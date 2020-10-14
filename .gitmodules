@@ -1,0 +1,3 @@
+[submodule "nRF5_SDK_17.0.0_9d13099/external/micro-ecc/micro-ecc"]
+	path = nRF5_SDK_17.0.0_9d13099/external/micro-ecc/micro-ecc
+	url = https://github.com/kmackay/micro-ecc.git
