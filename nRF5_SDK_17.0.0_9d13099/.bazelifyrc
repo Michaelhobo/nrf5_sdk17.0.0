@@ -1,0 +1,88 @@
+excludes: "config"
+excludes: "examples"
+excludes: "documentation"
+excludes: "external/cJSON"
+excludes: "external/fatfs"
+excludes: "external/freertos"
+# excludes: "external/infineon"
+excludes: "external/lwip"
+excludes: "external/mbedtls"
+# excludes: "external/micro-ecc"
+excludes: "external/nano"
+excludes: "external/nfc_adafruit_library"
+# excludes: "external/nrf_cc310"
+# excludes: "external/nrf_cc310_bl"
+excludes: "external/segger_rtt"
+#excludes: "external/thedotfactory_fonts"
+excludes: "external/tile"
+excludes: "components/ant"
+excludes: "components/softdevice/s112"
+excludes: "components/softdevice/s113"
+excludes: "components/softdevice/s122"
+excludes: "components/softdevice/s140"
+excludes: "components/softdevice/common/nrf_sdh_freertos.h"
+excludes: "components/nrf/t4t_parser"
+excludes: "components/802_15_4"
+excludes: "components/nfc/t4t_parser"
+excludes: "components/softdevice/mbr/headers"
+# excludes: "components/libraries/crypto"
+excludes: "components/serialization/application/codecs/ant"
+excludes: "components/libraries/ecc"
+excludes: "external/nrf_cc310/include/ssi_pal_fips.h"
+excludes: "external/nrf_cc310/include/ssi_regs.h"
+excludes: "external/infineon/optiga/include/optiga/dtls"
+excludes: "external/infineon/optiga/include/optiga/pal"
+ignore_headers: "math.h"
+ignore_headers: "stddef.h"
+ignore_headers: "stdint.h"
+ignore_headers: "stdio.h"
+ignore_headers: "stdlib.h"
+ignore_headers: "string.h"
+ignore_headers: "float.h"
+ignore_headers: "FreeRTOSConfig.h"
+ignore_headers: "FreeRTOS.h"
+ignore_headers: "custom_board.h"
+ignore_headers: "iccarm_builtin.h"
+ignore_headers: "SEGGER_RTT.h"
+ignore_headers: "ant_error.h"
+ignore_headers: "ant_event.h"
+ignore_headers: "ant_interface.h"
+ignore_headers: "ant_parameters.h"
+target_overrides: <
+  key: "sdk_config.h",
+  value: "TODO: user-provided",
+>
+target_overrides: <
+  key: "es_app_config.h"
+  value: "TODO: user-provided"
+>
+target_overrides: <
+  key: "nrf_drv_config.h"
+  value: "TODO: user-provided"
+>
+target_overrides: <
+  key: "conn_mw.h"
+  value: "//nRF5_SDK_17.0.0_9d13099/components/serialization/connectivity/codecs/common:conn_mw"
+  # value: "//nRF5_SDK_17.0.0_9d13099/components/serialization/connectivity/codecs/ble/middleware:conn_mw"
+>
+# target_overrides: <
+#   key: "conn_mw_items.c"
+#   value: "//nRF5_SDK_17.0.0_9d13099/components/serialization/connectivity/codecs/common:conn_mw_items"
+# >
+# target_overrides: <
+#   key: "nrf_bitmask.h"
+#   value: "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:nrf_bitmask"
+# >
+target_overrides: <
+  key: "nrf_crypto_allocator.h"
+  value: "TODO: user-provided"
+>
+include_dirs: "components/softdevice/s132/headers"
+include_dirs: "external/nrf_oberon"
+include_dirs: "external/mbedtls/include"
+include_dirs: "integration/nrfx"
+include_dirs: "modules/nrfx/drivers/include"
+include_dirs: "external/nrf_cc310/include"
+include_dirs: "external/infineon/optiga/include"
+# include_dirs: "external/lwip/src/include"
+# include_dirs: "external/lwip/src/include/lwip"
