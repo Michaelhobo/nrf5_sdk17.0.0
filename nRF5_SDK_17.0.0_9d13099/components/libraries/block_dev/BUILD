@@ -1,0 +1,9 @@
+cc_library(
+    name = "nrf_block_dev",
+    hdrs = ["nrf_block_dev.h"],
+    includes = ["."],
+    deps = [
+        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:nrf_assert",
+        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:sdk_common",
+    ],
+)

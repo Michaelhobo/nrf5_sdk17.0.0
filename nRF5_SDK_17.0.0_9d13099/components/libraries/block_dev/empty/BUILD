@@ -1,0 +1,12 @@
+cc_library(
+    name = "nrf_block_dev_empty",
+    srcs = ["nrf_block_dev_empty.c"],
+    hdrs = ["nrf_block_dev_empty.h"],
+    includes = ["."],
+    deps = [
+        "//nRF5_SDK_17.0.0_9d13099/components/libraries/block_dev:nrf_block_dev",
+        "//nRF5_SDK_17.0.0_9d13099/components/libraries/log:nrf_log",
+        "//nRF5_SDK_17.0.0_9d13099/components/libraries/log:nrf_log_instance",
+        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:sdk_common",
+    ],
+)

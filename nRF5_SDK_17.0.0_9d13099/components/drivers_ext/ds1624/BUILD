@@ -1,0 +1,10 @@
+cc_library(
+    name = "ds1624",
+    srcs = ["ds1624.c"],
+    hdrs = ["ds1624.h"],
+    includes = ["."],
+    deps = [
+        "//nRF5_SDK_17.0.0_9d13099/components/drivers_nrf/twi_master/deprecated:twi_master",
+        "//nRF5_SDK_17.0.0_9d13099/components/libraries/delay:nrf_delay",
+    ],
+)
