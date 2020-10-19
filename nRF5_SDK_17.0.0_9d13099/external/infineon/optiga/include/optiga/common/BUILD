@@ -1,3 +1,7 @@
+load("@rules_cc//cc:defs.bzl", "cc_library")
+
+package(default_visibility = "//visibility:public")
+
 cc_library(
     name = "AuthLibSettings",
     hdrs = ["AuthLibSettings.h"],
@@ -5,21 +9,14 @@ cc_library(
 )
 
 cc_library(
-    name = "Util",
-    hdrs = ["Util.h"],
+    name = "Datatypes",
+    hdrs = ["Datatypes.h"],
     includes = ["."],
-    deps = [":Datatypes"],
 )
 
 cc_library(
     name = "ErrorCodes",
     hdrs = ["ErrorCodes.h"],
-    includes = ["."],
-)
-
-cc_library(
-    name = "MemoryMgmt",
-    hdrs = ["MemoryMgmt.h"],
     includes = ["."],
 )
 
@@ -31,7 +28,14 @@ cc_library(
 )
 
 cc_library(
-    name = "Datatypes",
-    hdrs = ["Datatypes.h"],
+    name = "MemoryMgmt",
+    hdrs = ["MemoryMgmt.h"],
     includes = ["."],
+)
+
+cc_library(
+    name = "Util",
+    hdrs = ["Util.h"],
+    includes = ["."],
+    deps = [":Datatypes"],
 )

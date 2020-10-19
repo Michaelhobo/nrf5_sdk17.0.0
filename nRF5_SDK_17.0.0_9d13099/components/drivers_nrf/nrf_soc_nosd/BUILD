@@ -1,13 +1,6 @@
-cc_library(
-    name = "nrf_soc",
-    srcs = ["nrf_soc.c"],
-    hdrs = ["nrf_soc.h"],
-    includes = ["."],
-    deps = [
-        ":nrf_error",
-        "//nRF5_SDK_17.0.0_9d13099/modules/nrfx/mdk:nrf",
-    ],
-)
+load("@rules_cc//cc:defs.bzl", "cc_library")
+
+package(default_visibility = "//visibility:public")
 
 cc_library(
     name = "nrf_error",
@@ -31,4 +24,15 @@ cc_library(
     name = "nrf_sdm",
     hdrs = ["nrf_sdm.h"],
     includes = ["."],
+)
+
+cc_library(
+    name = "nrf_soc",
+    srcs = ["nrf_soc.c"],
+    hdrs = ["nrf_soc.h"],
+    includes = ["."],
+    deps = [
+        ":nrf_error",
+        "//nRF5_SDK_17.0.0_9d13099/modules/nrfx/mdk:nrf",
+    ],
 )

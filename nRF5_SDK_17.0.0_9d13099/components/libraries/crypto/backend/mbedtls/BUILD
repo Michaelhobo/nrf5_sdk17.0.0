@@ -1,43 +1,6 @@
-cc_library(
-    name = "mbedtls_backend_ecc",
-    srcs = ["mbedtls_backend_ecc.c"],
-    hdrs = ["mbedtls_backend_ecc.h"],
-    includes = ["."],
-    deps = [
-        "TODO: user-provided",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto:nrf_crypto_ecc",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto:nrf_crypto_ecc_shared",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto:nrf_crypto_ecdh",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto:nrf_crypto_mem",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto:nrf_crypto_rng",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto:nrf_crypto_shared",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:nordic_common",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:nrf_assert",
-        "//nRF5_SDK_17.0.0_9d13099/external/mbedtls/include/mbedtls:bignum",
-        "//nRF5_SDK_17.0.0_9d13099/external/mbedtls/include/mbedtls:config",
-        "//nRF5_SDK_17.0.0_9d13099/external/mbedtls/include/mbedtls:ecp",
-    ],
-)
+load("@rules_cc//cc:defs.bzl", "cc_library")
 
-cc_library(
-    name = "mbedtls_backend_ecdsa",
-    srcs = ["mbedtls_backend_ecdsa.c"],
-    hdrs = ["mbedtls_backend_ecdsa.h"],
-    includes = ["."],
-    deps = [
-        "TODO: user-provided",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto:nrf_crypto_ecc",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto:nrf_crypto_ecc_shared",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto:nrf_crypto_ecdsa",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto:nrf_crypto_ecdsa_shared",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:nordic_common",
-        "//nRF5_SDK_17.0.0_9d13099/external/mbedtls/include/mbedtls:config",
-        "//nRF5_SDK_17.0.0_9d13099/external/mbedtls/include/mbedtls:ecdsa",
-        "//nRF5_SDK_17.0.0_9d13099/external/mbedtls/include/mbedtls:ecp",
-        "//nRF5_SDK_17.0.0_9d13099/external/mbedtls/include/mbedtls:sha256",
-        "//nRF5_SDK_17.0.0_9d13099/external/mbedtls/include/mbedtls:sha512",
-    ],
-)
+package(default_visibility = "//visibility:public")
 
 cc_library(
     name = "mbedtls_backend_aes",
@@ -45,7 +8,7 @@ cc_library(
     hdrs = ["mbedtls_backend_aes.h"],
     includes = ["."],
     deps = [
-        "TODO: user-provided",
+        "//nRF5_SDK_17.0.0_9d13099:sdk_config_remap",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto:nrf_crypto_aes_shared",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto:nrf_crypto_error",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto:nrf_crypto_types",
@@ -64,7 +27,7 @@ cc_library(
     hdrs = ["mbedtls_backend_aes_aead.h"],
     includes = ["."],
     deps = [
-        "TODO: user-provided",
+        "//nRF5_SDK_17.0.0_9d13099:sdk_config_remap",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto:nrf_crypto_aead_shared",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto:nrf_crypto_error",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:sdk_common",
@@ -75,12 +38,33 @@ cc_library(
 )
 
 cc_library(
+    name = "mbedtls_backend_ecc",
+    srcs = ["mbedtls_backend_ecc.c"],
+    hdrs = ["mbedtls_backend_ecc.h"],
+    includes = ["."],
+    deps = [
+        "//nRF5_SDK_17.0.0_9d13099:sdk_config_remap",
+        "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto:nrf_crypto_ecc",
+        "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto:nrf_crypto_ecc_shared",
+        "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto:nrf_crypto_ecdh",
+        "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto:nrf_crypto_mem",
+        "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto:nrf_crypto_rng",
+        "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto:nrf_crypto_shared",
+        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:nordic_common",
+        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:nrf_assert",
+        "//nRF5_SDK_17.0.0_9d13099/external/mbedtls/include/mbedtls:bignum",
+        "//nRF5_SDK_17.0.0_9d13099/external/mbedtls/include/mbedtls:config",
+        "//nRF5_SDK_17.0.0_9d13099/external/mbedtls/include/mbedtls:ecp",
+    ],
+)
+
+cc_library(
     name = "mbedtls_backend_ecdh",
     srcs = ["mbedtls_backend_ecdh.c"],
     hdrs = ["mbedtls_backend_ecdh.h"],
     includes = ["."],
     deps = [
-        "TODO: user-provided",
+        "//nRF5_SDK_17.0.0_9d13099:sdk_config_remap",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto:nrf_crypto_ecc",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto:nrf_crypto_ecc_shared",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto:nrf_crypto_ecdh",
@@ -94,17 +78,20 @@ cc_library(
 )
 
 cc_library(
-    name = "mbedtls_backend_hmac",
-    srcs = ["mbedtls_backend_hmac.c"],
-    hdrs = ["mbedtls_backend_hmac.h"],
+    name = "mbedtls_backend_ecdsa",
+    srcs = ["mbedtls_backend_ecdsa.c"],
+    hdrs = ["mbedtls_backend_ecdsa.h"],
     includes = ["."],
     deps = [
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto:nrf_crypto_error",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto:nrf_crypto_hmac_shared",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto:nrf_crypto_types",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/log:nrf_log",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:sdk_common",
-        "//nRF5_SDK_17.0.0_9d13099/external/mbedtls/include/mbedtls:md",
+        "//nRF5_SDK_17.0.0_9d13099:sdk_config_remap",
+        "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto:nrf_crypto_ecc",
+        "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto:nrf_crypto_ecc_shared",
+        "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto:nrf_crypto_ecdsa",
+        "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto:nrf_crypto_ecdsa_shared",
+        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:nordic_common",
+        "//nRF5_SDK_17.0.0_9d13099/external/mbedtls/include/mbedtls:config",
+        "//nRF5_SDK_17.0.0_9d13099/external/mbedtls/include/mbedtls:ecdsa",
+        "//nRF5_SDK_17.0.0_9d13099/external/mbedtls/include/mbedtls:ecp",
         "//nRF5_SDK_17.0.0_9d13099/external/mbedtls/include/mbedtls:sha256",
         "//nRF5_SDK_17.0.0_9d13099/external/mbedtls/include/mbedtls:sha512",
     ],
@@ -126,6 +113,23 @@ cc_library(
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:sdk_errors",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:sdk_macros",
         "//nRF5_SDK_17.0.0_9d13099/external/mbedtls/include/mbedtls:config",
+        "//nRF5_SDK_17.0.0_9d13099/external/mbedtls/include/mbedtls:md",
+        "//nRF5_SDK_17.0.0_9d13099/external/mbedtls/include/mbedtls:sha256",
+        "//nRF5_SDK_17.0.0_9d13099/external/mbedtls/include/mbedtls:sha512",
+    ],
+)
+
+cc_library(
+    name = "mbedtls_backend_hmac",
+    srcs = ["mbedtls_backend_hmac.c"],
+    hdrs = ["mbedtls_backend_hmac.h"],
+    includes = ["."],
+    deps = [
+        "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto:nrf_crypto_error",
+        "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto:nrf_crypto_hmac_shared",
+        "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto:nrf_crypto_types",
+        "//nRF5_SDK_17.0.0_9d13099/components/libraries/log:nrf_log",
+        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:sdk_common",
         "//nRF5_SDK_17.0.0_9d13099/external/mbedtls/include/mbedtls:md",
         "//nRF5_SDK_17.0.0_9d13099/external/mbedtls/include/mbedtls:sha256",
         "//nRF5_SDK_17.0.0_9d13099/external/mbedtls/include/mbedtls:sha512",

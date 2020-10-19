@@ -53,25 +53,9 @@ ignore_headers: "ant_event.h"
 ignore_headers: "ant_interface.h"
 ignore_headers: "ant_parameters.h"
 target_overrides: <
-  key: "sdk_config.h",
-  value: "TODO: user-provided",
->
-target_overrides: <
-  key: "es_app_config.h"
-  value: "TODO: user-provided"
->
-target_overrides: <
-  key: "nrf_drv_config.h"
-  value: "TODO: user-provided"
->
-target_overrides: <
   key: "conn_mw.h"
   value: "//nRF5_SDK_17.0.0_9d13099/components/serialization/connectivity/codecs/common:conn_mw"
   # value: "//nRF5_SDK_17.0.0_9d13099/components/serialization/connectivity/codecs/ble/middleware:conn_mw"
->
-target_overrides: <
-  key: "nrf_crypto_allocator.h"
-  value: "TODO: user-provided"
 >
 include_dirs: "external/nrf_oberon"
 include_dirs: "external/mbedtls/include"
@@ -79,5 +63,7 @@ include_dirs: "integration/nrfx"
 include_dirs: "modules/nrfx/drivers/include"
 include_dirs: "external/nrf_cc310/include"
 include_dirs: "external/infineon/optiga/include"
-# include_dirs: "external/lwip/src/include"
-# include_dirs: "external/lwip/src/include/lwip"
+remaps: "sdk_config.h"
+remaps: "es_app_config.h"
+remaps: "nrf_drv_config.h"
+remaps: "nrf_crypto_allocator.h"

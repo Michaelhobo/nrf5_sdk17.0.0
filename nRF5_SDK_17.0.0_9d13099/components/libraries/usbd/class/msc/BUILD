@@ -1,23 +1,6 @@
-cc_library(
-    name = "app_usbd_msc_types",
-    hdrs = ["app_usbd_msc_types.h"],
-    includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099/components/libraries/util:app_util"],
-)
+load("@rules_cc//cc:defs.bzl", "cc_library")
 
-cc_library(
-    name = "app_usbd_msc_scsi",
-    hdrs = ["app_usbd_msc_scsi.h"],
-    includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099/components/libraries/util:app_util"],
-)
-
-cc_library(
-    name = "app_usbd_msc_desc",
-    hdrs = ["app_usbd_msc_desc.h"],
-    includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099/components/libraries/usbd:app_usbd_descriptor"],
-)
+package(default_visibility = "//visibility:public")
 
 cc_library(
     name = "app_usbd_msc",
@@ -42,8 +25,29 @@ cc_library(
 )
 
 cc_library(
+    name = "app_usbd_msc_desc",
+    hdrs = ["app_usbd_msc_desc.h"],
+    includes = ["."],
+    deps = ["//nRF5_SDK_17.0.0_9d13099/components/libraries/usbd:app_usbd_descriptor"],
+)
+
+cc_library(
     name = "app_usbd_msc_internal",
     hdrs = ["app_usbd_msc_internal.h"],
+    includes = ["."],
+    deps = ["//nRF5_SDK_17.0.0_9d13099/components/libraries/util:app_util"],
+)
+
+cc_library(
+    name = "app_usbd_msc_scsi",
+    hdrs = ["app_usbd_msc_scsi.h"],
+    includes = ["."],
+    deps = ["//nRF5_SDK_17.0.0_9d13099/components/libraries/util:app_util"],
+)
+
+cc_library(
+    name = "app_usbd_msc_types",
+    hdrs = ["app_usbd_msc_types.h"],
     includes = ["."],
     deps = ["//nRF5_SDK_17.0.0_9d13099/components/libraries/util:app_util"],
 )

@@ -1,29 +1,6 @@
-cc_library(
-    name = "ble_ots_object",
-    srcs = ["ble_ots_object.c"],
-    hdrs = ["ble_ots_object.h"],
-    includes = ["."],
-    deps = [
-        ":ble_ots",
-        "//nRF5_SDK_17.0.0_9d13099/components/ble/common:ble_srv_common",
-    ],
-)
+load("@rules_cc//cc:defs.bzl", "cc_library")
 
-cc_library(
-    name = "ble_ots_oacp",
-    srcs = ["ble_ots_oacp.c"],
-    hdrs = ["ble_ots_oacp.h"],
-    includes = ["."],
-    deps = [
-        ":ble_ots",
-        ":ble_ots_l2cap",
-        ":ble_ots_object",
-        "//nRF5_SDK_17.0.0_9d13099/components/ble/nrf_ble_gq",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/crc32",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/fds",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/log:nrf_log",
-    ],
-)
+package(default_visibility = "//visibility:public")
 
 cc_library(
     name = "ble_ots",
@@ -50,5 +27,32 @@ cc_library(
         ":ble_ots_oacp",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/log:nrf_log",
         "//nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers:ble_l2cap",
+    ],
+)
+
+cc_library(
+    name = "ble_ots_oacp",
+    srcs = ["ble_ots_oacp.c"],
+    hdrs = ["ble_ots_oacp.h"],
+    includes = ["."],
+    deps = [
+        ":ble_ots",
+        ":ble_ots_l2cap",
+        ":ble_ots_object",
+        "//nRF5_SDK_17.0.0_9d13099/components/ble/nrf_ble_gq",
+        "//nRF5_SDK_17.0.0_9d13099/components/libraries/crc32",
+        "//nRF5_SDK_17.0.0_9d13099/components/libraries/fds",
+        "//nRF5_SDK_17.0.0_9d13099/components/libraries/log:nrf_log",
+    ],
+)
+
+cc_library(
+    name = "ble_ots_object",
+    srcs = ["ble_ots_object.c"],
+    hdrs = ["ble_ots_object.h"],
+    includes = ["."],
+    deps = [
+        ":ble_ots",
+        "//nRF5_SDK_17.0.0_9d13099/components/ble/common:ble_srv_common",
     ],
 )

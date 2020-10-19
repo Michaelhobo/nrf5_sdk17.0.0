@@ -1,15 +1,6 @@
-cc_library(
-    name = "nrf_gzp",
-    srcs = ["nrf_gzp.c"],
-    hdrs = ["nrf_gzp.h"],
-    includes = ["."],
-    deps = [
-        ":nrf_gzll",
-        "//nRF5_SDK_17.0.0_9d13099/components/proprietary_rf/gzll/config:nrf_gzp_config",
-        "//nRF5_SDK_17.0.0_9d13099/modules/nrfx/hal:nrf_ecb",
-        "//nRF5_SDK_17.0.0_9d13099/modules/nrfx/mdk:nrf",
-    ],
-)
+load("@rules_cc//cc:defs.bzl", "cc_library")
+
+package(default_visibility = "//visibility:public")
 
 cc_library(
     name = "nrf_gzll",
@@ -19,12 +10,6 @@ cc_library(
         ":nrf_gzll_constants",
         "//nRF5_SDK_17.0.0_9d13099/modules/nrfx/mdk:nrf",
     ],
-)
-
-cc_library(
-    name = "nrf_gzll_resources",
-    hdrs = ["nrf_gzll_resources.h"],
-    includes = ["."],
 )
 
 cc_library(
@@ -41,5 +26,24 @@ cc_library(
         ":nrf_gzll",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:app_error",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:sdk_errors",
+    ],
+)
+
+cc_library(
+    name = "nrf_gzll_resources",
+    hdrs = ["nrf_gzll_resources.h"],
+    includes = ["."],
+)
+
+cc_library(
+    name = "nrf_gzp",
+    srcs = ["nrf_gzp.c"],
+    hdrs = ["nrf_gzp.h"],
+    includes = ["."],
+    deps = [
+        ":nrf_gzll",
+        "//nRF5_SDK_17.0.0_9d13099/components/proprietary_rf/gzll/config:nrf_gzp_config",
+        "//nRF5_SDK_17.0.0_9d13099/modules/nrfx/hal:nrf_ecb",
+        "//nRF5_SDK_17.0.0_9d13099/modules/nrfx/mdk:nrf",
     ],
 )

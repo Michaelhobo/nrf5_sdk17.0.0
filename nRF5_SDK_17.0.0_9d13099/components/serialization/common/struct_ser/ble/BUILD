@@ -1,30 +1,6 @@
-cc_library(
-    name = "nrf_soc_struct_serialization",
-    srcs = ["nrf_soc_struct_serialization.c"],
-    hdrs = ["nrf_soc_struct_serialization.h"],
-    includes = ["."],
-    deps = [
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:app_util",
-        "//nRF5_SDK_17.0.0_9d13099/components/serialization/common:ble_serialization",
-        "//nRF5_SDK_17.0.0_9d13099/components/serialization/common:cond_field_serialization",
-        "//nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers:nrf_soc",
-    ],
-)
+load("@rules_cc//cc:defs.bzl", "cc_library")
 
-cc_library(
-    name = "ble_gattc_struct_serialization",
-    srcs = ["ble_gattc_struct_serialization.c"],
-    hdrs = ["ble_gattc_struct_serialization.h"],
-    includes = ["."],
-    deps = [
-        ":ble_gatt_struct_serialization",
-        ":ble_struct_serialization",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:app_util",
-        "//nRF5_SDK_17.0.0_9d13099/components/serialization/common:ble_serialization",
-        "//nRF5_SDK_17.0.0_9d13099/components/serialization/common:cond_field_serialization",
-        "//nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers:ble_gattc",
-    ],
-)
+package(default_visibility = "//visibility:public")
 
 cc_library(
     name = "ble_gap_struct_serialization",
@@ -52,6 +28,21 @@ cc_library(
         "//nRF5_SDK_17.0.0_9d13099/components/serialization/common:ble_serialization",
         "//nRF5_SDK_17.0.0_9d13099/components/serialization/common:cond_field_serialization",
         "//nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers:ble_gatt",
+    ],
+)
+
+cc_library(
+    name = "ble_gattc_struct_serialization",
+    srcs = ["ble_gattc_struct_serialization.c"],
+    hdrs = ["ble_gattc_struct_serialization.h"],
+    includes = ["."],
+    deps = [
+        ":ble_gatt_struct_serialization",
+        ":ble_struct_serialization",
+        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:app_util",
+        "//nRF5_SDK_17.0.0_9d13099/components/serialization/common:ble_serialization",
+        "//nRF5_SDK_17.0.0_9d13099/components/serialization/common:cond_field_serialization",
+        "//nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers:ble_gattc",
     ],
 )
 
@@ -102,5 +93,18 @@ cc_library(
         "//nRF5_SDK_17.0.0_9d13099/components/serialization/connectivity/codecs/ble/serializers:conn_ble_gap_sec_keys",
         "//nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers:ble",
         "//nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers:ble_types",
+    ],
+)
+
+cc_library(
+    name = "nrf_soc_struct_serialization",
+    srcs = ["nrf_soc_struct_serialization.c"],
+    hdrs = ["nrf_soc_struct_serialization.h"],
+    includes = ["."],
+    deps = [
+        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:app_util",
+        "//nRF5_SDK_17.0.0_9d13099/components/serialization/common:ble_serialization",
+        "//nRF5_SDK_17.0.0_9d13099/components/serialization/common:cond_field_serialization",
+        "//nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers:nrf_soc",
     ],
 )

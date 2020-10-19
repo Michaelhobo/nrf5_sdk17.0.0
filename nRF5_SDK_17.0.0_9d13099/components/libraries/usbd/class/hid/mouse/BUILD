@@ -1,8 +1,6 @@
-cc_library(
-    name = "app_usbd_hid_mouse_internal",
-    hdrs = ["app_usbd_hid_mouse_internal.h"],
-    includes = ["."],
-)
+load("@rules_cc//cc:defs.bzl", "cc_library")
+
+package(default_visibility = "//visibility:public")
 
 cc_library(
     name = "app_usbd_hid_mouse",
@@ -27,5 +25,11 @@ cc_library(
 cc_library(
     name = "app_usbd_hid_mouse_desc",
     hdrs = ["app_usbd_hid_mouse_desc.h"],
+    includes = ["."],
+)
+
+cc_library(
+    name = "app_usbd_hid_mouse_internal",
+    hdrs = ["app_usbd_hid_mouse_internal.h"],
     includes = ["."],
 )

@@ -1,11 +1,21 @@
+load("@rules_cc//cc:defs.bzl", "cc_library")
+
+package(default_visibility = "//visibility:public")
+
 cc_library(
-    name = "bsp_cli",
-    srcs = ["bsp_cli.c"],
-    hdrs = ["bsp_cli.h"],
+    name = "bsp",
+    srcs = ["bsp.c"],
+    hdrs = ["bsp.h"],
     includes = ["."],
     deps = [
-        ":bsp",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/cli:nrf_cli",
+        ":bsp_config",
+        "//nRF5_SDK_17.0.0_9d13099/components/boards",
+        "//nRF5_SDK_17.0.0_9d13099/components/libraries/button:app_button",
+        "//nRF5_SDK_17.0.0_9d13099/components/libraries/timer:app_timer",
+        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:nordic_common",
+        "//nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers:nrf_error",
+        "//nRF5_SDK_17.0.0_9d13099/modules/nrfx/hal:nrf_gpio",
+        "//nRF5_SDK_17.0.0_9d13099/modules/nrfx/mdk:nrf",
     ],
 )
 
@@ -19,6 +29,29 @@ cc_library(
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:sdk_common",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:sdk_errors",
         "//nRF5_SDK_17.0.0_9d13099/components/softdevice/common:nrf_sdh_ant",
+    ],
+)
+
+cc_library(
+    name = "bsp_btn_ble",
+    srcs = ["bsp_btn_ble.c"],
+    hdrs = ["bsp_btn_ble.h"],
+    includes = ["."],
+    deps = [
+        ":bsp",
+        "//nRF5_SDK_17.0.0_9d13099/components/softdevice/common:nrf_sdh_ble",
+        "//nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers:ble",
+    ],
+)
+
+cc_library(
+    name = "bsp_cli",
+    srcs = ["bsp_cli.c"],
+    hdrs = ["bsp_cli.h"],
+    includes = ["."],
+    deps = [
+        ":bsp",
+        "//nRF5_SDK_17.0.0_9d13099/components/libraries/cli:nrf_cli",
     ],
 )
 
@@ -42,34 +75,5 @@ cc_library(
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:app_util_platform",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:sdk_errors",
         "//nRF5_SDK_17.0.0_9d13099/modules/nrfx/mdk:nrf",
-    ],
-)
-
-cc_library(
-    name = "bsp",
-    srcs = ["bsp.c"],
-    hdrs = ["bsp.h"],
-    includes = ["."],
-    deps = [
-        ":bsp_config",
-        "//nRF5_SDK_17.0.0_9d13099/components/boards",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/button:app_button",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/timer:app_timer",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:nordic_common",
-        "//nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers:nrf_error",
-        "//nRF5_SDK_17.0.0_9d13099/modules/nrfx/hal:nrf_gpio",
-        "//nRF5_SDK_17.0.0_9d13099/modules/nrfx/mdk:nrf",
-    ],
-)
-
-cc_library(
-    name = "bsp_btn_ble",
-    srcs = ["bsp_btn_ble.c"],
-    hdrs = ["bsp_btn_ble.h"],
-    includes = ["."],
-    deps = [
-        ":bsp",
-        "//nRF5_SDK_17.0.0_9d13099/components/softdevice/common:nrf_sdh_ble",
-        "//nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers:ble",
     ],
 )

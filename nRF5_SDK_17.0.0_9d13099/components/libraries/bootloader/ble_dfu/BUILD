@@ -1,3 +1,7 @@
+load("@rules_cc//cc:defs.bzl", "cc_library")
+
+package(default_visibility = "//visibility:public")
+
 cc_library(
     name = "nrf_dfu_ble",
     srcs = ["nrf_dfu_ble.c"],
@@ -30,7 +34,7 @@ cc_library(
     hdrs = ["nrf_dfu_ble_svci_bond_sharing.h"],
     includes = ["."],
     deps = [
-        "TODO: user-provided",
+        "//nRF5_SDK_17.0.0_9d13099:sdk_config_remap",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/bootloader/dfu:nrf_dfu_types",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/svc:nrf_svci",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/svc:nrf_svci_async_function",
