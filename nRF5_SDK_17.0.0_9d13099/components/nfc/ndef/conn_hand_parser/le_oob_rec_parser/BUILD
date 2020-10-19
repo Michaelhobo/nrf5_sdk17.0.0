@@ -1,6 +1,6 @@
 load("@rules_cc//cc:defs.bzl", "cc_library")
 
-package(default_visibility = "//visibility:public")
+package(default_visibility = ["//visibility:public"])
 
 cc_library(
     name = "nfc_le_oob_rec_parser",

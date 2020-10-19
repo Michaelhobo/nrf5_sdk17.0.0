@@ -1,6 +1,6 @@
 load("@rules_cc//cc:defs.bzl", "cc_library")
 
-package(default_visibility = "//visibility:public")
+package(default_visibility = ["//visibility:public"])
 
 cc_library(
     name = "ser_config_5W_app",

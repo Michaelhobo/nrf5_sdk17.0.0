@@ -1,6 +1,6 @@
 load("@rules_cc//cc:defs.bzl", "cc_library")
 
-package(default_visibility = "//visibility:public")
+package(default_visibility = ["//visibility:public"])
 
 cc_library(
     name = "ccsw_crys_rsa_shared_types",
