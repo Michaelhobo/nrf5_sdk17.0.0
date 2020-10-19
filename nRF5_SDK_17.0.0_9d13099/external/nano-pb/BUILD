@@ -1,13 +1,6 @@
-cc_library(
-    name = "pb_decode",
-    srcs = ["pb_decode.c"],
-    hdrs = ["pb_decode.h"],
-    includes = ["."],
-    deps = [
-        ":pb",
-        ":pb_common",
-    ],
-)
+load("@rules_cc//cc:defs.bzl", "cc_library")
+
+package(default_visibility = "//visibility:public")
 
 cc_library(
     name = "pb",
@@ -21,6 +14,17 @@ cc_library(
     hdrs = ["pb_common.h"],
     includes = ["."],
     deps = [":pb"],
+)
+
+cc_library(
+    name = "pb_decode",
+    srcs = ["pb_decode.c"],
+    hdrs = ["pb_decode.h"],
+    includes = ["."],
+    deps = [
+        ":pb",
+        ":pb_common",
+    ],
 )
 
 cc_library(

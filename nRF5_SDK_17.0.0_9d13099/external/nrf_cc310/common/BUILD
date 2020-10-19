@@ -1,3 +1,7 @@
+load("@rules_cc//cc:defs.bzl", "cc_library")
+
+package(default_visibility = "//visibility:public")
+
 cc_library(
     name = "integration_test_plat_defs",
     hdrs = ["integration_test_plat_defs.h"],

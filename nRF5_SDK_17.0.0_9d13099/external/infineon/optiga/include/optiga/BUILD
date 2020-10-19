@@ -1,13 +1,6 @@
-cc_library(
-    name = "optiga_dtls",
-    hdrs = ["optiga_dtls.h"],
-    includes = ["."],
-    deps = [
-        "//nRF5_SDK_17.0.0_9d13099/external/infineon/optiga/include/optiga/common:Datatypes",
-        "//nRF5_SDK_17.0.0_9d13099/external/infineon/optiga/include/optiga/dtls:OcpCommon",
-        "//nRF5_SDK_17.0.0_9d13099/external/infineon/optiga/include/optiga/dtls:OcpCommonIncludes",
-    ],
-)
+load("@rules_cc//cc:defs.bzl", "cc_library")
+
+package(default_visibility = "//visibility:public")
 
 cc_library(
     name = "Version",
@@ -22,6 +15,17 @@ cc_library(
     deps = [
         "//nRF5_SDK_17.0.0_9d13099/external/infineon/optiga/include/optiga/cmd:CommandLib",
         "//nRF5_SDK_17.0.0_9d13099/external/infineon/optiga/include/optiga/common:Datatypes",
+    ],
+)
+
+cc_library(
+    name = "optiga_dtls",
+    hdrs = ["optiga_dtls.h"],
+    includes = ["."],
+    deps = [
+        "//nRF5_SDK_17.0.0_9d13099/external/infineon/optiga/include/optiga/common:Datatypes",
+        "//nRF5_SDK_17.0.0_9d13099/external/infineon/optiga/include/optiga/dtls:OcpCommon",
+        "//nRF5_SDK_17.0.0_9d13099/external/infineon/optiga/include/optiga/dtls:OcpCommonIncludes",
     ],
 )
 

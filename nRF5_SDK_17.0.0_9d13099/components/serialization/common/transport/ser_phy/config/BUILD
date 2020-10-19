@@ -1,6 +1,10 @@
+load("@rules_cc//cc:defs.bzl", "cc_library")
+
+package(default_visibility = "//visibility:public")
+
 cc_library(
-    name = "ser_phy_debug_conn",
-    hdrs = ["ser_phy_debug_conn.h"],
+    name = "ser_config_5W_app",
+    hdrs = ["ser_config_5W_app.h"],
     includes = ["."],
 )
 
@@ -25,13 +29,13 @@ cc_library(
 )
 
 cc_library(
-    name = "ser_config_5W_app",
-    hdrs = ["ser_config_5W_app.h"],
+    name = "ser_phy_debug_app",
+    hdrs = ["ser_phy_debug_app.h"],
     includes = ["."],
 )
 
 cc_library(
-    name = "ser_phy_debug_app",
-    hdrs = ["ser_phy_debug_app.h"],
+    name = "ser_phy_debug_conn",
+    hdrs = ["ser_phy_debug_conn.h"],
     includes = ["."],
 )

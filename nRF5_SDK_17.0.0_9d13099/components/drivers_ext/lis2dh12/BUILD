@@ -1,8 +1,6 @@
-cc_library(
-    name = "lis2dh12_internal",
-    hdrs = ["lis2dh12_internal.h"],
-    includes = ["."],
-)
+load("@rules_cc//cc:defs.bzl", "cc_library")
+
+package(default_visibility = "//visibility:public")
 
 cc_library(
     name = "lis2dh12",
@@ -13,4 +11,10 @@ cc_library(
         ":lis2dh12_internal",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/twi_sensor:nrf_twi_sensor",
     ],
+)
+
+cc_library(
+    name = "lis2dh12_internal",
+    hdrs = ["lis2dh12_internal.h"],
+    includes = ["."],
 )

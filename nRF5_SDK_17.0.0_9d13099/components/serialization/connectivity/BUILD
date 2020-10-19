@@ -1,40 +1,6 @@
-cc_library(
-    name = "ser_conn_reset_cmd_decoder",
-    srcs = ["ser_conn_reset_cmd_decoder.c"],
-    hdrs = ["ser_conn_reset_cmd_decoder.h"],
-    includes = ["."],
-    deps = [
-        ":ser_conn_handlers",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/log:nrf_log",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/scheduler:app_scheduler",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/timer:app_timer",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:app_error",
-        "//nRF5_SDK_17.0.0_9d13099/components/serialization/common:ble_serialization",
-        "//nRF5_SDK_17.0.0_9d13099/components/serialization/common/transport:ser_hal_transport",
-        "//nRF5_SDK_17.0.0_9d13099/components/serialization/common/transport/ser_phy:ser_phy_hci",
-        "//nRF5_SDK_17.0.0_9d13099/components/softdevice/common:nrf_sdh",
-        "//nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers:nrf_nvic",
-    ],
-)
+load("@rules_cc//cc:defs.bzl", "cc_library")
 
-cc_library(
-    name = "ser_conn_pkt_decoder",
-    srcs = ["ser_conn_pkt_decoder.c"],
-    hdrs = ["ser_conn_pkt_decoder.h"],
-    includes = ["."],
-    deps = [
-        ":ser_conn_cmd_decoder",
-        ":ser_conn_dtm_cmd_decoder",
-        ":ser_conn_reset_cmd_decoder",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/log:nrf_log",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:app_error",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:nordic_common",
-        "//nRF5_SDK_17.0.0_9d13099/components/serialization/common:ble_serialization",
-        "//nRF5_SDK_17.0.0_9d13099/components/serialization/common:ser_config",
-        "//nRF5_SDK_17.0.0_9d13099/components/serialization/common:ser_dbg_sd_str",
-        "//nRF5_SDK_17.0.0_9d13099/components/serialization/common/transport:ser_hal_transport",
-    ],
-)
+package(default_visibility = "//visibility:public")
 
 cc_library(
     name = "ser_conn_cmd_decoder",
@@ -109,5 +75,43 @@ cc_library(
         "//nRF5_SDK_17.0.0_9d13099/components/softdevice/common:nrf_sdh_ant",
         "//nRF5_SDK_17.0.0_9d13099/components/softdevice/common:nrf_sdh_ble",
         "//nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers:ble",
+    ],
+)
+
+cc_library(
+    name = "ser_conn_pkt_decoder",
+    srcs = ["ser_conn_pkt_decoder.c"],
+    hdrs = ["ser_conn_pkt_decoder.h"],
+    includes = ["."],
+    deps = [
+        ":ser_conn_cmd_decoder",
+        ":ser_conn_dtm_cmd_decoder",
+        ":ser_conn_reset_cmd_decoder",
+        "//nRF5_SDK_17.0.0_9d13099/components/libraries/log:nrf_log",
+        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:app_error",
+        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:nordic_common",
+        "//nRF5_SDK_17.0.0_9d13099/components/serialization/common:ble_serialization",
+        "//nRF5_SDK_17.0.0_9d13099/components/serialization/common:ser_config",
+        "//nRF5_SDK_17.0.0_9d13099/components/serialization/common:ser_dbg_sd_str",
+        "//nRF5_SDK_17.0.0_9d13099/components/serialization/common/transport:ser_hal_transport",
+    ],
+)
+
+cc_library(
+    name = "ser_conn_reset_cmd_decoder",
+    srcs = ["ser_conn_reset_cmd_decoder.c"],
+    hdrs = ["ser_conn_reset_cmd_decoder.h"],
+    includes = ["."],
+    deps = [
+        ":ser_conn_handlers",
+        "//nRF5_SDK_17.0.0_9d13099/components/libraries/log:nrf_log",
+        "//nRF5_SDK_17.0.0_9d13099/components/libraries/scheduler:app_scheduler",
+        "//nRF5_SDK_17.0.0_9d13099/components/libraries/timer:app_timer",
+        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:app_error",
+        "//nRF5_SDK_17.0.0_9d13099/components/serialization/common:ble_serialization",
+        "//nRF5_SDK_17.0.0_9d13099/components/serialization/common/transport:ser_hal_transport",
+        "//nRF5_SDK_17.0.0_9d13099/components/serialization/common/transport/ser_phy:ser_phy_hci",
+        "//nRF5_SDK_17.0.0_9d13099/components/softdevice/common:nrf_sdh",
+        "//nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers:nrf_nvic",
     ],
 )

@@ -1,3 +1,7 @@
+load("@rules_cc//cc:defs.bzl", "cc_library")
+
+package(default_visibility = "//visibility:public")
+
 cc_library(
     name = "app_usbd_dummy",
     srcs = ["app_usbd_dummy.c"],
@@ -20,14 +24,14 @@ cc_library(
 )
 
 cc_library(
+    name = "app_usbd_dummy_internal",
+    hdrs = ["app_usbd_dummy_internal.h"],
+    includes = ["."],
+)
+
+cc_library(
     name = "app_usbd_dummy_types",
     hdrs = ["app_usbd_dummy_types.h"],
     includes = ["."],
     deps = ["//nRF5_SDK_17.0.0_9d13099/components/libraries/util:app_util"],
-)
-
-cc_library(
-    name = "app_usbd_dummy_internal",
-    hdrs = ["app_usbd_dummy_internal.h"],
-    includes = ["."],
 )

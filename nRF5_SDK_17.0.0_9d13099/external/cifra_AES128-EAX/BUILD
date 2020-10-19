@@ -1,12 +1,27 @@
+load("@rules_cc//cc:defs.bzl", "cc_library")
+
+package(default_visibility = "//visibility:public")
+
 cc_library(
-    name = "tassert",
-    hdrs = ["tassert.h"],
+    name = "bitops",
+    hdrs = ["bitops.h"],
     includes = ["."],
 )
 
 cc_library(
-    name = "prp",
-    hdrs = ["prp.h"],
+    name = "blockwise",
+    srcs = ["blockwise.c"],
+    hdrs = ["blockwise.h"],
+    includes = ["."],
+    deps = [
+        ":bitops",
+        ":tassert",
+    ],
+)
+
+cc_library(
+    name = "cf_config",
+    hdrs = ["cf_config.h"],
     includes = ["."],
 )
 
@@ -21,6 +36,17 @@ cc_library(
         ":handy",
         ":prp",
         ":tassert",
+    ],
+)
+
+cc_library(
+    name = "gf128",
+    srcs = ["gf128.c"],
+    hdrs = ["gf128.h"],
+    includes = ["."],
+    deps = [
+        ":bitops",
+        ":cf_config",
     ],
 )
 
@@ -44,35 +70,13 @@ cc_library(
 )
 
 cc_library(
-    name = "blockwise",
-    srcs = ["blockwise.c"],
-    hdrs = ["blockwise.h"],
-    includes = ["."],
-    deps = [
-        ":bitops",
-        ":tassert",
-    ],
-)
-
-cc_library(
-    name = "cf_config",
-    hdrs = ["cf_config.h"],
+    name = "prp",
+    hdrs = ["prp.h"],
     includes = ["."],
 )
 
 cc_library(
-    name = "gf128",
-    srcs = ["gf128.c"],
-    hdrs = ["gf128.h"],
-    includes = ["."],
-    deps = [
-        ":bitops",
-        ":cf_config",
-    ],
-)
-
-cc_library(
-    name = "bitops",
-    hdrs = ["bitops.h"],
+    name = "tassert",
+    hdrs = ["tassert.h"],
     includes = ["."],
 )

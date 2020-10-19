@@ -1,8 +1,6 @@
-cc_library(
-    name = "ser_phy_debug_comm",
-    hdrs = ["ser_phy_debug_comm.h"],
-    includes = ["."],
-)
+load("@rules_cc//cc:defs.bzl", "cc_library")
+
+package(default_visibility = "//visibility:public")
 
 cc_library(
     name = "dtm_uart_params",
@@ -16,11 +14,17 @@ cc_library(
     hdrs = ["ser_hal_transport.h"],
     includes = ["."],
     deps = [
-        "TODO: user-provided",
+        "//nRF5_SDK_17.0.0_9d13099:sdk_config_remap",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/log:nrf_log",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/scheduler:app_scheduler",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:app_error",
         "//nRF5_SDK_17.0.0_9d13099/components/serialization/common:ser_config",
         "//nRF5_SDK_17.0.0_9d13099/components/serialization/common/transport/ser_phy",
     ],
+)
+
+cc_library(
+    name = "ser_phy_debug_comm",
+    hdrs = ["ser_phy_debug_comm.h"],
+    includes = ["."],
 )

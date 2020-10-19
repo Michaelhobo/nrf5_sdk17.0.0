@@ -1,18 +1,6 @@
-cc_library(
-    name = "app_usbd_hid_generic_desc",
-    hdrs = ["app_usbd_hid_generic_desc.h"],
-    includes = ["."],
-)
+load("@rules_cc//cc:defs.bzl", "cc_library")
 
-cc_library(
-    name = "app_usbd_hid_generic_internal",
-    hdrs = ["app_usbd_hid_generic_internal.h"],
-    includes = ["."],
-    deps = [
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/queue:nrf_queue",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/usbd/class/hid:app_usbd_hid",
-    ],
-)
+package(default_visibility = "//visibility:public")
 
 cc_library(
     name = "app_usbd_hid_generic",
@@ -31,5 +19,21 @@ cc_library(
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:app_util_platform",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:sdk_common",
         "//nRF5_SDK_17.0.0_9d13099/integration/nrfx/legacy:nrf_drv_usbd",
+    ],
+)
+
+cc_library(
+    name = "app_usbd_hid_generic_desc",
+    hdrs = ["app_usbd_hid_generic_desc.h"],
+    includes = ["."],
+)
+
+cc_library(
+    name = "app_usbd_hid_generic_internal",
+    hdrs = ["app_usbd_hid_generic_internal.h"],
+    includes = ["."],
+    deps = [
+        "//nRF5_SDK_17.0.0_9d13099/components/libraries/queue:nrf_queue",
+        "//nRF5_SDK_17.0.0_9d13099/components/libraries/usbd/class/hid:app_usbd_hid",
     ],
 )

@@ -1,3 +1,7 @@
+load("@rules_cc//cc:defs.bzl", "cc_library")
+
+package(default_visibility = "//visibility:public")
+
 cc_library(
     name = "nfc_hs_rec",
     srcs = ["nfc_hs_rec.c"],

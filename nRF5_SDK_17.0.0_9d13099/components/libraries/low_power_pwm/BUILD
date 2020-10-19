@@ -1,3 +1,7 @@
+load("@rules_cc//cc:defs.bzl", "cc_library")
+
+package(default_visibility = "//visibility:public")
+
 cc_library(
     name = "low_power_pwm",
     srcs = ["low_power_pwm.c"],

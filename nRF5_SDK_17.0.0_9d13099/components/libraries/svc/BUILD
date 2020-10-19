@@ -1,9 +1,6 @@
-cc_library(
-    name = "nrf_svci_async_handler",
-    hdrs = ["nrf_svci_async_handler.h"],
-    includes = ["."],
-    deps = [":nrf_svc_function"],
-)
+load("@rules_cc//cc:defs.bzl", "cc_library")
+
+package(default_visibility = "//visibility:public")
 
 cc_library(
     name = "nrf_svc_function",
@@ -34,4 +31,11 @@ cc_library(
         ":nrf_svci",
         ":nrf_svci_async_handler",
     ],
+)
+
+cc_library(
+    name = "nrf_svci_async_handler",
+    hdrs = ["nrf_svci_async_handler.h"],
+    includes = ["."],
+    deps = [":nrf_svc_function"],
 )

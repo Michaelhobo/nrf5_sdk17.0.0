@@ -1,9 +1,6 @@
-cc_library(
-    name = "app_usbd_nrf_dfu_trigger_types",
-    hdrs = ["app_usbd_nrf_dfu_trigger_types.h"],
-    includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099/components/libraries/util:app_util"],
-)
+load("@rules_cc//cc:defs.bzl", "cc_library")
+
+package(default_visibility = "//visibility:public")
 
 cc_library(
     name = "app_usbd_nrf_dfu_trigger",
@@ -30,4 +27,11 @@ cc_library(
     name = "app_usbd_nrf_dfu_trigger_internal",
     hdrs = ["app_usbd_nrf_dfu_trigger_internal.h"],
     includes = ["."],
+)
+
+cc_library(
+    name = "app_usbd_nrf_dfu_trigger_types",
+    hdrs = ["app_usbd_nrf_dfu_trigger_types.h"],
+    includes = ["."],
+    deps = ["//nRF5_SDK_17.0.0_9d13099/components/libraries/util:app_util"],
 )

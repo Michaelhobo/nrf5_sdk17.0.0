@@ -1,34 +1,11 @@
-cc_library(
-    name = "conn_mw_ble_gatts",
-    srcs = ["conn_mw_ble_gatts.c"],
-    hdrs = ["conn_mw_ble_gatts.h"],
-    includes = ["."],
-    deps = [
-        "//nRF5_SDK_17.0.0_9d13099/components/serialization/common:ble_serialization",
-        "//nRF5_SDK_17.0.0_9d13099/components/serialization/connectivity/codecs/ble/serializers:ble_gatts_conn",
-    ],
-)
+load("@rules_cc//cc:defs.bzl", "cc_library")
+
+package(default_visibility = "//visibility:public")
 
 cc_library(
-    name = "conn_mw_ble_gattc",
-    srcs = ["conn_mw_ble_gattc.c"],
-    hdrs = ["conn_mw_ble_gattc.h"],
+    name = "conn_mw",
+    hdrs = ["conn_mw.h"],
     includes = ["."],
-    deps = [
-        "//nRF5_SDK_17.0.0_9d13099/components/serialization/common:ble_serialization",
-        "//nRF5_SDK_17.0.0_9d13099/components/serialization/connectivity/codecs/ble/serializers:ble_gattc_conn",
-    ],
-)
-
-cc_library(
-    name = "conn_mw_ble_l2cap",
-    srcs = ["conn_mw_ble_l2cap.c"],
-    hdrs = ["conn_mw_ble_l2cap.h"],
-    includes = ["."],
-    deps = [
-        "//nRF5_SDK_17.0.0_9d13099/components/serialization/common:ble_serialization",
-        "//nRF5_SDK_17.0.0_9d13099/components/serialization/connectivity/codecs/ble/serializers:ble_l2cap_conn",
-    ],
 )
 
 cc_library(
@@ -58,7 +35,34 @@ cc_library(
 )
 
 cc_library(
-    name = "conn_mw",
-    hdrs = ["conn_mw.h"],
+    name = "conn_mw_ble_gattc",
+    srcs = ["conn_mw_ble_gattc.c"],
+    hdrs = ["conn_mw_ble_gattc.h"],
     includes = ["."],
+    deps = [
+        "//nRF5_SDK_17.0.0_9d13099/components/serialization/common:ble_serialization",
+        "//nRF5_SDK_17.0.0_9d13099/components/serialization/connectivity/codecs/ble/serializers:ble_gattc_conn",
+    ],
+)
+
+cc_library(
+    name = "conn_mw_ble_gatts",
+    srcs = ["conn_mw_ble_gatts.c"],
+    hdrs = ["conn_mw_ble_gatts.h"],
+    includes = ["."],
+    deps = [
+        "//nRF5_SDK_17.0.0_9d13099/components/serialization/common:ble_serialization",
+        "//nRF5_SDK_17.0.0_9d13099/components/serialization/connectivity/codecs/ble/serializers:ble_gatts_conn",
+    ],
+)
+
+cc_library(
+    name = "conn_mw_ble_l2cap",
+    srcs = ["conn_mw_ble_l2cap.c"],
+    hdrs = ["conn_mw_ble_l2cap.h"],
+    includes = ["."],
+    deps = [
+        "//nRF5_SDK_17.0.0_9d13099/components/serialization/common:ble_serialization",
+        "//nRF5_SDK_17.0.0_9d13099/components/serialization/connectivity/codecs/ble/serializers:ble_l2cap_conn",
+    ],
 )

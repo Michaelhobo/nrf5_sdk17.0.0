@@ -1,15 +1,6 @@
-cc_library(
-    name = "nrf_cli_vt100",
-    hdrs = ["nrf_cli_vt100.h"],
-    includes = ["."],
-)
+load("@rules_cc//cc:defs.bzl", "cc_library")
 
-cc_library(
-    name = "nrf_cli_types",
-    hdrs = ["nrf_cli_types.h"],
-    includes = ["."],
-    deps = ["TODO: user-provided"],
-)
+package(default_visibility = "//visibility:public")
 
 cc_library(
     name = "nrf_cli",
@@ -38,4 +29,17 @@ cc_library(
         "//nRF5_SDK_17.0.0_9d13099/external/fprintf:nrf_fprintf",
         "//nRF5_SDK_17.0.0_9d13099/external/fprintf:nrf_fprintf_format",
     ],
+)
+
+cc_library(
+    name = "nrf_cli_types",
+    hdrs = ["nrf_cli_types.h"],
+    includes = ["."],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:sdk_config_remap"],
+)
+
+cc_library(
+    name = "nrf_cli_vt100",
+    hdrs = ["nrf_cli_vt100.h"],
+    includes = ["."],
 )
