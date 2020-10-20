@@ -1,7 +1,44 @@
-# Exclude a bunch of unimportant things
+# Exclude a bunch of unimportant things.
 excludes: "config"
 excludes: "examples"
 excludes: "documentation"
+
+# Ignore standard library headers.
+ignore_headers: "math.h"
+ignore_headers: "stddef.h"
+ignore_headers: "stdint.h"
+ignore_headers: "stdio.h"
+ignore_headers: "stdlib.h"
+ignore_headers: "string.h"
+ignore_headers: "float.h"
+
+# Select a single SoftDevice. We selected s132 here.
+include_dirs: "components/softdevice/s132/headers"
+excludes: "components/softdevice/s112"
+excludes: "components/softdevice/s113"
+excludes: "components/softdevice/s122"
+excludes: "components/softdevice/s140"
+
+# Necessary include directories.
+include_dirs: "external/nrf_oberon"
+include_dirs: "external/mbedtls/include"
+include_dirs: "integration/nrfx"
+include_dirs: "modules/nrfx/drivers/include"
+include_dirs: "external/nrf_cc310/include"
+include_dirs: "external/infineon/optiga/include"
+
+# Remap these user-supplied config files and libraries.
+remaps: "sdk_config.h"
+remaps: "es_app_config.h"
+remaps: "nrf_drv_config.h"
+remaps: "nrf_crypto_allocator.h"
+
+# Provide a single conn_mw.h
+target_overrides: <
+  key: "conn_mw.h"
+  value: "//nRF5_SDK_17.0.0_9d13099/components/serialization/connectivity/codecs/common:conn_mw"
+  # value: "//nRF5_SDK_17.0.0_9d13099/components/serialization/connectivity/codecs/ble/middleware:conn_mw"
+>
 
 # Exclude a bunch of external libraries for now.
 excludes: "external/cJSON"
@@ -18,15 +55,14 @@ excludes: "external/nrf_cc310/include/ssi_regs.h"
 excludes: "external/infineon/optiga/include/optiga/dtls"
 excludes: "external/infineon/optiga/include/optiga/pal"
 
-# Select a single SoftDevice. We selected s132 here.
-include_dirs: "components/softdevice/s132/headers"
-excludes: "components/softdevice/s112"
-excludes: "components/softdevice/s113"
-excludes: "components/softdevice/s122"
-excludes: "components/softdevice/s140"
-
-# TODO: Get ANT working
+# TODO: Get ANT working.
 excludes: "components/ant"
+ignore_headers: "ant_error.h"
+ignore_headers: "ant_event.h"
+ignore_headers: "ant_interface.h"
+ignore_headers: "ant_parameters.h"
+
+# TODO: Get more things working.
 excludes: "components/softdevice/common/nrf_sdh_freertos.h"
 excludes: "components/nrf/t4t_parser"
 excludes: "components/802_15_4"
@@ -35,35 +71,8 @@ excludes: "components/softdevice/mbr/headers"
 excludes: "components/serialization/application/codecs/ant"
 excludes: "components/libraries/ecc"
 
-# 
-ignore_headers: "math.h"
-ignore_headers: "stddef.h"
-ignore_headers: "stdint.h"
-ignore_headers: "stdio.h"
-ignore_headers: "stdlib.h"
-ignore_headers: "string.h"
-ignore_headers: "float.h"
 ignore_headers: "FreeRTOSConfig.h"
 ignore_headers: "FreeRTOS.h"
 ignore_headers: "custom_board.h"
 ignore_headers: "iccarm_builtin.h"
 ignore_headers: "SEGGER_RTT.h"
-ignore_headers: "ant_error.h"
-ignore_headers: "ant_event.h"
-ignore_headers: "ant_interface.h"
-ignore_headers: "ant_parameters.h"
-target_overrides: <
-  key: "conn_mw.h"
-  value: "//nRF5_SDK_17.0.0_9d13099/components/serialization/connectivity/codecs/common:conn_mw"
-  # value: "//nRF5_SDK_17.0.0_9d13099/components/serialization/connectivity/codecs/ble/middleware:conn_mw"
->
-include_dirs: "external/nrf_oberon"
-include_dirs: "external/mbedtls/include"
-include_dirs: "integration/nrfx"
-include_dirs: "modules/nrfx/drivers/include"
-include_dirs: "external/nrf_cc310/include"
-include_dirs: "external/infineon/optiga/include"
-remaps: "sdk_config.h"
-remaps: "es_app_config.h"
-remaps: "nrf_drv_config.h"
-remaps: "nrf_crypto_allocator.h"

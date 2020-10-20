@@ -21,10 +21,10 @@ nrf_cc_binary(
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/log:nrf_log_default_backends",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/pwr_mgmt:nrf_pwr_mgmt",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/timer:app_timer",
+        "//nRF5_SDK_17.0.0_9d13099/components/softdevice/common:nrf_sdh",
         "//nRF5_SDK_17.0.0_9d13099/components/softdevice/common:nrf_sdh_ble",
         "//nRF5_SDK_17.0.0_9d13099/components/softdevice/common:nrf_sdh_soc",
         "//nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers:ble",
         "//nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers:ble_hci",
-        "//nRF5_SDK_17.0.0_9d13099/components/softdevice/common:nrf_sdh",
     ],
 )
