@@ -9,11 +9,8 @@ cc_library(
     includes = ["."],
     deps = [
         ":app_usbd_hid_types",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/atomic:nrf_atomic",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/log:nrf_log",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/usbd:app_usbd",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/usbd:app_usbd_core",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:sdk_common",
+        "//nRF5_SDK_17.0.0_9d13099:100f0197-983a-4344-b22d-2887b0fffc9d",
+        "//nRF5_SDK_17.0.0_9d13099:54213e57-6f9f-4cc9-943b-7764ef3b22d4",
     ],
 )
 
@@ -22,7 +19,7 @@ cc_library(
     hdrs = ["app_usbd_hid_types.h"],
     includes = ["."],
     deps = [
+        "//nRF5_SDK_17.0.0_9d13099:100f0197-983a-4344-b22d-2887b0fffc9d",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/usbd:app_usbd_types",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:sdk_common",
     ],
 )

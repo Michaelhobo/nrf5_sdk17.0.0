@@ -9,10 +9,9 @@ cc_library(
     includes = ["."],
     deps = [
         ":nrf_serial_flash_params",
+        "//nRF5_SDK_17.0.0_9d13099:100f0197-983a-4344-b22d-2887b0fffc9d",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/block_dev:nrf_block_dev",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/log:nrf_log",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/log:nrf_log_instance",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:sdk_common",
         "//nRF5_SDK_17.0.0_9d13099/integration/nrfx/legacy:nrf_drv_qspi",
     ],
 )
@@ -22,5 +21,5 @@ cc_library(
     srcs = ["nrf_serial_flash_params.c"],
     hdrs = ["nrf_serial_flash_params.h"],
     includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099/components/libraries/util:sdk_common"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:100f0197-983a-4344-b22d-2887b0fffc9d"],
 )

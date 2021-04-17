@@ -1,0 +1,26 @@
+load("@rules_cc//cc:defs.bzl", "cc_library")
+
+package(default_visibility = ["//visibility:public"])
+
+cc_library(
+    name = "nrf_platform_port",
+    srcs = ["nrf_platform_port.c"],
+    hdrs = ["nrf_platform_port.h"],
+    includes = ["."],
+    deps = [
+        "//nRF5_SDK_17.0.0_9d13099:100f0197-983a-4344-b22d-2887b0fffc9d",
+        "//nRF5_SDK_17.0.0_9d13099:ble_6lowpan_remap",
+        "//nRF5_SDK_17.0.0_9d13099:c4d261a0-f237-4cb2-ad7e-ef98990e0d99",
+        "//nRF5_SDK_17.0.0_9d13099:e2be4621-97b5-4e42-a08a-547fa0ed68c5",
+        "//nRF5_SDK_17.0.0_9d13099:iot_common_remap",
+        "//nRF5_SDK_17.0.0_9d13099:iot_context_manager_remap",
+        "//nRF5_SDK_17.0.0_9d13099:sdk_config_remap",
+        "//nRF5_SDK_17.0.0_9d13099/components/ble/ble_services/ble_ipsp",
+        "//nRF5_SDK_17.0.0_9d13099/components/libraries/mem_manager",
+        "//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/lwip:def",
+        "//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/lwip:ip6",
+        "//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/lwip:mem",
+        "//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/lwip:netif",
+        "//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/lwip:pbuf",
+    ],
+)

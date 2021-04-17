@@ -8,15 +8,12 @@ cc_library(
     hdrs = ["ble_conn.h"],
     includes = ["."],
     deps = [
+        "//nRF5_SDK_17.0.0_9d13099:a5631caf-42f1-4ec6-8967-cb78816f23ce",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:app_util",
         "//nRF5_SDK_17.0.0_9d13099/components/serialization/common:ble_serialization",
         "//nRF5_SDK_17.0.0_9d13099/components/serialization/common:cond_field_serialization",
-        "//nRF5_SDK_17.0.0_9d13099/components/serialization/common/struct_ser/ble:ble_gap_struct_serialization",
-        "//nRF5_SDK_17.0.0_9d13099/components/serialization/common/struct_ser/ble:ble_gatt_struct_serialization",
         "//nRF5_SDK_17.0.0_9d13099/components/serialization/common/struct_ser/ble:ble_gattc_struct_serialization",
-        "//nRF5_SDK_17.0.0_9d13099/components/serialization/common/struct_ser/ble:ble_gatts_struct_serialization",
         "//nRF5_SDK_17.0.0_9d13099/components/serialization/common/struct_ser/ble:ble_l2cap_struct_serialization",
-        "//nRF5_SDK_17.0.0_9d13099/components/serialization/common/struct_ser/ble:ble_struct_serialization",
         "//nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers:ble",
     ],
 )
@@ -28,9 +25,9 @@ cc_library(
     includes = ["."],
     deps = [
         ":conn_ble_user_mem",
+        "//nRF5_SDK_17.0.0_9d13099:a5631caf-42f1-4ec6-8967-cb78816f23ce",
+        "//nRF5_SDK_17.0.0_9d13099:f7190e8c-55d7-4855-bf1c-ed36930e9339",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:app_util",
-        "//nRF5_SDK_17.0.0_9d13099/components/serialization/common:ble_serialization",
-        "//nRF5_SDK_17.0.0_9d13099/components/serialization/common/struct_ser/ble:ble_struct_serialization",
         "//nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers:ble",
     ],
 )
@@ -41,11 +38,9 @@ cc_library(
     hdrs = ["ble_gap_conn.h"],
     includes = ["."],
     deps = [
+        "//nRF5_SDK_17.0.0_9d13099:a5631caf-42f1-4ec6-8967-cb78816f23ce",
+        "//nRF5_SDK_17.0.0_9d13099:f7190e8c-55d7-4855-bf1c-ed36930e9339",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:app_util",
-        "//nRF5_SDK_17.0.0_9d13099/components/serialization/common:ble_serialization",
-        "//nRF5_SDK_17.0.0_9d13099/components/serialization/common:cond_field_serialization",
-        "//nRF5_SDK_17.0.0_9d13099/components/serialization/common/struct_ser/ble:ble_gap_struct_serialization",
-        "//nRF5_SDK_17.0.0_9d13099/components/serialization/common/struct_ser/ble:ble_struct_serialization",
         "//nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers:ble_gap",
     ],
 )
@@ -57,11 +52,9 @@ cc_library(
     includes = ["."],
     deps = [
         ":conn_ble_gap_sec_keys",
+        "//nRF5_SDK_17.0.0_9d13099:a5631caf-42f1-4ec6-8967-cb78816f23ce",
+        "//nRF5_SDK_17.0.0_9d13099:f7190e8c-55d7-4855-bf1c-ed36930e9339",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:app_util",
-        "//nRF5_SDK_17.0.0_9d13099/components/serialization/common:ble_serialization",
-        "//nRF5_SDK_17.0.0_9d13099/components/serialization/common:cond_field_serialization",
-        "//nRF5_SDK_17.0.0_9d13099/components/serialization/common/struct_ser/ble:ble_gap_struct_serialization",
-        "//nRF5_SDK_17.0.0_9d13099/components/serialization/common/struct_ser/ble:ble_struct_serialization",
         "//nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers:ble",
     ],
 )
@@ -72,11 +65,10 @@ cc_library(
     hdrs = ["ble_gattc_conn.h"],
     includes = ["."],
     deps = [
+        "//nRF5_SDK_17.0.0_9d13099:a5631caf-42f1-4ec6-8967-cb78816f23ce",
+        "//nRF5_SDK_17.0.0_9d13099:f7190e8c-55d7-4855-bf1c-ed36930e9339",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:app_util",
-        "//nRF5_SDK_17.0.0_9d13099/components/serialization/common:ble_serialization",
-        "//nRF5_SDK_17.0.0_9d13099/components/serialization/common:cond_field_serialization",
         "//nRF5_SDK_17.0.0_9d13099/components/serialization/common/struct_ser/ble:ble_gattc_struct_serialization",
-        "//nRF5_SDK_17.0.0_9d13099/components/serialization/common/struct_ser/ble:ble_struct_serialization",
         "//nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers:ble",
         "//nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers:ble_gattc",
     ],
@@ -101,11 +93,9 @@ cc_library(
     hdrs = ["ble_gatts_conn.h"],
     includes = ["."],
     deps = [
+        "//nRF5_SDK_17.0.0_9d13099:a5631caf-42f1-4ec6-8967-cb78816f23ce",
+        "//nRF5_SDK_17.0.0_9d13099:f7190e8c-55d7-4855-bf1c-ed36930e9339",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:app_util",
-        "//nRF5_SDK_17.0.0_9d13099/components/serialization/common:ble_serialization",
-        "//nRF5_SDK_17.0.0_9d13099/components/serialization/common:cond_field_serialization",
-        "//nRF5_SDK_17.0.0_9d13099/components/serialization/common/struct_ser/ble:ble_gatts_struct_serialization",
-        "//nRF5_SDK_17.0.0_9d13099/components/serialization/common/struct_ser/ble:ble_struct_serialization",
         "//nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers:ble",
         "//nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers:ble_gatts",
     ],
@@ -118,9 +108,9 @@ cc_library(
     includes = ["."],
     deps = [
         ":conn_ble_user_mem",
+        "//nRF5_SDK_17.0.0_9d13099:a5631caf-42f1-4ec6-8967-cb78816f23ce",
+        "//nRF5_SDK_17.0.0_9d13099:f7190e8c-55d7-4855-bf1c-ed36930e9339",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:app_util",
-        "//nRF5_SDK_17.0.0_9d13099/components/serialization/common:ble_serialization",
-        "//nRF5_SDK_17.0.0_9d13099/components/serialization/common/struct_ser/ble:ble_gatts_struct_serialization",
         "//nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers:ble",
     ],
 )
@@ -132,11 +122,10 @@ cc_library(
     includes = ["."],
     deps = [
         ":conn_ble_l2cap_sdu_pool",
+        "//nRF5_SDK_17.0.0_9d13099:a5631caf-42f1-4ec6-8967-cb78816f23ce",
+        "//nRF5_SDK_17.0.0_9d13099:f7190e8c-55d7-4855-bf1c-ed36930e9339",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:app_util",
-        "//nRF5_SDK_17.0.0_9d13099/components/serialization/common:ble_serialization",
-        "//nRF5_SDK_17.0.0_9d13099/components/serialization/common:cond_field_serialization",
         "//nRF5_SDK_17.0.0_9d13099/components/serialization/common/struct_ser/ble:ble_l2cap_struct_serialization",
-        "//nRF5_SDK_17.0.0_9d13099/components/serialization/common/struct_ser/ble:ble_struct_serialization",
         "//nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers:ble",
         "//nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers:ble_err",
         "//nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers:ble_l2cap",
@@ -152,10 +141,10 @@ cc_library(
     includes = ["."],
     deps = [
         ":conn_ble_l2cap_sdu_pool",
+        "//nRF5_SDK_17.0.0_9d13099:a5631caf-42f1-4ec6-8967-cb78816f23ce",
+        "//nRF5_SDK_17.0.0_9d13099:f7190e8c-55d7-4855-bf1c-ed36930e9339",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:app_util",
-        "//nRF5_SDK_17.0.0_9d13099/components/serialization/common:ble_serialization",
         "//nRF5_SDK_17.0.0_9d13099/components/serialization/common/struct_ser/ble:ble_l2cap_struct_serialization",
-        "//nRF5_SDK_17.0.0_9d13099/components/serialization/common/struct_ser/ble:ble_struct_serialization",
         "//nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers:ble",
     ],
 )
@@ -202,8 +191,7 @@ cc_library(
     hdrs = ["nrf_soc_conn.h"],
     includes = ["."],
     deps = [
-        "//nRF5_SDK_17.0.0_9d13099/components/serialization/common:ble_serialization",
-        "//nRF5_SDK_17.0.0_9d13099/components/serialization/common:cond_field_serialization",
+        "//nRF5_SDK_17.0.0_9d13099:f7190e8c-55d7-4855-bf1c-ed36930e9339",
         "//nRF5_SDK_17.0.0_9d13099/components/serialization/common/struct_ser/ble:nrf_soc_struct_serialization",
         "//nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers:nrf_error",
         "//nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers:nrf_soc",

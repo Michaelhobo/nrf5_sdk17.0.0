@@ -6,7 +6,7 @@ cc_library(
     name = "es",
     hdrs = ["es.h"],
     includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099/components/libraries/util:app_util_platform"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:100f0197-983a-4344-b22d-2887b0fffc9d"],
 )
 
 cc_library(
@@ -17,10 +17,10 @@ cc_library(
     deps = [
         ":es_adv_frame",
         ":es_adv_timing",
-        ":es_slot",
         ":es_tlm",
+        "//nRF5_SDK_17.0.0_9d13099:100f0197-983a-4344-b22d-2887b0fffc9d",
+        "//nRF5_SDK_17.0.0_9d13099:1fbb1f71-9646-4bd0-b1a7-be74499b328e",
         "//nRF5_SDK_17.0.0_9d13099/components/ble/ble_services/ble_escs:nrf_ble_escs",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:app_error",
     ],
 )
 
@@ -30,7 +30,7 @@ cc_library(
     hdrs = ["es_adv_frame.h"],
     includes = ["."],
     deps = [
-        ":es_slot",
+        "//nRF5_SDK_17.0.0_9d13099:1fbb1f71-9646-4bd0-b1a7-be74499b328e",
         "//nRF5_SDK_17.0.0_9d13099/components/ble/common:ble_advdata",
     ],
 )
@@ -42,8 +42,8 @@ cc_library(
     includes = ["."],
     deps = [
         ":es_adv_timing_resolver",
-        ":es_slot",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/timer:app_timer",
+        "//nRF5_SDK_17.0.0_9d13099:100f0197-983a-4344-b22d-2887b0fffc9d",
+        "//nRF5_SDK_17.0.0_9d13099:1fbb1f71-9646-4bd0-b1a7-be74499b328e",
     ],
 )
 
@@ -53,8 +53,8 @@ cc_library(
     hdrs = ["es_adv_timing_resolver.h"],
     includes = ["."],
     deps = [
+        "//nRF5_SDK_17.0.0_9d13099:100f0197-983a-4344-b22d-2887b0fffc9d",
         "//nRF5_SDK_17.0.0_9d13099:es_app_config_remap",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:sdk_macros",
     ],
 )
 
@@ -66,103 +66,44 @@ cc_library(
 
 cc_library(
     name = "es_flash",
-    srcs = ["es_flash.c"],
-    hdrs = ["es_flash.h"],
     includes = ["."],
-    deps = [
-        ":es_slot",
-        ":es_util",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/fds",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/scheduler:app_scheduler",
-        "//nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers:ble_hci",
-        "//nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers:nrf_nvic",
-    ],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:1fbb1f71-9646-4bd0-b1a7-be74499b328e"],
 )
 
 cc_library(
     name = "es_gatts",
-    srcs = ["es_gatts.c"],
-    hdrs = ["es_gatts.h"],
     includes = ["."],
-    deps = [
-        ":es_gatts_read",
-        ":es_gatts_write",
-        ":es_slot",
-        "//nRF5_SDK_17.0.0_9d13099/components/ble/ble_services/ble_escs:nrf_ble_escs",
-    ],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:a2eff0f8-78c3-4a15-a4a9-22d5556da56c"],
 )
 
 cc_library(
     name = "es_gatts_read",
-    srcs = ["es_gatts_read.c"],
-    hdrs = ["es_gatts_read.h"],
     includes = ["."],
-    deps = [
-        ":es_adv",
-        ":es_gatts",
-        ":es_security",
-        ":es_slot",
-        "//nRF5_SDK_17.0.0_9d13099/components/ble/ble_services/ble_escs:nrf_ble_escs",
-    ],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:a2eff0f8-78c3-4a15-a4a9-22d5556da56c"],
 )
 
 cc_library(
     name = "es_gatts_write",
-    srcs = ["es_gatts_write.c"],
-    hdrs = ["es_gatts_write.h"],
     includes = ["."],
-    deps = [
-        ":es_adv",
-        ":es_flash",
-        ":es_gatts",
-        ":es_security",
-        "//nRF5_SDK_17.0.0_9d13099/components/ble/ble_services/ble_escs:nrf_ble_escs",
-    ],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:a2eff0f8-78c3-4a15-a4a9-22d5556da56c"],
 )
 
 cc_library(
     name = "es_security",
-    srcs = ["es_security.c"],
-    hdrs = ["es_security.h"],
     includes = ["."],
-    deps = [
-        ":es_flash",
-        ":es_stopwatch",
-        "//nRF5_SDK_17.0.0_9d13099/components/ble/ble_services/ble_escs:nrf_ble_escs",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto:nrf_crypto",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/fds",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/timer:app_timer",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:app_error",
-        "//nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers:nrf_soc",
-        "//nRF5_SDK_17.0.0_9d13099/external/cifra_AES128-EAX:modes",
-    ],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:1fbb1f71-9646-4bd0-b1a7-be74499b328e"],
 )
 
 cc_library(
     name = "es_slot",
-    srcs = ["es_slot.c"],
-    hdrs = ["es_slot.h"],
     includes = ["."],
-    deps = [
-        ":es_flash",
-        ":es_security",
-        ":es_slot_reg",
-        ":es_tlm",
-        "//nRF5_SDK_17.0.0_9d13099:es_app_config_remap",
-        "//nRF5_SDK_17.0.0_9d13099/components/ble/ble_services/ble_escs:nrf_ble_escs",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/fds",
-    ],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:1fbb1f71-9646-4bd0-b1a7-be74499b328e"],
 )
 
 cc_library(
     name = "es_slot_reg",
-    srcs = ["es_slot_reg.c"],
-    hdrs = ["es_slot_reg.h"],
     includes = ["."],
-    deps = [
-        ":es_security",
-        ":es_slot",
-    ],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:1fbb1f71-9646-4bd0-b1a7-be74499b328e"],
 )
 
 cc_library(
@@ -171,10 +112,8 @@ cc_library(
     hdrs = ["es_stopwatch.h"],
     includes = ["."],
     deps = [
+        "//nRF5_SDK_17.0.0_9d13099:100f0197-983a-4344-b22d-2887b0fffc9d",
         "//nRF5_SDK_17.0.0_9d13099:es_app_config_remap",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/timer:app_timer",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:app_error",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:sdk_macros",
     ],
 )
 
@@ -187,8 +126,8 @@ cc_library(
         ":es",
         ":es_battery_voltage",
         ":es_stopwatch",
+        "//nRF5_SDK_17.0.0_9d13099:100f0197-983a-4344-b22d-2887b0fffc9d",
         "//nRF5_SDK_17.0.0_9d13099:es_app_config_remap",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/timer:app_timer",
         "//nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers:nrf_soc",
     ],
 )
@@ -207,14 +146,12 @@ cc_library(
     deps = [
         ":es_adv",
         ":es_battery_voltage",
-        ":es_flash",
-        ":es_gatts",
-        ":es_security",
-        ":es_slot",
         ":es_stopwatch",
+        "//nRF5_SDK_17.0.0_9d13099:100f0197-983a-4344-b22d-2887b0fffc9d",
+        "//nRF5_SDK_17.0.0_9d13099:1fbb1f71-9646-4bd0-b1a7-be74499b328e",
+        "//nRF5_SDK_17.0.0_9d13099:a2eff0f8-78c3-4a15-a4a9-22d5556da56c",
         "//nRF5_SDK_17.0.0_9d13099/components/ble/ble_services/ble_escs:escs_defs",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/fds",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:app_error",
         "//nRF5_SDK_17.0.0_9d13099/components/softdevice/common:nrf_sdh_ble",
         "//nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers:ble",
     ],

@@ -9,12 +9,10 @@ cc_library(
     includes = ["."],
     deps = [
         ":nrf_libuarte_drv",
+        "//nRF5_SDK_17.0.0_9d13099:100f0197-983a-4344-b22d-2887b0fffc9d",
         "//nRF5_SDK_17.0.0_9d13099:sdk_config_remap",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/balloc:nrf_balloc",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/log:nrf_log",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/queue:nrf_queue",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/timer:app_timer",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:app_error",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:sdk_errors",
         "//nRF5_SDK_17.0.0_9d13099/modules/nrfx/drivers/include:nrfx_ppi",
         "//nRF5_SDK_17.0.0_9d13099/modules/nrfx/drivers/include:nrfx_rtc",
@@ -29,8 +27,8 @@ cc_library(
     hdrs = ["nrf_libuarte_drv.h"],
     includes = ["."],
     deps = [
+        "//nRF5_SDK_17.0.0_9d13099:100f0197-983a-4344-b22d-2887b0fffc9d",
         "//nRF5_SDK_17.0.0_9d13099:sdk_config_remap",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/log:nrf_log",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:sdk_errors",
         "//nRF5_SDK_17.0.0_9d13099/modules/nrfx/drivers/include:nrfx_ppi",
         "//nRF5_SDK_17.0.0_9d13099/modules/nrfx/drivers/include:nrfx_timer",

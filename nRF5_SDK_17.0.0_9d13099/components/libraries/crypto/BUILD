@@ -9,17 +9,16 @@ cc_library(
     deps = [
         ":nrf_crypto_aead",
         ":nrf_crypto_aes",
-        ":nrf_crypto_ecc",
-        ":nrf_crypto_ecdh",
-        ":nrf_crypto_ecdsa",
-        ":nrf_crypto_eddsa",
         ":nrf_crypto_hash",
         ":nrf_crypto_hkdf",
         ":nrf_crypto_hmac",
         ":nrf_crypto_init",
         ":nrf_crypto_mem",
-        ":nrf_crypto_rng",
         ":nrf_crypto_types",
+        "//nRF5_SDK_17.0.0_9d13099:11b723c8-b8d4-4770-8086-91a6acd49b66",
+        "//nRF5_SDK_17.0.0_9d13099:243403bf-e207-4b15-8582-dcb332e75a01",
+        "//nRF5_SDK_17.0.0_9d13099:4d623e5c-312e-445f-abc9-983d1375ccbc",
+        "//nRF5_SDK_17.0.0_9d13099:7e17deef-2723-40e6-bf71-8124f59cb362",
     ],
 )
 
@@ -33,7 +32,7 @@ cc_library(
         ":nrf_crypto_aead_shared",
         ":nrf_crypto_error",
         ":nrf_crypto_types",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:sdk_common",
+        "//nRF5_SDK_17.0.0_9d13099:100f0197-983a-4344-b22d-2887b0fffc9d",
     ],
 )
 
@@ -69,7 +68,7 @@ cc_library(
         ":nrf_crypto_mem",
         ":nrf_crypto_shared",
         ":nrf_crypto_types",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:sdk_common",
+        "//nRF5_SDK_17.0.0_9d13099:100f0197-983a-4344-b22d-2887b0fffc9d",
     ],
 )
 
@@ -91,43 +90,21 @@ cc_library(
     deps = [
         ":nrf_crypto_error",
         ":nrf_crypto_types",
+        "//nRF5_SDK_17.0.0_9d13099:100f0197-983a-4344-b22d-2887b0fffc9d",
         "//nRF5_SDK_17.0.0_9d13099:sdk_config_remap",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:sdk_common",
     ],
 )
 
 cc_library(
     name = "nrf_crypto_ecc",
-    srcs = ["nrf_crypto_ecc.c"],
-    hdrs = ["nrf_crypto_ecc.h"],
     includes = ["."],
-    deps = [
-        ":nrf_crypto_ecc_backend",
-        ":nrf_crypto_ecc_shared",
-        ":nrf_crypto_error",
-        ":nrf_crypto_mem",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:app_util",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:nordic_common",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:sdk_macros",
-    ],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:11b723c8-b8d4-4770-8086-91a6acd49b66"],
 )
 
 cc_library(
     name = "nrf_crypto_ecc_backend",
-    hdrs = ["nrf_crypto_ecc_backend.h"],
     includes = ["."],
-    deps = [
-        ":nrf_crypto_ecc_shared",
-        ":nrf_crypto_error",
-        "//nRF5_SDK_17.0.0_9d13099:sdk_config_remap",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto/backend/cc310:cc310_backend_ecc",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto/backend/cc310_bl:cc310_bl_backend_ecc",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto/backend/mbedtls:mbedtls_backend_ecc",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto/backend/micro_ecc:micro_ecc_backend_ecc",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto/backend/oberon:oberon_backend_ecc",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto/backend/optiga:optiga_backend_ecc",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:nordic_common",
-    ],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:11b723c8-b8d4-4770-8086-91a6acd49b66"],
 )
 
 cc_library(
@@ -139,36 +116,14 @@ cc_library(
 
 cc_library(
     name = "nrf_crypto_ecdh",
-    srcs = ["nrf_crypto_ecdh.c"],
-    hdrs = ["nrf_crypto_ecdh.h"],
     includes = ["."],
-    deps = [
-        ":nrf_crypto_ecc",
-        ":nrf_crypto_ecdh_backend",
-        ":nrf_crypto_ecdh_shared",
-        ":nrf_crypto_error",
-        ":nrf_crypto_mem",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:app_util",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:sdk_macros",
-    ],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:11b723c8-b8d4-4770-8086-91a6acd49b66"],
 )
 
 cc_library(
     name = "nrf_crypto_ecdh_backend",
-    hdrs = ["nrf_crypto_ecdh_backend.h"],
     includes = ["."],
-    deps = [
-        ":nrf_crypto_ecc",
-        ":nrf_crypto_ecdh_shared",
-        "//nRF5_SDK_17.0.0_9d13099:sdk_config_remap",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto/backend/cc310:cc310_backend_ecdh",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto/backend/cc310_bl:cc310_bl_backend_ecdh",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto/backend/mbedtls:mbedtls_backend_ecdh",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto/backend/micro_ecc:micro_ecc_backend_ecdh",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto/backend/oberon:oberon_backend_ecdh",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto/backend/optiga:optiga_backend_ecdh",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:sdk_errors",
-    ],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:11b723c8-b8d4-4770-8086-91a6acd49b66"],
 )
 
 cc_library(
@@ -180,34 +135,14 @@ cc_library(
 
 cc_library(
     name = "nrf_crypto_ecdsa",
-    srcs = ["nrf_crypto_ecdsa.c"],
-    hdrs = ["nrf_crypto_ecdsa.h"],
     includes = ["."],
-    deps = [
-        ":nrf_crypto_ecc",
-        ":nrf_crypto_ecdsa_backend",
-        ":nrf_crypto_ecdsa_shared",
-        ":nrf_crypto_error",
-        ":nrf_crypto_mem",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:app_util",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:sdk_macros",
-    ],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:4d623e5c-312e-445f-abc9-983d1375ccbc"],
 )
 
 cc_library(
     name = "nrf_crypto_ecdsa_backend",
-    hdrs = ["nrf_crypto_ecdsa_backend.h"],
     includes = ["."],
-    deps = [
-        ":nrf_crypto_ecdsa_shared",
-        "//nRF5_SDK_17.0.0_9d13099:sdk_config_remap",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto/backend/cc310:cc310_backend_ecdsa",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto/backend/cc310_bl:cc310_bl_backend_ecdsa",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto/backend/mbedtls:mbedtls_backend_ecdsa",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto/backend/micro_ecc:micro_ecc_backend_ecdsa",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto/backend/oberon:oberon_backend_ecdsa",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto/backend/optiga:optiga_backend_ecdsa",
-    ],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:4d623e5c-312e-445f-abc9-983d1375ccbc"],
 )
 
 cc_library(
@@ -215,37 +150,21 @@ cc_library(
     hdrs = ["nrf_crypto_ecdsa_shared.h"],
     includes = ["."],
     deps = [
-        ":nrf_crypto_ecc",
+        "//nRF5_SDK_17.0.0_9d13099:11b723c8-b8d4-4770-8086-91a6acd49b66",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:nordic_common",
     ],
 )
 
 cc_library(
     name = "nrf_crypto_eddsa",
-    srcs = ["nrf_crypto_eddsa.c"],
-    hdrs = ["nrf_crypto_eddsa.h"],
     includes = ["."],
-    deps = [
-        ":nrf_crypto_ecc",
-        ":nrf_crypto_eddsa_backend",
-        ":nrf_crypto_eddsa_shared",
-        ":nrf_crypto_error",
-        ":nrf_crypto_mem",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:app_util",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:sdk_macros",
-    ],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:243403bf-e207-4b15-8582-dcb332e75a01"],
 )
 
 cc_library(
     name = "nrf_crypto_eddsa_backend",
-    hdrs = ["nrf_crypto_eddsa_backend.h"],
     includes = ["."],
-    deps = [
-        ":nrf_crypto_ecdsa_shared",
-        "//nRF5_SDK_17.0.0_9d13099:sdk_config_remap",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto/backend/cc310:cc310_backend_eddsa",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto/backend/oberon:oberon_backend_eddsa",
-    ],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:243403bf-e207-4b15-8582-dcb332e75a01"],
 )
 
 cc_library(
@@ -253,7 +172,7 @@ cc_library(
     hdrs = ["nrf_crypto_eddsa_shared.h"],
     includes = ["."],
     deps = [
-        ":nrf_crypto_ecc",
+        "//nRF5_SDK_17.0.0_9d13099:11b723c8-b8d4-4770-8086-91a6acd49b66",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:nordic_common",
     ],
 )
@@ -264,8 +183,8 @@ cc_library(
     hdrs = ["nrf_crypto_error.h"],
     includes = ["."],
     deps = [
+        "//nRF5_SDK_17.0.0_9d13099:100f0197-983a-4344-b22d-2887b0fffc9d",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:nordic_common",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:sdk_common",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:sdk_errors",
     ],
 )
@@ -282,8 +201,8 @@ cc_library(
         ":nrf_crypto_mem",
         ":nrf_crypto_shared",
         ":nrf_crypto_types",
+        "//nRF5_SDK_17.0.0_9d13099:100f0197-983a-4344-b22d-2887b0fffc9d",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:app_util",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:sdk_common",
     ],
 )
 
@@ -292,12 +211,12 @@ cc_library(
     hdrs = ["nrf_crypto_hash_backend.h"],
     includes = ["."],
     deps = [
+        "//nRF5_SDK_17.0.0_9d13099:100f0197-983a-4344-b22d-2887b0fffc9d",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto/backend/cc310:cc310_backend_hash",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto/backend/cc310_bl:cc310_bl_backend_hash",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto/backend/mbedtls:mbedtls_backend_hash",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto/backend/nrf_sw:nrf_sw_backend_hash",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto/backend/oberon:oberon_backend_hash",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:sdk_common",
     ],
 )
 
@@ -320,8 +239,7 @@ cc_library(
         ":nrf_crypto_mem",
         ":nrf_crypto_shared",
         ":nrf_crypto_types",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:nrf_assert",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:sdk_common",
+        "//nRF5_SDK_17.0.0_9d13099:100f0197-983a-4344-b22d-2887b0fffc9d",
     ],
 )
 
@@ -338,8 +256,7 @@ cc_library(
         ":nrf_crypto_mem",
         ":nrf_crypto_shared",
         ":nrf_crypto_types",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/log:nrf_log",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:sdk_common",
+        "//nRF5_SDK_17.0.0_9d13099:100f0197-983a-4344-b22d-2887b0fffc9d",
     ],
 )
 
@@ -349,10 +266,10 @@ cc_library(
     includes = ["."],
     deps = [
         ":nrf_crypto_hmac_shared",
+        "//nRF5_SDK_17.0.0_9d13099:100f0197-983a-4344-b22d-2887b0fffc9d",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto/backend/cc310:cc310_backend_hmac",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto/backend/mbedtls:mbedtls_backend_hmac",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto/backend/oberon:oberon_backend_hmac",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:sdk_common",
     ],
 )
 
@@ -360,7 +277,7 @@ cc_library(
     name = "nrf_crypto_hmac_shared",
     hdrs = ["nrf_crypto_hmac_shared.h"],
     includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099/components/libraries/util:sdk_common"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:100f0197-983a-4344-b22d-2887b0fffc9d"],
 )
 
 cc_library(
@@ -370,8 +287,8 @@ cc_library(
     includes = ["."],
     deps = [
         ":nrf_crypto_types",
+        "//nRF5_SDK_17.0.0_9d13099:100f0197-983a-4344-b22d-2887b0fffc9d",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/experimental_section_vars:nrf_section",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:sdk_common",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:sdk_errors",
     ],
 )
@@ -382,48 +299,31 @@ cc_library(
     includes = ["."],
     deps = [
         ":nrf_crypto_types",
+        "//nRF5_SDK_17.0.0_9d13099:100f0197-983a-4344-b22d-2887b0fffc9d",
         "//nRF5_SDK_17.0.0_9d13099:nrf_crypto_allocator_remap",
         "//nRF5_SDK_17.0.0_9d13099:sdk_config_remap",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/mem_manager",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:sdk_alloca",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:sdk_common",
     ],
 )
 
 cc_library(
     name = "nrf_crypto_rng",
-    srcs = ["nrf_crypto_rng.c"],
-    hdrs = ["nrf_crypto_rng.h"],
     includes = ["."],
-    deps = [
-        ":nrf_crypto_error",
-        ":nrf_crypto_init",
-        ":nrf_crypto_mem",
-        ":nrf_crypto_rng_backend",
-        ":nrf_crypto_rng_shared",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/log:nrf_log",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/stack_info:nrf_stack_info",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:sdk_common",
-    ],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:7e17deef-2723-40e6-bf71-8124f59cb362"],
 )
 
 cc_library(
     name = "nrf_crypto_rng_backend",
-    hdrs = ["nrf_crypto_rng_backend.h"],
     includes = ["."],
-    deps = [
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto/backend/cc310:cc310_backend_rng",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto/backend/nrf_hw:nrf_hw_backend_rng",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto/backend/nrf_hw:nrf_hw_backend_rng_mbedtls",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto/backend/optiga:optiga_backend_rng",
-    ],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:7e17deef-2723-40e6-bf71-8124f59cb362"],
 )
 
 cc_library(
     name = "nrf_crypto_rng_shared",
     hdrs = ["nrf_crypto_rng_shared.h"],
     includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099/components/libraries/util:sdk_common"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:100f0197-983a-4344-b22d-2887b0fffc9d"],
 )
 
 cc_library(
@@ -433,9 +333,9 @@ cc_library(
     includes = ["."],
     deps = [
         ":nrf_crypto_mem",
+        "//nRF5_SDK_17.0.0_9d13099:100f0197-983a-4344-b22d-2887b0fffc9d",
         "//nRF5_SDK_17.0.0_9d13099:sdk_config_remap",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:nordic_common",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:sdk_macros",
     ],
 )
 
