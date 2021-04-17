@@ -10,55 +10,14 @@ cc_library(
 
 cc_library(
     name = "nrf",
-    hdrs = ["nrf.h"],
     includes = ["."],
-    deps = [
-        ":compiler_abstraction",
-        ":nrf51",
-        ":nrf51_bitfields",
-        ":nrf51_deprecated",
-        ":nrf51_to_nrf52",
-        ":nrf51_to_nrf52810",
-        ":nrf51_to_nrf52840",
-        ":nrf52",
-        ":nrf52805",
-        ":nrf52805_bitfields",
-        ":nrf52810",
-        ":nrf52810_bitfields",
-        ":nrf52810_name_change",
-        ":nrf52810_to_nrf52811",
-        ":nrf52811",
-        ":nrf52811_bitfields",
-        ":nrf52820",
-        ":nrf52820_bitfields",
-        ":nrf52833",
-        ":nrf52833_bitfields",
-        ":nrf52833_to_nrf52820",
-        ":nrf52840",
-        ":nrf52840_bitfields",
-        ":nrf52_bitfields",
-        ":nrf52_name_change",
-        ":nrf52_to_nrf52810",
-        ":nrf52_to_nrf52833",
-        ":nrf52_to_nrf52840",
-        ":nrf5340_application",
-        ":nrf5340_application_bitfields",
-        ":nrf5340_network",
-        ":nrf5340_network_bitfields",
-        ":nrf9160",
-        ":nrf9160_bitfields",
-        ":nrf9160_name_change",
-    ],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:fd0248f6-a546-4781-bd6c-1ef963497768"],
 )
 
 cc_library(
     name = "nrf51",
-    hdrs = ["nrf51.h"],
     includes = ["."],
-    deps = [
-        ":system_nrf51",
-        "//nRF5_SDK_17.0.0_9d13099/components/toolchain/cmsis/include:core_cm0",
-    ],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:fd0248f6-a546-4781-bd6c-1ef963497768"],
 )
 
 cc_library(
@@ -136,22 +95,14 @@ cc_library(
 
 cc_library(
     name = "nrf52",
-    hdrs = ["nrf52.h"],
     includes = ["."],
-    deps = [
-        ":system_nrf52",
-        "//nRF5_SDK_17.0.0_9d13099/components/toolchain/cmsis/include:core_cm4",
-    ],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:fd0248f6-a546-4781-bd6c-1ef963497768"],
 )
 
 cc_library(
     name = "nrf52805",
-    hdrs = ["nrf52805.h"],
     includes = ["."],
-    deps = [
-        ":system_nrf52805",
-        "//nRF5_SDK_17.0.0_9d13099/components/toolchain/cmsis/include:core_cm4",
-    ],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:fd0248f6-a546-4781-bd6c-1ef963497768"],
 )
 
 cc_library(
@@ -168,12 +119,8 @@ cc_library(
 
 cc_library(
     name = "nrf52810",
-    hdrs = ["nrf52810.h"],
     includes = ["."],
-    deps = [
-        ":system_nrf52810",
-        "//nRF5_SDK_17.0.0_9d13099/components/toolchain/cmsis/include:core_cm4",
-    ],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:fd0248f6-a546-4781-bd6c-1ef963497768"],
 )
 
 cc_library(
@@ -202,12 +149,8 @@ cc_library(
 
 cc_library(
     name = "nrf52811",
-    hdrs = ["nrf52811.h"],
     includes = ["."],
-    deps = [
-        ":system_nrf52811",
-        "//nRF5_SDK_17.0.0_9d13099/components/toolchain/cmsis/include:core_cm4",
-    ],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:fd0248f6-a546-4781-bd6c-1ef963497768"],
 )
 
 cc_library(
@@ -224,12 +167,8 @@ cc_library(
 
 cc_library(
     name = "nrf52820",
-    hdrs = ["nrf52820.h"],
     includes = ["."],
-    deps = [
-        ":system_nrf52820",
-        "//nRF5_SDK_17.0.0_9d13099/components/toolchain/cmsis/include:core_cm4",
-    ],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:fd0248f6-a546-4781-bd6c-1ef963497768"],
 )
 
 cc_library(
@@ -252,12 +191,8 @@ cc_library(
 
 cc_library(
     name = "nrf52833",
-    hdrs = ["nrf52833.h"],
     includes = ["."],
-    deps = [
-        ":system_nrf52833",
-        "//nRF5_SDK_17.0.0_9d13099/components/toolchain/cmsis/include:core_cm4",
-    ],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:fd0248f6-a546-4781-bd6c-1ef963497768"],
 )
 
 cc_library(
@@ -280,12 +215,8 @@ cc_library(
 
 cc_library(
     name = "nrf52840",
-    hdrs = ["nrf52840.h"],
     includes = ["."],
-    deps = [
-        ":system_nrf52840",
-        "//nRF5_SDK_17.0.0_9d13099/components/toolchain/cmsis/include:core_cm4",
-    ],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:fd0248f6-a546-4781-bd6c-1ef963497768"],
 )
 
 cc_library(
@@ -339,12 +270,8 @@ cc_library(
 
 cc_library(
     name = "nrf5340_application",
-    hdrs = ["nrf5340_application.h"],
     includes = ["."],
-    deps = [
-        ":system_nrf5340_application",
-        "//nRF5_SDK_17.0.0_9d13099/components/toolchain/cmsis/include:core_cm33",
-    ],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:fd0248f6-a546-4781-bd6c-1ef963497768"],
 )
 
 cc_library(
@@ -361,12 +288,8 @@ cc_library(
 
 cc_library(
     name = "nrf5340_network",
-    hdrs = ["nrf5340_network.h"],
     includes = ["."],
-    deps = [
-        ":system_nrf5340_network",
-        "//nRF5_SDK_17.0.0_9d13099/components/toolchain/cmsis/include:core_cm33",
-    ],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:fd0248f6-a546-4781-bd6c-1ef963497768"],
 )
 
 cc_library(
@@ -390,12 +313,8 @@ cc_library(
 
 cc_library(
     name = "nrf9160",
-    hdrs = ["nrf9160.h"],
     includes = ["."],
-    deps = [
-        ":system_nrf9160",
-        "//nRF5_SDK_17.0.0_9d13099/components/toolchain/cmsis/include:core_cm33",
-    ],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:fd0248f6-a546-4781-bd6c-1ef963497768"],
 )
 
 cc_library(
@@ -425,15 +344,8 @@ cc_library(
 
 cc_library(
     name = "nrf_erratas",
-    hdrs = ["nrf_erratas.h"],
     includes = ["."],
-    deps = [
-        ":nrf",
-        ":nrf51_erratas",
-        ":nrf52_erratas",
-        ":nrf53_erratas",
-        ":nrf91_erratas",
-    ],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:fd0248f6-a546-4781-bd6c-1ef963497768"],
 )
 
 cc_library(
@@ -469,121 +381,66 @@ cc_library(
 
 cc_library(
     name = "system_nrf51",
-    srcs = ["system_nrf51.c"],
-    hdrs = ["system_nrf51.h"],
     includes = ["."],
-    deps = [
-        ":nrf",
-        ":nrf_erratas",
-    ],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:fd0248f6-a546-4781-bd6c-1ef963497768"],
 )
 
 cc_library(
     name = "system_nrf52",
-    srcs = ["system_nrf52.c"],
-    hdrs = ["system_nrf52.h"],
     includes = ["."],
-    deps = [
-        ":nrf",
-        ":nrf_erratas",
-    ],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:fd0248f6-a546-4781-bd6c-1ef963497768"],
 )
 
 cc_library(
     name = "system_nrf52805",
-    srcs = ["system_nrf52805.c"],
-    hdrs = ["system_nrf52805.h"],
     includes = ["."],
-    deps = [
-        ":nrf",
-        ":nrf_erratas",
-    ],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:fd0248f6-a546-4781-bd6c-1ef963497768"],
 )
 
 cc_library(
     name = "system_nrf52810",
-    srcs = ["system_nrf52810.c"],
-    hdrs = ["system_nrf52810.h"],
     includes = ["."],
-    deps = [
-        ":nrf",
-        ":nrf_erratas",
-    ],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:fd0248f6-a546-4781-bd6c-1ef963497768"],
 )
 
 cc_library(
     name = "system_nrf52811",
-    srcs = ["system_nrf52811.c"],
-    hdrs = ["system_nrf52811.h"],
     includes = ["."],
-    deps = [
-        ":nrf",
-        ":nrf_erratas",
-    ],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:fd0248f6-a546-4781-bd6c-1ef963497768"],
 )
 
 cc_library(
     name = "system_nrf52820",
-    srcs = ["system_nrf52820.c"],
-    hdrs = ["system_nrf52820.h"],
     includes = ["."],
-    deps = [
-        ":nrf",
-        ":nrf_erratas",
-    ],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:fd0248f6-a546-4781-bd6c-1ef963497768"],
 )
 
 cc_library(
     name = "system_nrf52833",
-    srcs = ["system_nrf52833.c"],
-    hdrs = ["system_nrf52833.h"],
     includes = ["."],
-    deps = [
-        ":nrf",
-        ":nrf_erratas",
-    ],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:fd0248f6-a546-4781-bd6c-1ef963497768"],
 )
 
 cc_library(
     name = "system_nrf52840",
-    srcs = ["system_nrf52840.c"],
-    hdrs = ["system_nrf52840.h"],
     includes = ["."],
-    deps = [
-        ":nrf",
-        ":nrf_erratas",
-    ],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:fd0248f6-a546-4781-bd6c-1ef963497768"],
 )
 
 cc_library(
     name = "system_nrf5340_application",
-    srcs = ["system_nrf5340_application.c"],
-    hdrs = ["system_nrf5340_application.h"],
     includes = ["."],
-    deps = [
-        ":nrf",
-        ":nrf_erratas",
-    ],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:fd0248f6-a546-4781-bd6c-1ef963497768"],
 )
 
 cc_library(
     name = "system_nrf5340_network",
-    srcs = ["system_nrf5340_network.c"],
-    hdrs = ["system_nrf5340_network.h"],
     includes = ["."],
-    deps = [
-        ":nrf",
-        ":nrf_erratas",
-    ],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:fd0248f6-a546-4781-bd6c-1ef963497768"],
 )
 
 cc_library(
     name = "system_nrf9160",
-    srcs = ["system_nrf9160.c"],
-    hdrs = ["system_nrf9160.h"],
     includes = ["."],
-    deps = [
-        ":nrf",
-        ":nrf_erratas",
-    ],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:fd0248f6-a546-4781-bd6c-1ef963497768"],
 )

@@ -13,7 +13,7 @@ cc_library(
     hdrs = ["ser_phy_config_app.h"],
     includes = ["."],
     deps = [
-        "//nRF5_SDK_17.0.0_9d13099/components/boards",
+        "//nRF5_SDK_17.0.0_9d13099:61e27dec-e73f-44b3-894d-97fe1be84655",
         "//nRF5_SDK_17.0.0_9d13099/components/serialization/common:ser_config",
     ],
 )
@@ -23,7 +23,7 @@ cc_library(
     hdrs = ["ser_phy_config_conn.h"],
     includes = ["."],
     deps = [
-        "//nRF5_SDK_17.0.0_9d13099/components/boards",
+        "//nRF5_SDK_17.0.0_9d13099:61e27dec-e73f-44b3-894d-97fe1be84655",
         "//nRF5_SDK_17.0.0_9d13099/components/serialization/common:ser_config",
     ],
 )

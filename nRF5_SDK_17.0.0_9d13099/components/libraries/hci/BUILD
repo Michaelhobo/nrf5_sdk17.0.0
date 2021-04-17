@@ -8,7 +8,7 @@ cc_library(
     hdrs = ["hci_mem_pool.h"],
     includes = ["."],
     deps = [
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:sdk_common",
+        "//nRF5_SDK_17.0.0_9d13099:100f0197-983a-4344-b22d-2887b0fffc9d",
         "//nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers:nrf_error",
     ],
 )
@@ -19,8 +19,8 @@ cc_library(
     hdrs = ["hci_slip.h"],
     includes = ["."],
     deps = [
+        "//nRF5_SDK_17.0.0_9d13099:100f0197-983a-4344-b22d-2887b0fffc9d",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/uart:app_uart",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:sdk_common",
         "//nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers:nrf_error",
     ],
 )
@@ -33,10 +33,8 @@ cc_library(
     deps = [
         ":hci_mem_pool",
         ":hci_slip",
+        "//nRF5_SDK_17.0.0_9d13099:100f0197-983a-4344-b22d-2887b0fffc9d",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/crc16",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/timer:app_timer",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:app_error",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:sdk_common",
         "//nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers:nrf_error",
     ],
 )

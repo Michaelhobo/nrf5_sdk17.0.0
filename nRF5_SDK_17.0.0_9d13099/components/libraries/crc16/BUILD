@@ -7,5 +7,5 @@ cc_library(
     srcs = ["crc16.c"],
     hdrs = ["crc16.h"],
     includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099/components/libraries/util:sdk_common"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:100f0197-983a-4344-b22d-2887b0fffc9d"],
 )

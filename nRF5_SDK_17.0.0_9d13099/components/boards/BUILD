@@ -16,32 +16,8 @@ cc_library(
 
 cc_library(
     name = "boards",
-    srcs = ["boards.c"],
-    hdrs = ["boards.h"],
     includes = ["."],
-    deps = [
-        ":arduino_primo",
-        ":d52_starterkit",
-        ":n5_starterkit",
-        ":nrf6310",
-        ":pca10000",
-        ":pca10001",
-        ":pca10003",
-        ":pca10028",
-        ":pca10031",
-        ":pca10036",
-        ":pca10040",
-        ":pca10056",
-        ":pca10059",
-        ":pca10100",
-        ":pca10112",
-        ":pca20006",
-        ":pca20020",
-        ":wt51822",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/bootloader/dfu:nrf_dfu_trigger_usb",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:nordic_common",
-        "//nRF5_SDK_17.0.0_9d13099/modules/nrfx/hal:nrf_gpio",
-    ],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:61e27dec-e73f-44b3-894d-97fe1be84655"],
 )
 
 cc_library(
