@@ -2,6 +2,11 @@ load("@rules_cc//cc:defs.bzl", "cc_library")
 
 package(default_visibility = ["//visibility:public"])
 
+exports_files([
+    "DtlsHandshakeProtocol.h",
+    "MessageLayer.h",
+])
+
 cc_library(
     name = "AlertProtocol",
     hdrs = ["AlertProtocol.h"],
@@ -24,16 +29,16 @@ cc_library(
     includes = ["."],
     deps = [
         ":AlertProtocol",
+        ":DtlsHandshakeProtocol",
         ":DtlsRecordLayer",
-        "//nRF5_SDK_17.0.0_9d13099:b99dbbfa-0121-47b7-a34c-70bd255dc891",
+        ":MessageLayer",
         "//nRF5_SDK_17.0.0_9d13099/external/infineon/optiga/include/optiga:optiga_dtls",
     ],
 )
 
 cc_library(
     name = "DtlsHandshakeProtocol",
-    includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:b99dbbfa-0121-47b7-a34c-70bd255dc891"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:optiga_dtls"],
 )
 
 cc_library(
@@ -44,7 +49,7 @@ cc_library(
         ":DtlsWindowing",
         ":OcpCommonIncludes",
         ":OcpRecordLayer",
-        "//nRF5_SDK_17.0.0_9d13099:b99dbbfa-0121-47b7-a34c-70bd255dc891",
+        "//nRF5_SDK_17.0.0_9d13099:optiga_dtls",
     ],
 )
 
@@ -81,8 +86,7 @@ cc_library(
 
 cc_library(
     name = "MessageLayer",
-    includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:b99dbbfa-0121-47b7-a34c-70bd255dc891"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:optiga_dtls"],
 )
 
 cc_library(

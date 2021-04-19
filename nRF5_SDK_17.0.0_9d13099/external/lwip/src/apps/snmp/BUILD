@@ -36,7 +36,7 @@ cc_library(
         ":snmp_core_priv",
         ":snmp_pbuf_stream",
         ":snmpv3_priv",
-        "//nRF5_SDK_17.0.0_9d13099:c4d261a0-f237-4cb2-ad7e-ef98990e0d99",
+        "//nRF5_SDK_17.0.0_9d13099:lwip_stats",
         "//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/lwip:err",
         "//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/lwip:ip_addr",
         "//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/lwip/apps:snmp",

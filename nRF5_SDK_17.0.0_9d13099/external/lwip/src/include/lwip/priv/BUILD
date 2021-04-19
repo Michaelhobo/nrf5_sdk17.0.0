@@ -8,7 +8,7 @@ cc_library(
     includes = ["."],
     deps = [
         ":tcpip_priv",
-        "//nRF5_SDK_17.0.0_9d13099:e2be4621-97b5-4e42-a08a-547fa0ed68c5",
+        "//nRF5_SDK_17.0.0_9d13099:lwip_debug",
         "//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/lwip:api",
         "//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/lwip:arch",
         "//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/lwip:err",
@@ -24,7 +24,7 @@ cc_library(
     includes = ["."],
     deps = [
         ":memp_std",
-        "//nRF5_SDK_17.0.0_9d13099:e2be4621-97b5-4e42-a08a-547fa0ed68c5",
+        "//nRF5_SDK_17.0.0_9d13099:lwip_debug",
         "//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/lwip:mem",
     ],
 )
@@ -41,7 +41,7 @@ cc_library(
     hdrs = ["nd6_priv.h"],
     includes = ["."],
     deps = [
-        "//nRF5_SDK_17.0.0_9d13099:e2be4621-97b5-4e42-a08a-547fa0ed68c5",
+        "//nRF5_SDK_17.0.0_9d13099:lwip_debug",
         "//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/lwip:ip6_addr",
         "//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/lwip:netif",
         "//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/lwip:pbuf",
@@ -53,7 +53,7 @@ cc_library(
     hdrs = ["tcp_priv.h"],
     includes = ["."],
     deps = [
-        "//nRF5_SDK_17.0.0_9d13099:e2be4621-97b5-4e42-a08a-547fa0ed68c5",
+        "//nRF5_SDK_17.0.0_9d13099:lwip_debug",
         "//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/lwip:err",
         "//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/lwip:icmp",
         "//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/lwip:ip",
@@ -71,7 +71,7 @@ cc_library(
     hdrs = ["tcpip_priv.h"],
     includes = ["."],
     deps = [
-        "//nRF5_SDK_17.0.0_9d13099:e2be4621-97b5-4e42-a08a-547fa0ed68c5",
+        "//nRF5_SDK_17.0.0_9d13099:lwip_debug",
         "//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/lwip:sys",
         "//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/lwip:tcpip",
         "//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/lwip:timeouts",

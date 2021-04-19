@@ -8,7 +8,7 @@ cc_library(
     hdrs = ["ble_lbs_c.h"],
     includes = ["."],
     deps = [
-        "//nRF5_SDK_17.0.0_9d13099:100f0197-983a-4344-b22d-2887b0fffc9d",
+        "//nRF5_SDK_17.0.0_9d13099:nrf_fprintf_and_atomic",
         "//nRF5_SDK_17.0.0_9d13099/components/ble/ble_db_discovery",
         "//nRF5_SDK_17.0.0_9d13099/components/ble/common:ble_srv_common",
         "//nRF5_SDK_17.0.0_9d13099/components/ble/nrf_ble_gq",

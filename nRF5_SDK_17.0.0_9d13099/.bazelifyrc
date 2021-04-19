@@ -117,3 +117,128 @@ source_sets: {
   hdrs: "conn_mw.h"
 }
 
+named_groups: {
+  name: "optiga_dtls"
+  first_hdr: "//nRF5_SDK_17.0.0_9d13099/external/infineon/optiga/include/optiga/dtls:DtlsHandshakeProtocol.h"
+  last_hdr: "//nRF5_SDK_17.0.0_9d13099/external/infineon/optiga/include/optiga/dtls:MessageLayer.h"
+}
+named_groups: {
+  name: "nrf_crypto_eddsa_backend"
+  first_hdr: "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto/backend/cc310:cc310_backend_eddsa.h"
+  last_hdr: "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto:nrf_crypto_eddsa_backend.h"
+}
+named_groups: {
+  name: "ble_gls"
+  first_hdr: "//nRF5_SDK_17.0.0_9d13099/components/ble/ble_services/ble_gls:ble_gls.h"
+  last_hdr: "//nRF5_SDK_17.0.0_9d13099/components/ble/ble_services/ble_gls:ble_gls_db.h"
+}
+named_groups: {
+  name: "eddystone_es_flash"
+  first_hdr: "//nRF5_SDK_17.0.0_9d13099/components/ble/ble_services/eddystone:es_flash.h"
+  last_hdr: "//nRF5_SDK_17.0.0_9d13099/components/ble/ble_services/eddystone:es_slot_reg.h"
+}
+named_groups: {
+  name: "ble_oob"
+  first_hdr: "//nRF5_SDK_17.0.0_9d13099/components/nfc/ndef/connection_handover/ble_oob_advdata:nfc_ble_oob_advdata.h"
+  last_hdr: "//nRF5_SDK_17.0.0_9d13099/components/nfc/ndef/connection_handover/le_oob_rec:nfc_le_oob_rec.h"
+}
+named_groups: {
+  name: "ppp"
+  first_hdr: "//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/netif/ppp:chap-new.h"
+  last_hdr: "//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/netif/ppp:upap.h"
+}
+named_groups: {
+  name: "serialization_connectivity"
+  first_hdr: "//nRF5_SDK_17.0.0_9d13099/components/serialization/common/transport/ser_phy:ser_phy_hci.h"
+  last_hdr: "//nRF5_SDK_17.0.0_9d13099/components/serialization/connectivity:ser_conn_reset_cmd_decoder.h"
+}
+named_groups: {
+  name: "eddystone_es_gatts"
+  first_hdr: "//nRF5_SDK_17.0.0_9d13099/components/ble/ble_services/eddystone:es_gatts.h"
+  last_hdr: "//nRF5_SDK_17.0.0_9d13099/components/ble/ble_services/eddystone:es_gatts_write.h"
+}
+named_groups: {
+  name: "nrf_crypto_ecdsa_backend"
+  first_hdr: "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto/backend/cc310:cc310_backend_ecdsa.h"
+  last_hdr: "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto:nrf_crypto_ecdsa_backend.h"
+}
+named_groups: {
+  name: "ble_ots"
+  first_hdr: "//nRF5_SDK_17.0.0_9d13099/components/ble/ble_services/experimental_ble_ots:ble_ots.h"
+  last_hdr: "//nRF5_SDK_17.0.0_9d13099/components/ble/ble_services/experimental_ble_ots:ble_ots_object.h"
+}
+named_groups: {
+  name: "ble_ancs_c"
+  first_hdr: "//nRF5_SDK_17.0.0_9d13099/components/ble/ble_services/ble_ancs_c:ancs_app_attr_get.h"
+  last_hdr: "//nRF5_SDK_17.0.0_9d13099/components/ble/ble_services/ble_ancs_c:nrf_ble_ancs_c.h"
+}
+named_groups: {
+  name: "lwip_stats"
+  first_hdr: "//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/lwip:memp.h"
+  last_hdr: "//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/lwip:stats.h"
+}
+named_groups: {
+  name: "lwip_debug"
+  first_hdr: "//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/lwip:debug.h"
+  last_hdr: "//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/lwip:opt.h"
+}
+named_groups: {
+  name: "nrf_ble_cgms"
+  first_hdr: "//nRF5_SDK_17.0.0_9d13099/components/ble/ble_services/experimental_nrf_ble_cgms:cgms_db.h"
+  last_hdr: "//nRF5_SDK_17.0.0_9d13099/components/ble/ble_services/experimental_nrf_ble_cgms:nrf_ble_cgms.h"
+}
+named_groups: {
+  name: "ble_lns"
+  first_hdr: "//nRF5_SDK_17.0.0_9d13099/components/ble/ble_services/experimental_ble_lns:ble_ln_cp.h"
+  last_hdr: "//nRF5_SDK_17.0.0_9d13099/components/ble/ble_services/experimental_ble_lns:ble_lns.h"
+}
+named_groups: {
+  name: "nrf_ble_ots_c"
+  first_hdr: "//nRF5_SDK_17.0.0_9d13099/components/ble/ble_services/experimental_nrf_ble_ots_c:nrf_ble_ots_c.h"
+  last_hdr: "//nRF5_SDK_17.0.0_9d13099/components/ble/ble_services/experimental_nrf_ble_ots_c:nrf_ble_ots_c_oacp.h"
+}
+named_groups: {
+  name: "nrf_crypto_ecdh_backend"
+  first_hdr: "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto/backend/cc310:cc310_backend_ecc.h"
+  last_hdr: "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto:nrf_crypto_ecdh_backend.h"
+}
+named_groups: {
+  name: "nrfx_mdk_nrf"
+  first_hdr: "//nRF5_SDK_17.0.0_9d13099/modules/nrfx/mdk:nrf.h"
+  last_hdr: "//nRF5_SDK_17.0.0_9d13099/modules/nrfx/mdk:system_nrf9160.h"
+}
+named_groups: {
+  name: "nrf_dfu"
+  first_hdr: "//nRF5_SDK_17.0.0_9d13099/components/libraries/bootloader/dfu:nrf_dfu.h"
+  last_hdr: "//nRF5_SDK_17.0.0_9d13099/components/libraries/bootloader/dfu:nrf_dfu_ver_validation.h"
+}
+named_groups: {
+  name: "ble_serialization"
+  first_hdr: "//nRF5_SDK_17.0.0_9d13099/components/serialization/common:ble_serialization.h"
+  last_hdr: "//nRF5_SDK_17.0.0_9d13099/components/serialization/common:cond_field_serialization.h"
+}
+named_groups: {
+  name: "app_usbd"
+  first_hdr: "//nRF5_SDK_17.0.0_9d13099/components/libraries/usbd:app_usbd.h"
+  last_hdr: "//nRF5_SDK_17.0.0_9d13099/components/libraries/usbd:app_usbd_string_desc.h"
+}
+named_groups: {
+  name: "nrf_crypto_rng_backend"
+  first_hdr: "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto/backend/cc310:cc310_backend_rng.h"
+  last_hdr: "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto:nrf_crypto_rng_backend.h"
+}
+named_groups: {
+  name: "nrf_fprintf_and_atomic"
+  first_hdr: "//nRF5_SDK_17.0.0_9d13099/components/libraries/atomic:nrf_atomic.h"
+  last_hdr: "//nRF5_SDK_17.0.0_9d13099/external/fprintf:nrf_fprintf_format.h"
+}
+named_groups: {
+  name: "boards_and_dfu"
+  first_hdr: "//nRF5_SDK_17.0.0_9d13099/components/boards:boards.h"
+  last_hdr: "//nRF5_SDK_17.0.0_9d13099/components/libraries/bootloader/dfu:nrf_dfu_trigger_usb.h"
+}
+named_groups: {
+  name: "ble_struct_serialization"
+  first_hdr: "//nRF5_SDK_17.0.0_9d13099/components/serialization/common/struct_ser/ble:ble_gap_struct_serialization.h"
+  last_hdr: "//nRF5_SDK_17.0.0_9d13099/components/serialization/common/struct_ser/ble:ble_struct_serialization.h"
+}

@@ -2,6 +2,13 @@ load("@rules_cc//cc:defs.bzl", "cc_library")
 
 package(default_visibility = ["//visibility:public"])
 
+exports_files([
+    "debug.h",
+    "memp.h",
+    "opt.h",
+    "stats.h",
+])
+
 cc_library(
     name = "api",
     hdrs = ["api.h"],
@@ -12,7 +19,7 @@ cc_library(
         ":ip_addr",
         ":netbuf",
         ":sys",
-        "//nRF5_SDK_17.0.0_9d13099:e2be4621-97b5-4e42-a08a-547fa0ed68c5",
+        "//nRF5_SDK_17.0.0_9d13099:lwip_debug",
     ],
 )
 
@@ -25,8 +32,8 @@ cc_library(
         ":err",
         ":igmp",
         ":ip_addr",
-        ":opt",
         ":sys",
+        "//nRF5_SDK_17.0.0_9d13099:lwip_debug",
     ],
 )
 
@@ -44,14 +51,13 @@ cc_library(
     deps = [
         ":etharp",
         ":netif",
-        "//nRF5_SDK_17.0.0_9d13099:e2be4621-97b5-4e42-a08a-547fa0ed68c5",
+        "//nRF5_SDK_17.0.0_9d13099:lwip_debug",
     ],
 )
 
 cc_library(
     name = "debug",
-    includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:e2be4621-97b5-4e42-a08a-547fa0ed68c5"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:lwip_debug"],
 )
 
 cc_library(
@@ -60,7 +66,7 @@ cc_library(
     includes = ["."],
     deps = [
         ":arch",
-        "//nRF5_SDK_17.0.0_9d13099:e2be4621-97b5-4e42-a08a-547fa0ed68c5",
+        "//nRF5_SDK_17.0.0_9d13099:lwip_debug",
         "//nRF5_SDK_17.0.0_9d13099/external/lwip/src/port/arch:perf",
     ],
 )
@@ -71,8 +77,8 @@ cc_library(
     includes = ["."],
     deps = [
         ":netif",
-        ":opt",
         ":udp",
+        "//nRF5_SDK_17.0.0_9d13099:lwip_debug",
     ],
 )
 
@@ -80,7 +86,7 @@ cc_library(
     name = "dhcp6",
     hdrs = ["dhcp6.h"],
     includes = ["."],
-    deps = [":opt"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:lwip_debug"],
 )
 
 cc_library(
@@ -89,7 +95,7 @@ cc_library(
     includes = ["."],
     deps = [
         ":ip_addr",
-        "//nRF5_SDK_17.0.0_9d13099:e2be4621-97b5-4e42-a08a-547fa0ed68c5",
+        "//nRF5_SDK_17.0.0_9d13099:lwip_debug",
     ],
 )
 
@@ -99,7 +105,7 @@ cc_library(
     includes = ["."],
     deps = [
         ":arch",
-        "//nRF5_SDK_17.0.0_9d13099:e2be4621-97b5-4e42-a08a-547fa0ed68c5",
+        "//nRF5_SDK_17.0.0_9d13099:lwip_debug",
     ],
 )
 
@@ -107,7 +113,7 @@ cc_library(
     name = "errno",
     hdrs = ["errno.h"],
     includes = ["."],
-    deps = [":opt"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:lwip_debug"],
 )
 
 cc_library(
@@ -118,8 +124,8 @@ cc_library(
         ":ip4",
         ":ip4_addr",
         ":netif",
-        ":opt",
         ":pbuf",
+        "//nRF5_SDK_17.0.0_9d13099:lwip_debug",
         "//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/lwip/prot:etharp",
         "//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/lwip/prot:ethernet",
     ],
@@ -133,8 +139,8 @@ cc_library(
         ":ip6",
         ":ip6_addr",
         ":netif",
-        ":opt",
         ":pbuf",
+        "//nRF5_SDK_17.0.0_9d13099:lwip_debug",
     ],
 )
 
@@ -146,8 +152,8 @@ cc_library(
         ":icmp6",
         ":ip_addr",
         ":netif",
-        ":opt",
         ":pbuf",
+        "//nRF5_SDK_17.0.0_9d13099:lwip_debug",
         "//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/lwip/prot:icmp",
     ],
 )
@@ -159,8 +165,8 @@ cc_library(
     deps = [
         ":ip6_addr",
         ":netif",
-        ":opt",
         ":pbuf",
+        "//nRF5_SDK_17.0.0_9d13099:lwip_debug",
         "//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/lwip/prot:icmp6",
     ],
 )
@@ -173,7 +179,7 @@ cc_library(
         ":ip_addr",
         ":netif",
         ":pbuf",
-        "//nRF5_SDK_17.0.0_9d13099:e2be4621-97b5-4e42-a08a-547fa0ed68c5",
+        "//nRF5_SDK_17.0.0_9d13099:lwip_debug",
     ],
 )
 
@@ -185,7 +191,7 @@ cc_library(
         ":def",
         ":ip6_addr",
         ":ip_addr",
-        "//nRF5_SDK_17.0.0_9d13099:e2be4621-97b5-4e42-a08a-547fa0ed68c5",
+        "//nRF5_SDK_17.0.0_9d13099:lwip_debug",
     ],
 )
 
@@ -196,7 +202,7 @@ cc_library(
     deps = [
         ":def",
         ":ip6_addr",
-        ":opt",
+        "//nRF5_SDK_17.0.0_9d13099:lwip_debug",
     ],
 )
 
@@ -207,7 +213,7 @@ cc_library(
     deps = [
         ":ip_addr",
         ":pbuf",
-        "//nRF5_SDK_17.0.0_9d13099:e2be4621-97b5-4e42-a08a-547fa0ed68c5",
+        "//nRF5_SDK_17.0.0_9d13099:lwip_debug",
     ],
 )
 
@@ -215,7 +221,7 @@ cc_library(
     name = "init",
     hdrs = ["init.h"],
     includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:e2be4621-97b5-4e42-a08a-547fa0ed68c5"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:lwip_debug"],
 )
 
 cc_library(
@@ -230,7 +236,7 @@ cc_library(
         ":ip_addr",
         ":netif",
         ":pbuf",
-        "//nRF5_SDK_17.0.0_9d13099:e2be4621-97b5-4e42-a08a-547fa0ed68c5",
+        "//nRF5_SDK_17.0.0_9d13099:lwip_debug",
         "//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/lwip/prot:ip",
     ],
 )
@@ -244,8 +250,8 @@ cc_library(
         ":err",
         ":ip4_addr",
         ":netif",
-        ":opt",
         ":pbuf",
+        "//nRF5_SDK_17.0.0_9d13099:lwip_debug",
         "//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/lwip/prot:ip4",
     ],
 )
@@ -256,7 +262,7 @@ cc_library(
     includes = ["."],
     deps = [
         ":def",
-        "//nRF5_SDK_17.0.0_9d13099:e2be4621-97b5-4e42-a08a-547fa0ed68c5",
+        "//nRF5_SDK_17.0.0_9d13099:lwip_debug",
     ],
 )
 
@@ -269,8 +275,8 @@ cc_library(
         ":ip",
         ":ip_addr",
         ":netif",
-        ":opt",
         ":pbuf",
+        "//nRF5_SDK_17.0.0_9d13099:lwip_debug",
     ],
 )
 
@@ -283,8 +289,8 @@ cc_library(
         ":err",
         ":ip6_addr",
         ":netif",
-        ":opt",
         ":pbuf",
+        "//nRF5_SDK_17.0.0_9d13099:lwip_debug",
         "//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/lwip/prot:ip6",
     ],
 )
@@ -295,7 +301,7 @@ cc_library(
     includes = ["."],
     deps = [
         ":def",
-        ":opt",
+        "//nRF5_SDK_17.0.0_9d13099:lwip_debug",
     ],
 )
 
@@ -307,8 +313,8 @@ cc_library(
         ":ip6",
         ":ip6_addr",
         ":netif",
-        ":opt",
         ":pbuf",
+        "//nRF5_SDK_17.0.0_9d13099:lwip_debug",
     ],
 )
 
@@ -320,7 +326,7 @@ cc_library(
         ":def",
         ":ip4_addr",
         ":ip6_addr",
-        "//nRF5_SDK_17.0.0_9d13099:e2be4621-97b5-4e42-a08a-547fa0ed68c5",
+        "//nRF5_SDK_17.0.0_9d13099:lwip_debug",
     ],
 )
 
@@ -333,8 +339,8 @@ cc_library(
         ":ip",
         ":ip_addr",
         ":netif",
-        ":opt",
         ":pbuf",
+        "//nRF5_SDK_17.0.0_9d13099:lwip_debug",
     ],
 )
 
@@ -344,14 +350,13 @@ cc_library(
     includes = ["."],
     deps = [
         ":arch",
-        "//nRF5_SDK_17.0.0_9d13099:e2be4621-97b5-4e42-a08a-547fa0ed68c5",
+        "//nRF5_SDK_17.0.0_9d13099:lwip_debug",
     ],
 )
 
 cc_library(
     name = "memp",
-    includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:c4d261a0-f237-4cb2-ad7e-ef98990e0d99"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:lwip_stats"],
 )
 
 cc_library(
@@ -368,7 +373,7 @@ cc_library(
     deps = [
         ":netif",
         ":pbuf",
-        "//nRF5_SDK_17.0.0_9d13099:e2be4621-97b5-4e42-a08a-547fa0ed68c5",
+        "//nRF5_SDK_17.0.0_9d13099:lwip_debug",
     ],
 )
 
@@ -379,7 +384,7 @@ cc_library(
     deps = [
         ":err",
         ":ip6_addr",
-        "//nRF5_SDK_17.0.0_9d13099:e2be4621-97b5-4e42-a08a-547fa0ed68c5",
+        "//nRF5_SDK_17.0.0_9d13099:lwip_debug",
     ],
 )
 
@@ -391,7 +396,7 @@ cc_library(
         ":ip6_addr",
         ":ip_addr",
         ":pbuf",
-        "//nRF5_SDK_17.0.0_9d13099:e2be4621-97b5-4e42-a08a-547fa0ed68c5",
+        "//nRF5_SDK_17.0.0_9d13099:lwip_debug",
     ],
 )
 
@@ -403,7 +408,7 @@ cc_library(
         ":arch",
         ":inet",
         ":sockets",
-        "//nRF5_SDK_17.0.0_9d13099:e2be4621-97b5-4e42-a08a-547fa0ed68c5",
+        "//nRF5_SDK_17.0.0_9d13099:lwip_debug",
     ],
 )
 
@@ -416,8 +421,8 @@ cc_library(
         ":err",
         ":ip_addr",
         ":pbuf",
-        "//nRF5_SDK_17.0.0_9d13099:c4d261a0-f237-4cb2-ad7e-ef98990e0d99",
-        "//nRF5_SDK_17.0.0_9d13099:e2be4621-97b5-4e42-a08a-547fa0ed68c5",
+        "//nRF5_SDK_17.0.0_9d13099:lwip_debug",
+        "//nRF5_SDK_17.0.0_9d13099:lwip_stats",
     ],
 )
 
@@ -430,15 +435,14 @@ cc_library(
         ":dhcp",
         ":netif",
         ":sys",
-        "//nRF5_SDK_17.0.0_9d13099:e2be4621-97b5-4e42-a08a-547fa0ed68c5",
+        "//nRF5_SDK_17.0.0_9d13099:lwip_debug",
         "//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/lwip/priv:tcpip_priv",
     ],
 )
 
 cc_library(
     name = "opt",
-    includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:e2be4621-97b5-4e42-a08a-547fa0ed68c5"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:lwip_debug"],
 )
 
 cc_library(
@@ -447,7 +451,7 @@ cc_library(
     includes = ["."],
     deps = [
         ":err",
-        "//nRF5_SDK_17.0.0_9d13099:e2be4621-97b5-4e42-a08a-547fa0ed68c5",
+        "//nRF5_SDK_17.0.0_9d13099:lwip_debug",
     ],
 )
 
@@ -457,9 +461,9 @@ cc_library(
     includes = ["."],
     deps = [
         ":netif",
-        ":opt",
         ":sys",
-        "//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/netif/ppp",
+        "//nRF5_SDK_17.0.0_9d13099:lwip_debug",
+        "//nRF5_SDK_17.0.0_9d13099:ppp",
     ],
 )
 
@@ -473,7 +477,7 @@ cc_library(
         ":ip6_addr",
         ":ip_addr",
         ":pbuf",
-        "//nRF5_SDK_17.0.0_9d13099:e2be4621-97b5-4e42-a08a-547fa0ed68c5",
+        "//nRF5_SDK_17.0.0_9d13099:lwip_debug",
     ],
 )
 
@@ -483,7 +487,7 @@ cc_library(
     includes = ["."],
     deps = [
         ":arch",
-        ":opt",
+        "//nRF5_SDK_17.0.0_9d13099:lwip_debug",
     ],
 )
 
@@ -493,7 +497,7 @@ cc_library(
     includes = ["."],
     deps = [
         ":ip_addr",
-        "//nRF5_SDK_17.0.0_9d13099:e2be4621-97b5-4e42-a08a-547fa0ed68c5",
+        "//nRF5_SDK_17.0.0_9d13099:lwip_debug",
     ],
 )
 
@@ -505,7 +509,7 @@ cc_library(
         ":err",
         ":pbuf",
         ":snmp",
-        "//nRF5_SDK_17.0.0_9d13099:e2be4621-97b5-4e42-a08a-547fa0ed68c5",
+        "//nRF5_SDK_17.0.0_9d13099:lwip_debug",
     ],
 )
 
@@ -518,7 +522,7 @@ cc_library(
         ":ip_addr",
         ":snmp",
         ":snmp_structs",
-        "//nRF5_SDK_17.0.0_9d13099:e2be4621-97b5-4e42-a08a-547fa0ed68c5",
+        "//nRF5_SDK_17.0.0_9d13099:lwip_debug",
         "//nRF5_SDK_17.0.0_9d13099:private_mib_remap",
     ],
 )
@@ -528,8 +532,8 @@ cc_library(
     hdrs = ["snmp_structs.h"],
     includes = ["."],
     deps = [
-        ":opt",
         ":snmp",
+        "//nRF5_SDK_17.0.0_9d13099:lwip_debug",
         "//nRF5_SDK_17.0.0_9d13099:private_mib_remap",
     ],
 )
@@ -543,14 +547,13 @@ cc_library(
         ":errno",
         ":inet",
         ":ip_addr",
-        "//nRF5_SDK_17.0.0_9d13099:e2be4621-97b5-4e42-a08a-547fa0ed68c5",
+        "//nRF5_SDK_17.0.0_9d13099:lwip_debug",
     ],
 )
 
 cc_library(
     name = "stats",
-    includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:c4d261a0-f237-4cb2-ad7e-ef98990e0d99"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:lwip_stats"],
 )
 
 cc_library(
@@ -559,7 +562,7 @@ cc_library(
     includes = ["."],
     deps = [
         ":err",
-        "//nRF5_SDK_17.0.0_9d13099:e2be4621-97b5-4e42-a08a-547fa0ed68c5",
+        "//nRF5_SDK_17.0.0_9d13099:lwip_debug",
         "//nRF5_SDK_17.0.0_9d13099/external/lwip/src/port/arch:sys_arch",
     ],
 )
@@ -575,8 +578,8 @@ cc_library(
         ":ip6",
         ":ip6_addr",
         ":mem",
-        ":opt",
         ":pbuf",
+        "//nRF5_SDK_17.0.0_9d13099:lwip_debug",
     ],
 )
 
@@ -588,7 +591,7 @@ cc_library(
         ":err",
         ":netif",
         ":timeouts",
-        "//nRF5_SDK_17.0.0_9d13099:e2be4621-97b5-4e42-a08a-547fa0ed68c5",
+        "//nRF5_SDK_17.0.0_9d13099:lwip_debug",
     ],
 )
 
@@ -599,7 +602,7 @@ cc_library(
     deps = [
         ":err",
         ":sys",
-        "//nRF5_SDK_17.0.0_9d13099:e2be4621-97b5-4e42-a08a-547fa0ed68c5",
+        "//nRF5_SDK_17.0.0_9d13099:lwip_debug",
     ],
 )
 
@@ -610,7 +613,7 @@ cc_library(
     deps = [
         ":err",
         ":sys",
-        "//nRF5_SDK_17.0.0_9d13099:e2be4621-97b5-4e42-a08a-547fa0ed68c5",
+        "//nRF5_SDK_17.0.0_9d13099:lwip_debug",
     ],
 )
 
@@ -624,7 +627,7 @@ cc_library(
         ":ip_addr",
         ":netif",
         ":pbuf",
-        "//nRF5_SDK_17.0.0_9d13099:e2be4621-97b5-4e42-a08a-547fa0ed68c5",
+        "//nRF5_SDK_17.0.0_9d13099:lwip_debug",
         "//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/lwip/prot:udp",
     ],
 )

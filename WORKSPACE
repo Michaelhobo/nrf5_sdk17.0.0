@@ -40,13 +40,3 @@ http_archive(
 load("@com_google_protobuf//:protobuf_deps.bzl", "protobuf_deps")
 
 protobuf_deps()
-
-http_archive(
-    name = "nrfbazel",
-    strip_prefix = "nrfbazel-master",
-    urls = ["https://github.com/michaelhobo/nrfbazel/archive/master.zip"],
-)
-
-load("@nrfbazel//:repositories.bzl", "nrfbazel_dependencies")
-
-nrfbazel_dependencies()

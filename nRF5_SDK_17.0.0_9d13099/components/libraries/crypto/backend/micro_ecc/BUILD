@@ -2,22 +2,28 @@ load("@rules_cc//cc:defs.bzl", "cc_library")
 
 package(default_visibility = ["//visibility:public"])
 
+exports_files([
+    "micro_ecc_backend_ecc.c",
+    "micro_ecc_backend_ecc.h",
+    "micro_ecc_backend_ecdh.c",
+    "micro_ecc_backend_ecdh.h",
+    "micro_ecc_backend_ecdsa.c",
+    "micro_ecc_backend_ecdsa.h",
+])
+
 cc_library(
     name = "micro_ecc_backend_ecc",
-    includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:11b723c8-b8d4-4770-8086-91a6acd49b66"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:nrf_crypto_ecdh_backend"],
 )
 
 cc_library(
     name = "micro_ecc_backend_ecdh",
-    includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:11b723c8-b8d4-4770-8086-91a6acd49b66"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:nrf_crypto_ecdh_backend"],
 )
 
 cc_library(
     name = "micro_ecc_backend_ecdsa",
-    includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:4d623e5c-312e-445f-abc9-983d1375ccbc"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:nrf_crypto_ecdsa_backend"],
 )
 
 cc_library(

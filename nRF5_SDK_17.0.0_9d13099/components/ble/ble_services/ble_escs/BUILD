@@ -17,9 +17,8 @@ cc_library(
     deps = [
         ":escs_defs",
         "//nRF5_SDK_17.0.0_9d13099:es_app_config_remap",
+        "//nRF5_SDK_17.0.0_9d13099:nrf_fprintf_and_atomic",
         "//nRF5_SDK_17.0.0_9d13099/components/ble/common:ble_srv_common",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:app_util_platform",
-        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:sdk_common",
         "//nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers:ble",
     ],
 )

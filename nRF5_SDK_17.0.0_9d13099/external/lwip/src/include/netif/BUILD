@@ -17,7 +17,7 @@ cc_library(
     hdrs = ["ethernet.h"],
     includes = ["."],
     deps = [
-        "//nRF5_SDK_17.0.0_9d13099:e2be4621-97b5-4e42-a08a-547fa0ed68c5",
+        "//nRF5_SDK_17.0.0_9d13099:lwip_debug",
         "//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/lwip:netif",
         "//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/lwip:pbuf",
         "//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/lwip/prot:ethernet",
@@ -41,7 +41,7 @@ cc_library(
     name = "lowpan6_opts",
     hdrs = ["lowpan6_opts.h"],
     includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:e2be4621-97b5-4e42-a08a-547fa0ed68c5"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:lwip_debug"],
 )
 
 cc_library(
@@ -49,7 +49,7 @@ cc_library(
     hdrs = ["slipif.h"],
     includes = ["."],
     deps = [
-        "//nRF5_SDK_17.0.0_9d13099:e2be4621-97b5-4e42-a08a-547fa0ed68c5",
+        "//nRF5_SDK_17.0.0_9d13099:lwip_debug",
         "//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/lwip:netif",
     ],
 )

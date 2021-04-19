@@ -27,7 +27,7 @@ cc_library(
     name = "httpd_opts",
     hdrs = ["httpd_opts.h"],
     includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/lwip:opt"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:lwip_debug"],
 )
 
 cc_library(
@@ -35,7 +35,7 @@ cc_library(
     hdrs = ["lwiperf.h"],
     includes = ["."],
     deps = [
-        "//nRF5_SDK_17.0.0_9d13099:e2be4621-97b5-4e42-a08a-547fa0ed68c5",
+        "//nRF5_SDK_17.0.0_9d13099:lwip_debug",
         "//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/lwip:ip_addr",
     ],
 )
@@ -54,7 +54,7 @@ cc_library(
     name = "mdns_opts",
     hdrs = ["mdns_opts.h"],
     includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:e2be4621-97b5-4e42-a08a-547fa0ed68c5"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:lwip_debug"],
 )
 
 cc_library(
@@ -82,7 +82,7 @@ cc_library(
     name = "mqtt_opts",
     hdrs = ["mqtt_opts.h"],
     includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:e2be4621-97b5-4e42-a08a-547fa0ed68c5"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:lwip_debug"],
 )
 
 cc_library(
@@ -96,7 +96,7 @@ cc_library(
     name = "netbiosns_opts",
     hdrs = ["netbiosns_opts.h"],
     includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/lwip:opt"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:lwip_debug"],
 )
 
 cc_library(
@@ -136,7 +136,7 @@ cc_library(
     name = "snmp_opts",
     hdrs = ["snmp_opts.h"],
     includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/lwip:opt"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:lwip_debug"],
 )
 
 cc_library(
@@ -194,14 +194,14 @@ cc_library(
     name = "sntp_opts",
     hdrs = ["sntp_opts.h"],
     includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:e2be4621-97b5-4e42-a08a-547fa0ed68c5"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:lwip_debug"],
 )
 
 cc_library(
     name = "tftp_opts",
     hdrs = ["tftp_opts.h"],
     includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/lwip:opt"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:lwip_debug"],
 )
 
 cc_library(
