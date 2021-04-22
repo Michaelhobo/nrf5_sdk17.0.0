@@ -64,7 +64,7 @@ cc_library(
         ":ble_types",
         ":nrf_error",
         ":nrf_svc",
-        "//nRF5_SDK_17.0.0_9d13099/modules/nrfx/mdk:nrf",
+        "//nRF5_SDK_17.0.0_9d13099:nrfx_mdk_nrf",
     ],
 )
 
@@ -143,7 +143,7 @@ cc_library(
         ":nrf_error",
         ":nrf_error_soc",
         ":nrf_svc",
-        "//nRF5_SDK_17.0.0_9d13099:fd0248f6-a546-4781-bd6c-1ef963497768",
+        "//nRF5_SDK_17.0.0_9d13099:nrfx_mdk_nrf",
     ],
 )
 
@@ -163,7 +163,7 @@ cc_library(
         ":nrf_error_sdm",
         ":nrf_soc",
         ":nrf_svc",
-        "//nRF5_SDK_17.0.0_9d13099:fd0248f6-a546-4781-bd6c-1ef963497768",
+        "//nRF5_SDK_17.0.0_9d13099:nrfx_mdk_nrf",
     ],
 )
 
@@ -175,7 +175,7 @@ cc_library(
         ":nrf_error",
         ":nrf_error_soc",
         ":nrf_svc",
-        "//nRF5_SDK_17.0.0_9d13099:fd0248f6-a546-4781-bd6c-1ef963497768",
+        "//nRF5_SDK_17.0.0_9d13099:nrfx_mdk_nrf",
     ],
 )
 

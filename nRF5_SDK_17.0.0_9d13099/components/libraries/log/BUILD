@@ -2,10 +2,16 @@ load("@rules_cc//cc:defs.bzl", "cc_library")
 
 package(default_visibility = ["//visibility:public"])
 
+exports_files([
+    "nrf_log.h",
+    "nrf_log_backend_interface.h",
+    "nrf_log_ctrl.h",
+    "nrf_log_str_formatter.h",
+])
+
 cc_library(
     name = "nrf_log",
-    includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:100f0197-983a-4344-b22d-2887b0fffc9d"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:nrf_fprintf_and_atomic"],
 )
 
 cc_library(
@@ -13,35 +19,33 @@ cc_library(
     hdrs = ["nrf_log_backend_flash.h"],
     includes = ["."],
     deps = [
-        "//nRF5_SDK_17.0.0_9d13099:100f0197-983a-4344-b22d-2887b0fffc9d",
+        "//nRF5_SDK_17.0.0_9d13099:nrf_fprintf_and_atomic",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/fstorage:nrf_fstorage",
     ],
 )
 
 cc_library(
     name = "nrf_log_backend_interface",
-    includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:100f0197-983a-4344-b22d-2887b0fffc9d"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:nrf_fprintf_and_atomic"],
 )
 
 cc_library(
     name = "nrf_log_backend_rtt",
     hdrs = ["nrf_log_backend_rtt.h"],
     includes = ["."],
-    deps = [":nrf_log_backend_interface"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:nrf_fprintf_and_atomic"],
 )
 
 cc_library(
     name = "nrf_log_backend_uart",
     hdrs = ["nrf_log_backend_uart.h"],
     includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:100f0197-983a-4344-b22d-2887b0fffc9d"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:nrf_fprintf_and_atomic"],
 )
 
 cc_library(
     name = "nrf_log_ctrl",
-    includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:100f0197-983a-4344-b22d-2887b0fffc9d"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:nrf_fprintf_and_atomic"],
 )
 
 cc_library(
@@ -67,8 +71,7 @@ cc_library(
 
 cc_library(
     name = "nrf_log_str_formatter",
-    includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:100f0197-983a-4344-b22d-2887b0fffc9d"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:nrf_fprintf_and_atomic"],
 )
 
 cc_library(

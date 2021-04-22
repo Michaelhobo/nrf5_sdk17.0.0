@@ -9,7 +9,7 @@ cc_library(
     includes = ["."],
     deps = [
         ":ble_srv_common",
-        "//nRF5_SDK_17.0.0_9d13099:100f0197-983a-4344-b22d-2887b0fffc9d",
+        "//nRF5_SDK_17.0.0_9d13099:nrf_fprintf_and_atomic",
         "//nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers:ble",
         "//nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers:ble_gap",
     ],
@@ -23,14 +23,14 @@ cc_library(
     deps = [
         ":ble_conn_state",
         ":ble_srv_common",
-        "//nRF5_SDK_17.0.0_9d13099:100f0197-983a-4344-b22d-2887b0fffc9d",
+        "//nRF5_SDK_17.0.0_9d13099:nrf_fprintf_and_atomic",
+        "//nRF5_SDK_17.0.0_9d13099:nrfx_mdk_nrf",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:app_util",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:sdk_errors",
         "//nRF5_SDK_17.0.0_9d13099/components/softdevice/common:nrf_sdh_ble",
         "//nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers:ble",
         "//nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers:ble_err",
         "//nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers:ble_hci",
-        "//nRF5_SDK_17.0.0_9d13099/modules/nrfx/mdk:nrf",
     ],
 )
 
@@ -40,7 +40,7 @@ cc_library(
     hdrs = ["ble_conn_state.h"],
     includes = ["."],
     deps = [
-        "//nRF5_SDK_17.0.0_9d13099:100f0197-983a-4344-b22d-2887b0fffc9d",
+        "//nRF5_SDK_17.0.0_9d13099:nrf_fprintf_and_atomic",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/atomic_flags:nrf_atflags",
         "//nRF5_SDK_17.0.0_9d13099/components/softdevice/common:nrf_sdh_ble",
         "//nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers:ble",
@@ -77,7 +77,7 @@ cc_library(
     hdrs = ["ble_srv_common.h"],
     includes = ["."],
     deps = [
-        "//nRF5_SDK_17.0.0_9d13099:100f0197-983a-4344-b22d-2887b0fffc9d",
+        "//nRF5_SDK_17.0.0_9d13099:nrf_fprintf_and_atomic",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:app_util",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:nordic_common",
         "//nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers:ble",

@@ -2,28 +2,35 @@ load("@rules_cc//cc:defs.bzl", "cc_library")
 
 package(default_visibility = ["//visibility:public"])
 
+exports_files([
+    "optiga_backend_ecc.c",
+    "optiga_backend_ecc.h",
+    "optiga_backend_ecdh.c",
+    "optiga_backend_ecdh.h",
+    "optiga_backend_ecdsa.c",
+    "optiga_backend_ecdsa.h",
+    "optiga_backend_rng.c",
+    "optiga_backend_rng.h",
+])
+
 cc_library(
     name = "optiga_backend_ecc",
-    includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:11b723c8-b8d4-4770-8086-91a6acd49b66"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:nrf_crypto_ecdh_backend"],
 )
 
 cc_library(
     name = "optiga_backend_ecdh",
-    includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:11b723c8-b8d4-4770-8086-91a6acd49b66"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:nrf_crypto_ecdh_backend"],
 )
 
 cc_library(
     name = "optiga_backend_ecdsa",
-    includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:4d623e5c-312e-445f-abc9-983d1375ccbc"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:nrf_crypto_ecdsa_backend"],
 )
 
 cc_library(
     name = "optiga_backend_rng",
-    includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:7e17deef-2723-40e6-bf71-8124f59cb362"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:nrf_crypto_rng_backend"],
 )
 
 cc_library(

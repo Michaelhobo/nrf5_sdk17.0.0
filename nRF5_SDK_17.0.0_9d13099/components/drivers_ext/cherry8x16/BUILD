@@ -7,5 +7,5 @@ cc_library(
     srcs = ["cherry8x16.c"],
     hdrs = ["cherry8x16.h"],
     includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099/modules/nrfx/mdk:nrf"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:nrfx_mdk_nrf"],
 )

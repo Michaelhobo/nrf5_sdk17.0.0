@@ -2,14 +2,19 @@ load("@rules_cc//cc:defs.bzl", "cc_library")
 
 package(default_visibility = ["//visibility:public"])
 
+exports_files([
+    "ble_gls.c",
+    "ble_gls.h",
+    "ble_gls_db.c",
+    "ble_gls_db.h",
+])
+
 cc_library(
     name = "ble_gls",
-    includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:349c38ee-0551-4f0d-8466-82086bba7ea7"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:ble_gls"],
 )
 
 cc_library(
     name = "ble_gls_db",
-    includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:349c38ee-0551-4f0d-8466-82086bba7ea7"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:ble_gls"],
 )

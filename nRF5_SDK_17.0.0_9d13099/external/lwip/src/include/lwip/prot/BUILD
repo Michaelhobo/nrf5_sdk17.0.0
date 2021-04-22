@@ -12,7 +12,7 @@ cc_library(
     name = "dhcp",
     hdrs = ["dhcp.h"],
     includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:e2be4621-97b5-4e42-a08a-547fa0ed68c5"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/lwip:opt"],
 )
 
 cc_library(

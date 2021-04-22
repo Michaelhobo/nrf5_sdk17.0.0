@@ -14,7 +14,7 @@ cc_library(
     hdrs = ["nrf_drv_clock.h"],
     includes = ["."],
     deps = [
-        "//nRF5_SDK_17.0.0_9d13099:100f0197-983a-4344-b22d-2887b0fffc9d",
+        "//nRF5_SDK_17.0.0_9d13099:nrf_fprintf_and_atomic",
         "//nRF5_SDK_17.0.0_9d13099/components/softdevice/common:nrf_sdh_soc",
     ],
 )
@@ -61,7 +61,7 @@ cc_library(
     hdrs = ["nrf_drv_power.h"],
     includes = ["."],
     deps = [
-        "//nRF5_SDK_17.0.0_9d13099:100f0197-983a-4344-b22d-2887b0fffc9d",
+        "//nRF5_SDK_17.0.0_9d13099:nrf_fprintf_and_atomic",
         "//nRF5_SDK_17.0.0_9d13099/components/softdevice/common:nrf_sdh_soc",
     ],
 )
@@ -97,7 +97,7 @@ cc_library(
     hdrs = ["nrf_drv_rng.h"],
     includes = ["."],
     deps = [
-        "//nRF5_SDK_17.0.0_9d13099:100f0197-983a-4344-b22d-2887b0fffc9d",
+        "//nRF5_SDK_17.0.0_9d13099:nrf_fprintf_and_atomic",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:nordic_common",
     ],
 )

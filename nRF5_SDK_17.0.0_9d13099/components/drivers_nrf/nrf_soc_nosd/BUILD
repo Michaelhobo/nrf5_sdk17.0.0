@@ -16,7 +16,7 @@ cc_library(
     deps = [
         ":nrf_error",
         ":nrf_soc",
-        "//nRF5_SDK_17.0.0_9d13099:fd0248f6-a546-4781-bd6c-1ef963497768",
+        "//nRF5_SDK_17.0.0_9d13099:nrfx_mdk_nrf",
     ],
 )
 
@@ -33,6 +33,6 @@ cc_library(
     includes = ["."],
     deps = [
         ":nrf_error",
-        "//nRF5_SDK_17.0.0_9d13099:fd0248f6-a546-4781-bd6c-1ef963497768",
+        "//nRF5_SDK_17.0.0_9d13099:nrfx_mdk_nrf",
     ],
 )

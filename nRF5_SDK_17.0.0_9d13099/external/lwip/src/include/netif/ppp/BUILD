@@ -2,6 +2,15 @@ load("@rules_cc//cc:defs.bzl", "cc_library")
 
 package(default_visibility = ["//visibility:public"])
 
+exports_files([
+    "chap-new.h",
+    "eap.h",
+    "fsm.h",
+    "lcp.h",
+    "ppp.h",
+    "upap.h",
+])
+
 cc_library(
     name = "ccp",
     hdrs = ["ccp.h"],
@@ -18,8 +27,7 @@ cc_library(
 
 cc_library(
     name = "chap-new",
-    includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:b7548c51-160b-4b63-a74f-25b36e81b774"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:ppp"],
 )
 
 cc_library(
@@ -31,8 +39,7 @@ cc_library(
 
 cc_library(
     name = "eap",
-    includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:b7548c51-160b-4b63-a74f-25b36e81b774"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:ppp"],
 )
 
 cc_library(
@@ -51,8 +58,7 @@ cc_library(
 
 cc_library(
     name = "fsm",
-    includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:b7548c51-160b-4b63-a74f-25b36e81b774"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:ppp"],
 )
 
 cc_library(
@@ -74,8 +80,7 @@ cc_library(
 
 cc_library(
     name = "lcp",
-    includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:b7548c51-160b-4b63-a74f-25b36e81b774"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:ppp"],
 )
 
 cc_library(
@@ -97,8 +102,7 @@ cc_library(
 
 cc_library(
     name = "ppp",
-    includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:b7548c51-160b-4b63-a74f-25b36e81b774"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:ppp"],
 )
 
 cc_library(
@@ -108,7 +112,7 @@ cc_library(
     deps = [
         ":ppp_opts",
         ":pppdebug",
-        "//nRF5_SDK_17.0.0_9d13099:b7548c51-160b-4b63-a74f-25b36e81b774",
+        "//nRF5_SDK_17.0.0_9d13099:ppp",
         "//nRF5_SDK_17.0.0_9d13099:ppp_settings_remap",
         "//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/lwip:def",
         "//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/lwip:netif",
@@ -120,7 +124,7 @@ cc_library(
     name = "ppp_opts",
     hdrs = ["ppp_opts.h"],
     includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:e2be4621-97b5-4e42-a08a-547fa0ed68c5"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:lwip_debug"],
 )
 
 cc_library(
@@ -130,7 +134,7 @@ cc_library(
     deps = [
         ":ppp_opts",
         ":pppos",
-        "//nRF5_SDK_17.0.0_9d13099:b7548c51-160b-4b63-a74f-25b36e81b774",
+        "//nRF5_SDK_17.0.0_9d13099:ppp",
         "//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/lwip:netif",
         "//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/lwip:sys",
         "//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/lwip/priv:tcpip_priv",
@@ -165,7 +169,7 @@ cc_library(
     includes = ["."],
     deps = [
         ":ppp_opts",
-        "//nRF5_SDK_17.0.0_9d13099:b7548c51-160b-4b63-a74f-25b36e81b774",
+        "//nRF5_SDK_17.0.0_9d13099:ppp",
         "//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/lwip:etharp",
     ],
 )
@@ -176,7 +180,7 @@ cc_library(
     includes = ["."],
     deps = [
         ":ppp_opts",
-        "//nRF5_SDK_17.0.0_9d13099:b7548c51-160b-4b63-a74f-25b36e81b774",
+        "//nRF5_SDK_17.0.0_9d13099:ppp",
     ],
 )
 
@@ -185,17 +189,16 @@ cc_library(
     hdrs = ["pppos.h"],
     includes = ["."],
     deps = [
-        ":ppp",
         ":ppp_opts",
         ":vj",
+        "//nRF5_SDK_17.0.0_9d13099:ppp",
         "//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/lwip:sys",
     ],
 )
 
 cc_library(
     name = "upap",
-    includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:b7548c51-160b-4b63-a74f-25b36e81b774"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:ppp"],
 )
 
 cc_library(

@@ -2,6 +2,23 @@ load("@rules_cc//cc:defs.bzl", "cc_library")
 
 package(default_visibility = ["//visibility:public"])
 
+exports_files([
+    "nrf_dfu.c",
+    "nrf_dfu.h",
+    "nrf_dfu_handling_error.c",
+    "nrf_dfu_handling_error.h",
+    "nrf_dfu_req_handler.c",
+    "nrf_dfu_req_handler.h",
+    "nrf_dfu_trigger_usb.c",
+    "nrf_dfu_trigger_usb.h",
+    "nrf_dfu_utils.c",
+    "nrf_dfu_utils.h",
+    "nrf_dfu_validation.c",
+    "nrf_dfu_validation.h",
+    "nrf_dfu_ver_validation.c",
+    "nrf_dfu_ver_validation.h",
+])
+
 cc_library(
     name = "dfu-cc.pb",
     srcs = ["dfu-cc.pb.c"],
@@ -11,8 +28,7 @@ cc_library(
 
 cc_library(
     name = "nrf_dfu",
-    includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:28d1fe0e-fd56-4cbe-a551-eafeec2a6d71"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:nrf_dfu"],
 )
 
 cc_library(
@@ -22,7 +38,7 @@ cc_library(
     includes = ["."],
     deps = [
         ":nrf_dfu_types",
-        "//nRF5_SDK_17.0.0_9d13099:100f0197-983a-4344-b22d-2887b0fffc9d",
+        "//nRF5_SDK_17.0.0_9d13099:nrf_fprintf_and_atomic",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/fstorage:nrf_fstorage",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/fstorage:nrf_fstorage_nvmc",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/fstorage:nrf_fstorage_sd",
@@ -32,8 +48,7 @@ cc_library(
 
 cc_library(
     name = "nrf_dfu_handling_error",
-    includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:28d1fe0e-fd56-4cbe-a551-eafeec2a6d71"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:nrf_dfu"],
 )
 
 cc_library(
@@ -43,7 +58,7 @@ cc_library(
     includes = ["."],
     deps = [
         ":nrf_dfu_types",
-        "//nRF5_SDK_17.0.0_9d13099:100f0197-983a-4344-b22d-2887b0fffc9d",
+        "//nRF5_SDK_17.0.0_9d13099:nrf_fprintf_and_atomic",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/bootloader:nrf_bootloader_info",
         "//nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers/nrf52:nrf_mbr",
     ],
@@ -51,8 +66,7 @@ cc_library(
 
 cc_library(
     name = "nrf_dfu_req_handler",
-    includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:28d1fe0e-fd56-4cbe-a551-eafeec2a6d71"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:nrf_dfu"],
 )
 
 cc_library(
@@ -63,7 +77,7 @@ cc_library(
     deps = [
         ":nrf_dfu_flash",
         ":nrf_dfu_types",
-        "//nRF5_SDK_17.0.0_9d13099:100f0197-983a-4344-b22d-2887b0fffc9d",
+        "//nRF5_SDK_17.0.0_9d13099:nrf_fprintf_and_atomic",
         "//nRF5_SDK_17.0.0_9d13099:sdk_config_remap",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/crc32",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:sdk_errors",
@@ -79,15 +93,14 @@ cc_library(
     includes = ["."],
     deps = [
         ":nrf_dfu_types",
-        "//nRF5_SDK_17.0.0_9d13099:100f0197-983a-4344-b22d-2887b0fffc9d",
+        "//nRF5_SDK_17.0.0_9d13099:nrf_fprintf_and_atomic",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/experimental_section_vars:nrf_section",
     ],
 )
 
 cc_library(
     name = "nrf_dfu_trigger_usb",
-    includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:61e27dec-e73f-44b3-894d-97fe1be84655"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:boards_and_dfu"],
 )
 
 cc_library(
@@ -95,8 +108,8 @@ cc_library(
     hdrs = ["nrf_dfu_types.h"],
     includes = ["."],
     deps = [
-        "//nRF5_SDK_17.0.0_9d13099:100f0197-983a-4344-b22d-2887b0fffc9d",
-        "//nRF5_SDK_17.0.0_9d13099:fd0248f6-a546-4781-bd6c-1ef963497768",
+        "//nRF5_SDK_17.0.0_9d13099:nrf_fprintf_and_atomic",
+        "//nRF5_SDK_17.0.0_9d13099:nrfx_mdk_nrf",
         "//nRF5_SDK_17.0.0_9d13099:sdk_config_remap",
         "//nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers:ble_gap",
         "//nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers/nrf52:nrf_mbr",
@@ -105,18 +118,15 @@ cc_library(
 
 cc_library(
     name = "nrf_dfu_utils",
-    includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:28d1fe0e-fd56-4cbe-a551-eafeec2a6d71"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:nrf_dfu"],
 )
 
 cc_library(
     name = "nrf_dfu_validation",
-    includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:28d1fe0e-fd56-4cbe-a551-eafeec2a6d71"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:nrf_dfu"],
 )
 
 cc_library(
     name = "nrf_dfu_ver_validation",
-    includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:28d1fe0e-fd56-4cbe-a551-eafeec2a6d71"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:nrf_dfu"],
 )

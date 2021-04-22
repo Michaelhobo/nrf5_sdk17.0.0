@@ -19,7 +19,7 @@ cc_library(
     includes = ["."],
     deps = [
         ":conn_mw_nrf_soc",
-        "//nRF5_SDK_17.0.0_9d13099/components/serialization/common:ble_serialization",
+        "//nRF5_SDK_17.0.0_9d13099:ble_serialization",
         "//nRF5_SDK_17.0.0_9d13099/components/serialization/connectivity/codecs/ant/middleware:conn_mw_ant",
         "//nRF5_SDK_17.0.0_9d13099/components/serialization/connectivity/codecs/ble/middleware:conn_mw_ble",
         "//nRF5_SDK_17.0.0_9d13099/components/serialization/connectivity/codecs/ble/middleware:conn_mw_ble_gap",
@@ -41,7 +41,7 @@ cc_library(
     hdrs = ["conn_mw_nrf_soc.h"],
     includes = ["."],
     deps = [
-        "//nRF5_SDK_17.0.0_9d13099:f7190e8c-55d7-4855-bf1c-ed36930e9339",
+        "//nRF5_SDK_17.0.0_9d13099/components/serialization/common:ble_serialization",
         "//nRF5_SDK_17.0.0_9d13099/components/serialization/connectivity/codecs/ble/serializers:nrf_soc_conn",
     ],
 )

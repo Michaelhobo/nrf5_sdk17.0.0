@@ -2,16 +2,25 @@ load("@rules_cc//cc:defs.bzl", "cc_library")
 
 package(default_visibility = ["//visibility:public"])
 
+exports_files([
+    "ble_gap_struct_serialization.c",
+    "ble_gap_struct_serialization.h",
+    "ble_gatt_struct_serialization.c",
+    "ble_gatt_struct_serialization.h",
+    "ble_gatts_struct_serialization.c",
+    "ble_gatts_struct_serialization.h",
+    "ble_struct_serialization.c",
+    "ble_struct_serialization.h",
+])
+
 cc_library(
     name = "ble_gap_struct_serialization",
-    includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:a5631caf-42f1-4ec6-8967-cb78816f23ce"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:ble_struct_serialization"],
 )
 
 cc_library(
     name = "ble_gatt_struct_serialization",
-    includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:a5631caf-42f1-4ec6-8967-cb78816f23ce"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:ble_struct_serialization"],
 )
 
 cc_library(
@@ -20,19 +29,16 @@ cc_library(
     hdrs = ["ble_gattc_struct_serialization.h"],
     includes = ["."],
     deps = [
-        ":ble_gatt_struct_serialization",
-        ":ble_struct_serialization",
+        "//nRF5_SDK_17.0.0_9d13099:ble_serialization",
+        "//nRF5_SDK_17.0.0_9d13099:ble_struct_serialization",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:app_util",
-        "//nRF5_SDK_17.0.0_9d13099/components/serialization/common:ble_serialization",
-        "//nRF5_SDK_17.0.0_9d13099/components/serialization/common:cond_field_serialization",
         "//nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers:ble_gattc",
     ],
 )
 
 cc_library(
     name = "ble_gatts_struct_serialization",
-    includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:a5631caf-42f1-4ec6-8967-cb78816f23ce"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:ble_struct_serialization"],
 )
 
 cc_library(
@@ -41,8 +47,8 @@ cc_library(
     hdrs = ["ble_l2cap_struct_serialization.h"],
     includes = ["."],
     deps = [
-        "//nRF5_SDK_17.0.0_9d13099:a5631caf-42f1-4ec6-8967-cb78816f23ce",
-        "//nRF5_SDK_17.0.0_9d13099:f7190e8c-55d7-4855-bf1c-ed36930e9339",
+        "//nRF5_SDK_17.0.0_9d13099:ble_serialization",
+        "//nRF5_SDK_17.0.0_9d13099:ble_struct_serialization",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:app_util",
         "//nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers:ble_l2cap",
     ],
@@ -50,8 +56,7 @@ cc_library(
 
 cc_library(
     name = "ble_struct_serialization",
-    includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:a5631caf-42f1-4ec6-8967-cb78816f23ce"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:ble_struct_serialization"],
 )
 
 cc_library(

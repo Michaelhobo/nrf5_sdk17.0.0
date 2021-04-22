@@ -2,6 +2,11 @@ load("@rules_cc//cc:defs.bzl", "cc_library")
 
 package(default_visibility = ["//visibility:public"])
 
+exports_files([
+    "boards.c",
+    "boards.h",
+])
+
 cc_library(
     name = "arduino_joystick_shield_v1a",
     hdrs = ["arduino_joystick_shield_v1a.h"],
@@ -16,8 +21,7 @@ cc_library(
 
 cc_library(
     name = "boards",
-    includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:61e27dec-e73f-44b3-894d-97fe1be84655"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:boards_and_dfu"],
 )
 
 cc_library(

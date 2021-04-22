@@ -2,6 +2,44 @@ load("@rules_cc//cc:defs.bzl", "cc_library")
 
 package(default_visibility = ["//visibility:public"])
 
+exports_files([
+    "nrf.h",
+    "nrf51.h",
+    "nrf52.h",
+    "nrf52805.h",
+    "nrf52810.h",
+    "nrf52811.h",
+    "nrf52820.h",
+    "nrf52833.h",
+    "nrf52840.h",
+    "nrf5340_application.h",
+    "nrf5340_network.h",
+    "nrf9160.h",
+    "nrf_erratas.h",
+    "system_nrf51.c",
+    "system_nrf51.h",
+    "system_nrf52.c",
+    "system_nrf52.h",
+    "system_nrf52805.c",
+    "system_nrf52805.h",
+    "system_nrf52810.c",
+    "system_nrf52810.h",
+    "system_nrf52811.c",
+    "system_nrf52811.h",
+    "system_nrf52820.c",
+    "system_nrf52820.h",
+    "system_nrf52833.c",
+    "system_nrf52833.h",
+    "system_nrf52840.c",
+    "system_nrf52840.h",
+    "system_nrf5340_application.c",
+    "system_nrf5340_application.h",
+    "system_nrf5340_network.c",
+    "system_nrf5340_network.h",
+    "system_nrf9160.c",
+    "system_nrf9160.h",
+])
+
 cc_library(
     name = "compiler_abstraction",
     hdrs = ["compiler_abstraction.h"],
@@ -10,14 +48,12 @@ cc_library(
 
 cc_library(
     name = "nrf",
-    includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:fd0248f6-a546-4781-bd6c-1ef963497768"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:nrfx_mdk_nrf"],
 )
 
 cc_library(
     name = "nrf51",
-    includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:fd0248f6-a546-4781-bd6c-1ef963497768"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:nrfx_mdk_nrf"],
 )
 
 cc_library(
@@ -95,14 +131,12 @@ cc_library(
 
 cc_library(
     name = "nrf52",
-    includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:fd0248f6-a546-4781-bd6c-1ef963497768"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:nrfx_mdk_nrf"],
 )
 
 cc_library(
     name = "nrf52805",
-    includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:fd0248f6-a546-4781-bd6c-1ef963497768"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:nrfx_mdk_nrf"],
 )
 
 cc_library(
@@ -119,8 +153,7 @@ cc_library(
 
 cc_library(
     name = "nrf52810",
-    includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:fd0248f6-a546-4781-bd6c-1ef963497768"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:nrfx_mdk_nrf"],
 )
 
 cc_library(
@@ -149,8 +182,7 @@ cc_library(
 
 cc_library(
     name = "nrf52811",
-    includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:fd0248f6-a546-4781-bd6c-1ef963497768"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:nrfx_mdk_nrf"],
 )
 
 cc_library(
@@ -167,8 +199,7 @@ cc_library(
 
 cc_library(
     name = "nrf52820",
-    includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:fd0248f6-a546-4781-bd6c-1ef963497768"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:nrfx_mdk_nrf"],
 )
 
 cc_library(
@@ -191,8 +222,7 @@ cc_library(
 
 cc_library(
     name = "nrf52833",
-    includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:fd0248f6-a546-4781-bd6c-1ef963497768"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:nrfx_mdk_nrf"],
 )
 
 cc_library(
@@ -215,8 +245,7 @@ cc_library(
 
 cc_library(
     name = "nrf52840",
-    includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:fd0248f6-a546-4781-bd6c-1ef963497768"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:nrfx_mdk_nrf"],
 )
 
 cc_library(
@@ -270,8 +299,7 @@ cc_library(
 
 cc_library(
     name = "nrf5340_application",
-    includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:fd0248f6-a546-4781-bd6c-1ef963497768"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:nrfx_mdk_nrf"],
 )
 
 cc_library(
@@ -288,8 +316,7 @@ cc_library(
 
 cc_library(
     name = "nrf5340_network",
-    includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:fd0248f6-a546-4781-bd6c-1ef963497768"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:nrfx_mdk_nrf"],
 )
 
 cc_library(
@@ -313,8 +340,7 @@ cc_library(
 
 cc_library(
     name = "nrf9160",
-    includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:fd0248f6-a546-4781-bd6c-1ef963497768"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:nrfx_mdk_nrf"],
 )
 
 cc_library(
@@ -344,8 +370,7 @@ cc_library(
 
 cc_library(
     name = "nrf_erratas",
-    includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:fd0248f6-a546-4781-bd6c-1ef963497768"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:nrfx_mdk_nrf"],
 )
 
 cc_library(
@@ -381,66 +406,55 @@ cc_library(
 
 cc_library(
     name = "system_nrf51",
-    includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:fd0248f6-a546-4781-bd6c-1ef963497768"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:nrfx_mdk_nrf"],
 )
 
 cc_library(
     name = "system_nrf52",
-    includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:fd0248f6-a546-4781-bd6c-1ef963497768"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:nrfx_mdk_nrf"],
 )
 
 cc_library(
     name = "system_nrf52805",
-    includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:fd0248f6-a546-4781-bd6c-1ef963497768"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:nrfx_mdk_nrf"],
 )
 
 cc_library(
     name = "system_nrf52810",
-    includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:fd0248f6-a546-4781-bd6c-1ef963497768"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:nrfx_mdk_nrf"],
 )
 
 cc_library(
     name = "system_nrf52811",
-    includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:fd0248f6-a546-4781-bd6c-1ef963497768"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:nrfx_mdk_nrf"],
 )
 
 cc_library(
     name = "system_nrf52820",
-    includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:fd0248f6-a546-4781-bd6c-1ef963497768"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:nrfx_mdk_nrf"],
 )
 
 cc_library(
     name = "system_nrf52833",
-    includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:fd0248f6-a546-4781-bd6c-1ef963497768"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:nrfx_mdk_nrf"],
 )
 
 cc_library(
     name = "system_nrf52840",
-    includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:fd0248f6-a546-4781-bd6c-1ef963497768"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:nrfx_mdk_nrf"],
 )
 
 cc_library(
     name = "system_nrf5340_application",
-    includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:fd0248f6-a546-4781-bd6c-1ef963497768"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:nrfx_mdk_nrf"],
 )
 
 cc_library(
     name = "system_nrf5340_network",
-    includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:fd0248f6-a546-4781-bd6c-1ef963497768"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:nrfx_mdk_nrf"],
 )
 
 cc_library(
     name = "system_nrf9160",
-    includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:fd0248f6-a546-4781-bd6c-1ef963497768"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:nrfx_mdk_nrf"],
 )

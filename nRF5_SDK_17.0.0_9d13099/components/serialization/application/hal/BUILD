@@ -13,5 +13,5 @@ cc_library(
     srcs = ["ser_app_power_system_off.c"],
     hdrs = ["ser_app_power_system_off.h"],
     includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:fd0248f6-a546-4781-bd6c-1ef963497768"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099:nrfx_mdk_nrf"],
 )
