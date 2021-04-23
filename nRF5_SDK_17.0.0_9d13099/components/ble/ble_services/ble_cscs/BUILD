@@ -6,7 +6,7 @@ cc_library(
     name = "ble_cscs",
     srcs = ["ble_cscs.c"],
     hdrs = ["ble_cscs.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/components/ble/ble_services/ble_cscs"],
     deps = [
         ":ble_sc_ctrlpt",
         "//nRF5_SDK_17.0.0_9d13099/components/ble/common:ble_sensor_location",
@@ -23,7 +23,7 @@ cc_library(
     name = "ble_sc_ctrlpt",
     srcs = ["ble_sc_ctrlpt.c"],
     hdrs = ["ble_sc_ctrlpt.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/components/ble/ble_services/ble_cscs"],
     deps = [
         "//nRF5_SDK_17.0.0_9d13099/components/ble/common:ble_sensor_location",
         "//nRF5_SDK_17.0.0_9d13099/components/ble/common:ble_srv_common",

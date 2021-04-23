@@ -6,11 +6,11 @@ cc_library(
     name = "mcp4725",
     srcs = ["mcp4725.c"],
     hdrs = ["mcp4725.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/components/drivers_ext/mcp4725"],
     deps = [
-        "//nRF5_SDK_17.0.0_9d13099:boards_and_dfu",
-        "//nRF5_SDK_17.0.0_9d13099:nrf_fprintf_and_atomic",
+        "//nRF5_SDK_17.0.0_9d13099/components/boards",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/delay:nrf_delay",
+        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:app_util_platform",
         "//nRF5_SDK_17.0.0_9d13099/integration/nrfx/legacy:nrf_drv_twi",
     ],
 )

@@ -6,7 +6,7 @@ cc_library(
     name = "ble_nus_c",
     srcs = ["ble_nus_c.c"],
     hdrs = ["ble_nus_c.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/components/ble/ble_services/ble_nus_c"],
     deps = [
         "//nRF5_SDK_17.0.0_9d13099:sdk_config_remap",
         "//nRF5_SDK_17.0.0_9d13099/components/ble/ble_db_discovery",

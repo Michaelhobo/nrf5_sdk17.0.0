@@ -5,37 +5,37 @@ package(default_visibility = ["//visibility:public"])
 cc_library(
     name = "AuthLibSettings",
     hdrs = ["AuthLibSettings.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/external/infineon/optiga/include/optiga/common"],
 )
 
 cc_library(
     name = "Datatypes",
     hdrs = ["Datatypes.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/external/infineon/optiga/include/optiga/common"],
 )
 
 cc_library(
     name = "ErrorCodes",
     hdrs = ["ErrorCodes.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/external/infineon/optiga/include/optiga/common"],
 )
 
 cc_library(
     name = "Logger",
     hdrs = ["Logger.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/external/infineon/optiga/include/optiga/common"],
     deps = [":Util"],
 )
 
 cc_library(
     name = "MemoryMgmt",
     hdrs = ["MemoryMgmt.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/external/infineon/optiga/include/optiga/common"],
 )
 
 cc_library(
     name = "Util",
     hdrs = ["Util.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/external/infineon/optiga/include/optiga/common"],
     deps = [":Datatypes"],
 )

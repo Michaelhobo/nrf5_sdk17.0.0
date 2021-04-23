@@ -6,5 +6,5 @@ cc_library(
     name = "sensorsim",
     srcs = ["sensorsim.c"],
     hdrs = ["sensorsim.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/components/libraries/sensorsim"],
 )

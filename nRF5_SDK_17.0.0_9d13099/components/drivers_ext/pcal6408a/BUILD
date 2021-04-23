@@ -6,7 +6,7 @@ cc_library(
     name = "pcal6408a",
     srcs = ["pcal6408a.c"],
     hdrs = ["pcal6408a.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/components/drivers_ext/pcal6408a"],
     deps = [
         ":pcal6408a_internal",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/twi_sensor:nrf_twi_sensor",
@@ -16,5 +16,5 @@ cc_library(
 cc_library(
     name = "pcal6408a_internal",
     hdrs = ["pcal6408a_internal.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/components/drivers_ext/pcal6408a"],
 )

@@ -10,7 +10,7 @@ exports_files([
 cc_library(
     name = "AlertProtocol",
     hdrs = ["AlertProtocol.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/external/infineon/optiga/include/optiga/dtls"],
     deps = [
         ":OcpCommon",
         ":OcpCommonIncludes",
@@ -20,13 +20,13 @@ cc_library(
 cc_library(
     name = "BaseErrorCodes",
     hdrs = ["BaseErrorCodes.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/external/infineon/optiga/include/optiga/dtls"],
 )
 
 cc_library(
     name = "DtlsFlighthandler",
     hdrs = ["DtlsFlighthandler.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/external/infineon/optiga/include/optiga/dtls"],
     deps = [
         ":AlertProtocol",
         ":DtlsHandshakeProtocol",
@@ -44,19 +44,19 @@ cc_library(
 cc_library(
     name = "DtlsRecordLayer",
     hdrs = ["DtlsRecordLayer.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/external/infineon/optiga/include/optiga/dtls"],
     deps = [
         ":DtlsWindowing",
+        ":MessageLayer",
         ":OcpCommonIncludes",
         ":OcpRecordLayer",
-        "//nRF5_SDK_17.0.0_9d13099:optiga_dtls",
     ],
 )
 
 cc_library(
     name = "DtlsTransportLayer",
     hdrs = ["DtlsTransportLayer.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/external/infineon/optiga/include/optiga/dtls"],
     deps = [
         ":OcpCommonIncludes",
         ":OcpTransportLayer",
@@ -67,7 +67,7 @@ cc_library(
 cc_library(
     name = "DtlsWindowing",
     hdrs = ["DtlsWindowing.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/external/infineon/optiga/include/optiga/dtls"],
     deps = [
         ":OcpCommonIncludes",
         "//nRF5_SDK_17.0.0_9d13099/external/infineon/optiga/include/optiga/common:Util",
@@ -77,7 +77,7 @@ cc_library(
 cc_library(
     name = "HardwareCrypto",
     hdrs = ["HardwareCrypto.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/external/infineon/optiga/include/optiga/dtls"],
     deps = [
         ":OcpCryptoLayer",
         "//nRF5_SDK_17.0.0_9d13099/external/infineon/optiga/include/optiga/common:MemoryMgmt",
@@ -92,7 +92,7 @@ cc_library(
 cc_library(
     name = "OcpCommon",
     hdrs = ["OcpCommon.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/external/infineon/optiga/include/optiga/dtls"],
     deps = [
         ":OcpCommonIncludes",
         ":OcpRecordLayer",
@@ -105,7 +105,7 @@ cc_library(
 cc_library(
     name = "OcpCommonIncludes",
     hdrs = ["OcpCommonIncludes.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/external/infineon/optiga/include/optiga/dtls"],
     deps = [
         ":BaseErrorCodes",
         "//nRF5_SDK_17.0.0_9d13099/external/infineon/optiga/include/optiga:Version",
@@ -116,7 +116,7 @@ cc_library(
 cc_library(
     name = "OcpCryptoLayer",
     hdrs = ["OcpCryptoLayer.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/external/infineon/optiga/include/optiga/dtls"],
     deps = [
         ":OcpCommonIncludes",
         "//nRF5_SDK_17.0.0_9d13099/external/infineon/optiga/include/optiga/common:Datatypes",
@@ -127,7 +127,7 @@ cc_library(
 cc_library(
     name = "OcpRecordLayer",
     hdrs = ["OcpRecordLayer.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/external/infineon/optiga/include/optiga/dtls"],
     deps = [
         ":OcpCryptoLayer",
         ":OcpTransportLayer",
@@ -138,7 +138,7 @@ cc_library(
 cc_library(
     name = "OcpTransportLayer",
     hdrs = ["OcpTransportLayer.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/external/infineon/optiga/include/optiga/dtls"],
     deps = [
         ":OcpCommonIncludes",
         "//nRF5_SDK_17.0.0_9d13099/external/infineon/optiga/include/optiga/common:Datatypes",
@@ -149,5 +149,5 @@ cc_library(
 cc_library(
     name = "UDPErrorCodes",
     hdrs = ["UDPErrorCodes.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/external/infineon/optiga/include/optiga/dtls"],
 )

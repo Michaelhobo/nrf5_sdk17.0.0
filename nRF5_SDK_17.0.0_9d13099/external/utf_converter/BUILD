@@ -6,5 +6,5 @@ cc_library(
     name = "utf",
     srcs = ["utf.c"],
     hdrs = ["utf.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/external/utf_converter"],
 )

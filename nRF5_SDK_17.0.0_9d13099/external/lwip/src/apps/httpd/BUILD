@@ -6,7 +6,7 @@ cc_library(
     name = "fsdata",
     srcs = ["fsdata.c"],
     hdrs = ["fsdata.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/external/lwip/src/apps/httpd"],
     deps = [
         "//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/lwip:def",
         "//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/lwip/apps:fs",
@@ -17,6 +17,6 @@ cc_library(
 cc_library(
     name = "httpd_structs",
     hdrs = ["httpd_structs.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/external/lwip/src/apps/httpd"],
     deps = ["//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/lwip/apps:httpd"],
 )

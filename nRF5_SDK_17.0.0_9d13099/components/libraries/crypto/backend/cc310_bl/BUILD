@@ -22,7 +22,7 @@ cc_library(
     name = "cc310_bl_backend_ecdsa",
     srcs = ["cc310_bl_backend_ecdsa.c"],
     hdrs = ["cc310_bl_backend_ecdsa.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/components/libraries/crypto/backend/cc310_bl"],
     deps = [
         ":cc310_bl_backend_shared",
         "//nRF5_SDK_17.0.0_9d13099:sdk_config_remap",
@@ -44,7 +44,7 @@ cc_library(
     name = "cc310_bl_backend_hash",
     srcs = ["cc310_bl_backend_hash.c"],
     hdrs = ["cc310_bl_backend_hash.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/components/libraries/crypto/backend/cc310_bl"],
     deps = [
         ":cc310_bl_backend_shared",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto:nrf_crypto_error",
@@ -69,12 +69,12 @@ cc_library(
     name = "cc310_bl_backend_shared",
     srcs = ["cc310_bl_backend_shared.c"],
     hdrs = ["cc310_bl_backend_shared.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/components/libraries/crypto/backend/cc310_bl"],
     deps = [
-        "//nRF5_SDK_17.0.0_9d13099:nrf_fprintf_and_atomic",
-        "//nRF5_SDK_17.0.0_9d13099:nrfx_mdk_nrf",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto:nrf_crypto_error",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto:nrf_crypto_hash_shared",
+        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:sdk_common",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:sdk_errors",
+        "//nRF5_SDK_17.0.0_9d13099/modules/nrfx/mdk:nrf",
     ],
 )

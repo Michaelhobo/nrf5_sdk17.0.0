@@ -6,18 +6,18 @@ cc_library(
     name = "ble_dtm",
     srcs = ["ble_dtm.c"],
     hdrs = ["ble_dtm.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/components/ble/ble_dtm"],
     deps = [
         ":ble_dtm_hw",
-        "//nRF5_SDK_17.0.0_9d13099:nrf_fprintf_and_atomic",
-        "//nRF5_SDK_17.0.0_9d13099:nrfx_mdk_nrf",
         "//nRF5_SDK_17.0.0_9d13099/components/drivers_ext/nrf21540",
+        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:sdk_common",
+        "//nRF5_SDK_17.0.0_9d13099/modules/nrfx/mdk:nrf",
     ],
 )
 
 cc_library(
     name = "ble_dtm_hw",
     hdrs = ["ble_dtm_hw.h"],
-    includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:nrfx_mdk_nrf"],
+    includes = ["nRF5_SDK_17.0.0_9d13099/components/ble/ble_dtm"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099/modules/nrfx/mdk:nrf"],
 )

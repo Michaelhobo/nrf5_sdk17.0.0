@@ -37,7 +37,7 @@ cc_library(
     name = "optiga_backend_utils",
     srcs = ["optiga_backend_utils.c"],
     hdrs = ["optiga_backend_utils.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/components/libraries/crypto/backend/optiga"],
     deps = [
         "//nRF5_SDK_17.0.0_9d13099:sdk_config_remap",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/crypto:nrf_crypto_error",

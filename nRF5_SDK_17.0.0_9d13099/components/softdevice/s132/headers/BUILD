@@ -5,7 +5,7 @@ package(default_visibility = ["//visibility:public"])
 cc_library(
     name = "ble",
     hdrs = ["ble.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers"],
     deps = [
         ":ble_err",
         ":ble_gap",
@@ -21,14 +21,14 @@ cc_library(
 cc_library(
     name = "ble_err",
     hdrs = ["ble_err.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers"],
     deps = [":nrf_error"],
 )
 
 cc_library(
     name = "ble_gap",
     hdrs = ["ble_gap.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers"],
     deps = [
         ":ble_err",
         ":ble_hci",
@@ -42,7 +42,7 @@ cc_library(
 cc_library(
     name = "ble_gatt",
     hdrs = ["ble_gatt.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers"],
     deps = [
         ":ble_err",
         ":ble_hci",
@@ -56,7 +56,7 @@ cc_library(
 cc_library(
     name = "ble_gattc",
     hdrs = ["ble_gattc.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers"],
     deps = [
         ":ble_err",
         ":ble_gatt",
@@ -64,14 +64,14 @@ cc_library(
         ":ble_types",
         ":nrf_error",
         ":nrf_svc",
-        "//nRF5_SDK_17.0.0_9d13099:nrfx_mdk_nrf",
+        "//nRF5_SDK_17.0.0_9d13099/modules/nrfx/mdk:nrf",
     ],
 )
 
 cc_library(
     name = "ble_gatts",
     hdrs = ["ble_gatts.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers"],
     deps = [
         ":ble_err",
         ":ble_gap",
@@ -87,13 +87,13 @@ cc_library(
 cc_library(
     name = "ble_hci",
     hdrs = ["ble_hci.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers"],
 )
 
 cc_library(
     name = "ble_l2cap",
     hdrs = ["ble_l2cap.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers"],
     deps = [
         ":ble_err",
         ":ble_ranges",
@@ -106,81 +106,81 @@ cc_library(
 cc_library(
     name = "ble_ranges",
     hdrs = ["ble_ranges.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers"],
 )
 
 cc_library(
     name = "ble_types",
     hdrs = ["ble_types.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers"],
 )
 
 cc_library(
     name = "nrf_error",
     hdrs = ["nrf_error.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers"],
 )
 
 cc_library(
     name = "nrf_error_sdm",
     hdrs = ["nrf_error_sdm.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers"],
     deps = [":nrf_error"],
 )
 
 cc_library(
     name = "nrf_error_soc",
     hdrs = ["nrf_error_soc.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers"],
     deps = [":nrf_error"],
 )
 
 cc_library(
     name = "nrf_nvic",
     hdrs = ["nrf_nvic.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers"],
     deps = [
         ":nrf_error",
         ":nrf_error_soc",
         ":nrf_svc",
-        "//nRF5_SDK_17.0.0_9d13099:nrfx_mdk_nrf",
+        "//nRF5_SDK_17.0.0_9d13099/modules/nrfx/mdk:nrf",
     ],
 )
 
 cc_library(
     name = "nrf_sd_def",
     hdrs = ["nrf_sd_def.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers"],
     deps = [":nrf_soc"],
 )
 
 cc_library(
     name = "nrf_sdm",
     hdrs = ["nrf_sdm.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers"],
     deps = [
         ":nrf_error",
         ":nrf_error_sdm",
         ":nrf_soc",
         ":nrf_svc",
-        "//nRF5_SDK_17.0.0_9d13099:nrfx_mdk_nrf",
+        "//nRF5_SDK_17.0.0_9d13099/modules/nrfx/mdk:nrf",
     ],
 )
 
 cc_library(
     name = "nrf_soc",
     hdrs = ["nrf_soc.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers"],
     deps = [
         ":nrf_error",
         ":nrf_error_soc",
         ":nrf_svc",
-        "//nRF5_SDK_17.0.0_9d13099:nrfx_mdk_nrf",
+        "//nRF5_SDK_17.0.0_9d13099/modules/nrfx/mdk:nrf",
     ],
 )
 
 cc_library(
     name = "nrf_svc",
     hdrs = ["nrf_svc.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers"],
 )

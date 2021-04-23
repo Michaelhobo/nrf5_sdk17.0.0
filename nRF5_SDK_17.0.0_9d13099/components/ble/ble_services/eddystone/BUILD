@@ -22,22 +22,22 @@ exports_files([
 cc_library(
     name = "es",
     hdrs = ["es.h"],
-    includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:nrf_fprintf_and_atomic"],
+    includes = ["nRF5_SDK_17.0.0_9d13099/components/ble/ble_services/eddystone"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099/components/libraries/util:app_util_platform"],
 )
 
 cc_library(
     name = "es_adv",
     srcs = ["es_adv.c"],
     hdrs = ["es_adv.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/components/ble/ble_services/eddystone"],
     deps = [
         ":es_adv_frame",
         ":es_adv_timing",
         ":es_slot",
         ":es_tlm",
-        "//nRF5_SDK_17.0.0_9d13099:nrf_fprintf_and_atomic",
         "//nRF5_SDK_17.0.0_9d13099/components/ble/ble_services/ble_escs:nrf_ble_escs",
+        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:app_error",
     ],
 )
 
@@ -45,7 +45,7 @@ cc_library(
     name = "es_adv_frame",
     srcs = ["es_adv_frame.c"],
     hdrs = ["es_adv_frame.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/components/ble/ble_services/eddystone"],
     deps = [
         ":es_slot",
         "//nRF5_SDK_17.0.0_9d13099/components/ble/common:ble_advdata",
@@ -56,11 +56,11 @@ cc_library(
     name = "es_adv_timing",
     srcs = ["es_adv_timing.c"],
     hdrs = ["es_adv_timing.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/components/ble/ble_services/eddystone"],
     deps = [
         ":es_adv_timing_resolver",
-        "//nRF5_SDK_17.0.0_9d13099:eddystone_es_flash",
-        "//nRF5_SDK_17.0.0_9d13099:nrf_fprintf_and_atomic",
+        ":es_slot",
+        "//nRF5_SDK_17.0.0_9d13099/components/libraries/timer:app_timer",
     ],
 )
 
@@ -68,17 +68,17 @@ cc_library(
     name = "es_adv_timing_resolver",
     srcs = ["es_adv_timing_resolver.c"],
     hdrs = ["es_adv_timing_resolver.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/components/ble/ble_services/eddystone"],
     deps = [
         "//nRF5_SDK_17.0.0_9d13099:es_app_config_remap",
-        "//nRF5_SDK_17.0.0_9d13099:nrf_fprintf_and_atomic",
+        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:sdk_macros",
     ],
 )
 
 cc_library(
     name = "es_battery_voltage",
     hdrs = ["es_battery_voltage.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/components/ble/ble_services/eddystone"],
 )
 
 cc_library(
@@ -120,10 +120,12 @@ cc_library(
     name = "es_stopwatch",
     srcs = ["es_stopwatch.c"],
     hdrs = ["es_stopwatch.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/components/ble/ble_services/eddystone"],
     deps = [
         "//nRF5_SDK_17.0.0_9d13099:es_app_config_remap",
-        "//nRF5_SDK_17.0.0_9d13099:nrf_fprintf_and_atomic",
+        "//nRF5_SDK_17.0.0_9d13099/components/libraries/timer:app_timer",
+        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:app_error",
+        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:sdk_macros",
     ],
 )
 
@@ -131,13 +133,13 @@ cc_library(
     name = "es_tlm",
     srcs = ["es_tlm.c"],
     hdrs = ["es_tlm.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/components/ble/ble_services/eddystone"],
     deps = [
         ":es",
         ":es_battery_voltage",
         ":es_stopwatch",
         "//nRF5_SDK_17.0.0_9d13099:es_app_config_remap",
-        "//nRF5_SDK_17.0.0_9d13099:nrf_fprintf_and_atomic",
+        "//nRF5_SDK_17.0.0_9d13099/components/libraries/timer:app_timer",
         "//nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers:nrf_soc",
     ],
 )
@@ -145,23 +147,25 @@ cc_library(
 cc_library(
     name = "es_util",
     hdrs = ["es_util.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/components/ble/ble_services/eddystone"],
 )
 
 cc_library(
     name = "nrf_ble_es",
     srcs = ["nrf_ble_es.c"],
     hdrs = ["nrf_ble_es.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/components/ble/ble_services/eddystone"],
     deps = [
         ":es_adv",
         ":es_battery_voltage",
+        ":es_flash",
+        ":es_gatts",
+        ":es_security",
+        ":es_slot",
         ":es_stopwatch",
-        "//nRF5_SDK_17.0.0_9d13099:eddystone_es_flash",
-        "//nRF5_SDK_17.0.0_9d13099:eddystone_es_gatts",
-        "//nRF5_SDK_17.0.0_9d13099:nrf_fprintf_and_atomic",
         "//nRF5_SDK_17.0.0_9d13099/components/ble/ble_services/ble_escs:escs_defs",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/fds",
+        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:app_error",
         "//nRF5_SDK_17.0.0_9d13099/components/softdevice/common:nrf_sdh_ble",
         "//nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers:ble",
     ],

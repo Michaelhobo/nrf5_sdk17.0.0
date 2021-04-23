@@ -5,7 +5,7 @@ package(default_visibility = ["//visibility:public"])
 cc_library(
     name = "etharp",
     hdrs = ["etharp.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/netif"],
     deps = [
         ":ethernet",
         "//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/lwip:etharp",
@@ -15,10 +15,10 @@ cc_library(
 cc_library(
     name = "ethernet",
     hdrs = ["ethernet.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/netif"],
     deps = [
-        "//nRF5_SDK_17.0.0_9d13099:lwip_debug",
         "//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/lwip:netif",
+        "//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/lwip:opt",
         "//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/lwip:pbuf",
         "//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/lwip/prot:ethernet",
     ],
@@ -27,7 +27,7 @@ cc_library(
 cc_library(
     name = "lowpan6",
     hdrs = ["lowpan6.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/netif"],
     deps = [
         ":lowpan6_opts",
         "//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/lwip:ip",
@@ -40,16 +40,16 @@ cc_library(
 cc_library(
     name = "lowpan6_opts",
     hdrs = ["lowpan6_opts.h"],
-    includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:lwip_debug"],
+    includes = ["nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/netif"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/lwip:opt"],
 )
 
 cc_library(
     name = "slipif",
     hdrs = ["slipif.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/netif"],
     deps = [
-        "//nRF5_SDK_17.0.0_9d13099:lwip_debug",
         "//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/lwip:netif",
+        "//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/lwip:opt",
     ],
 )

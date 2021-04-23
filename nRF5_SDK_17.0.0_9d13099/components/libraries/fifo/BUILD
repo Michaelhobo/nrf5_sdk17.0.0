@@ -6,6 +6,6 @@ cc_library(
     name = "app_fifo",
     srcs = ["app_fifo.c"],
     hdrs = ["app_fifo.h"],
-    includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:nrf_fprintf_and_atomic"],
+    includes = ["nRF5_SDK_17.0.0_9d13099/components/libraries/fifo"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099/components/libraries/util:sdk_common"],
 )

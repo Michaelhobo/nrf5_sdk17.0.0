@@ -18,10 +18,7 @@ cc_library(
     deps = ["//nRF5_SDK_17.0.0_9d13099:ble_ots"],
 )
 
-cc_library(
-    name = "ble_ots_l2cap",
-    deps = ["//nRF5_SDK_17.0.0_9d13099:ble_ots"],
-)
+cc_library(name = "ble_ots_l2cap")
 
 cc_library(
     name = "ble_ots_oacp",

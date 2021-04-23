@@ -14,7 +14,7 @@ exports_files([
 cc_library(
     name = "ble_ln_common",
     hdrs = ["ble_ln_common.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/components/ble/ble_services/experimental_ble_lns"],
 )
 
 cc_library(

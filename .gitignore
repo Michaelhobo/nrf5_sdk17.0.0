@@ -2,3 +2,4 @@
 *.swp
 bazel-*
 .bazelifyrc.hint
+.bazelify-out

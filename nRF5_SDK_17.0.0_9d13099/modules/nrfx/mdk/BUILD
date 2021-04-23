@@ -43,7 +43,7 @@ exports_files([
 cc_library(
     name = "compiler_abstraction",
     hdrs = ["compiler_abstraction.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/modules/nrfx/mdk"],
 )
 
 cc_library(
@@ -59,74 +59,74 @@ cc_library(
 cc_library(
     name = "nrf51422_peripherals",
     hdrs = ["nrf51422_peripherals.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/modules/nrfx/mdk"],
 )
 
 cc_library(
     name = "nrf51801_peripherals",
     hdrs = ["nrf51801_peripherals.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/modules/nrfx/mdk"],
 )
 
 cc_library(
     name = "nrf51802_peripherals",
     hdrs = ["nrf51802_peripherals.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/modules/nrfx/mdk"],
 )
 
 cc_library(
     name = "nrf51822_peripherals",
     hdrs = ["nrf51822_peripherals.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/modules/nrfx/mdk"],
 )
 
 cc_library(
     name = "nrf51824_peripherals",
     hdrs = ["nrf51824_peripherals.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/modules/nrfx/mdk"],
 )
 
 cc_library(
     name = "nrf51_bitfields",
     hdrs = ["nrf51_bitfields.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/modules/nrfx/mdk"],
 )
 
 cc_library(
     name = "nrf51_deprecated",
     hdrs = ["nrf51_deprecated.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/modules/nrfx/mdk"],
 )
 
 cc_library(
     name = "nrf51_erratas",
     hdrs = ["nrf51_erratas.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/modules/nrfx/mdk"],
     deps = [":compiler_abstraction"],
 )
 
 cc_library(
     name = "nrf51_peripherals",
     hdrs = ["nrf51_peripherals.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/modules/nrfx/mdk"],
 )
 
 cc_library(
     name = "nrf51_to_nrf52",
     hdrs = ["nrf51_to_nrf52.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/modules/nrfx/mdk"],
 )
 
 cc_library(
     name = "nrf51_to_nrf52810",
     hdrs = ["nrf51_to_nrf52810.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/modules/nrfx/mdk"],
 )
 
 cc_library(
     name = "nrf51_to_nrf52840",
     hdrs = ["nrf51_to_nrf52840.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/modules/nrfx/mdk"],
 )
 
 cc_library(
@@ -142,13 +142,13 @@ cc_library(
 cc_library(
     name = "nrf52805_bitfields",
     hdrs = ["nrf52805_bitfields.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/modules/nrfx/mdk"],
 )
 
 cc_library(
     name = "nrf52805_peripherals",
     hdrs = ["nrf52805_peripherals.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/modules/nrfx/mdk"],
 )
 
 cc_library(
@@ -159,25 +159,25 @@ cc_library(
 cc_library(
     name = "nrf52810_bitfields",
     hdrs = ["nrf52810_bitfields.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/modules/nrfx/mdk"],
 )
 
 cc_library(
     name = "nrf52810_name_change",
     hdrs = ["nrf52810_name_change.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/modules/nrfx/mdk"],
 )
 
 cc_library(
     name = "nrf52810_peripherals",
     hdrs = ["nrf52810_peripherals.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/modules/nrfx/mdk"],
 )
 
 cc_library(
     name = "nrf52810_to_nrf52811",
     hdrs = ["nrf52810_to_nrf52811.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/modules/nrfx/mdk"],
 )
 
 cc_library(
@@ -188,13 +188,13 @@ cc_library(
 cc_library(
     name = "nrf52811_bitfields",
     hdrs = ["nrf52811_bitfields.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/modules/nrfx/mdk"],
 )
 
 cc_library(
     name = "nrf52811_peripherals",
     hdrs = ["nrf52811_peripherals.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/modules/nrfx/mdk"],
 )
 
 cc_library(
@@ -205,19 +205,19 @@ cc_library(
 cc_library(
     name = "nrf52820_bitfields",
     hdrs = ["nrf52820_bitfields.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/modules/nrfx/mdk"],
 )
 
 cc_library(
     name = "nrf52820_peripherals",
     hdrs = ["nrf52820_peripherals.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/modules/nrfx/mdk"],
 )
 
 cc_library(
     name = "nrf52832_peripherals",
     hdrs = ["nrf52832_peripherals.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/modules/nrfx/mdk"],
 )
 
 cc_library(
@@ -228,19 +228,19 @@ cc_library(
 cc_library(
     name = "nrf52833_bitfields",
     hdrs = ["nrf52833_bitfields.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/modules/nrfx/mdk"],
 )
 
 cc_library(
     name = "nrf52833_peripherals",
     hdrs = ["nrf52833_peripherals.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/modules/nrfx/mdk"],
 )
 
 cc_library(
     name = "nrf52833_to_nrf52820",
     hdrs = ["nrf52833_to_nrf52820.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/modules/nrfx/mdk"],
 )
 
 cc_library(
@@ -251,50 +251,50 @@ cc_library(
 cc_library(
     name = "nrf52840_bitfields",
     hdrs = ["nrf52840_bitfields.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/modules/nrfx/mdk"],
 )
 
 cc_library(
     name = "nrf52840_peripherals",
     hdrs = ["nrf52840_peripherals.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/modules/nrfx/mdk"],
 )
 
 cc_library(
     name = "nrf52_bitfields",
     hdrs = ["nrf52_bitfields.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/modules/nrfx/mdk"],
 )
 
 cc_library(
     name = "nrf52_erratas",
     hdrs = ["nrf52_erratas.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/modules/nrfx/mdk"],
     deps = [":compiler_abstraction"],
 )
 
 cc_library(
     name = "nrf52_name_change",
     hdrs = ["nrf52_name_change.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/modules/nrfx/mdk"],
 )
 
 cc_library(
     name = "nrf52_to_nrf52810",
     hdrs = ["nrf52_to_nrf52810.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/modules/nrfx/mdk"],
 )
 
 cc_library(
     name = "nrf52_to_nrf52833",
     hdrs = ["nrf52_to_nrf52833.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/modules/nrfx/mdk"],
 )
 
 cc_library(
     name = "nrf52_to_nrf52840",
     hdrs = ["nrf52_to_nrf52840.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/modules/nrfx/mdk"],
 )
 
 cc_library(
@@ -305,13 +305,13 @@ cc_library(
 cc_library(
     name = "nrf5340_application_bitfields",
     hdrs = ["nrf5340_application_bitfields.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/modules/nrfx/mdk"],
 )
 
 cc_library(
     name = "nrf5340_application_peripherals",
     hdrs = ["nrf5340_application_peripherals.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/modules/nrfx/mdk"],
 )
 
 cc_library(
@@ -322,19 +322,19 @@ cc_library(
 cc_library(
     name = "nrf5340_network_bitfields",
     hdrs = ["nrf5340_network_bitfields.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/modules/nrfx/mdk"],
 )
 
 cc_library(
     name = "nrf5340_network_peripherals",
     hdrs = ["nrf5340_network_peripherals.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/modules/nrfx/mdk"],
 )
 
 cc_library(
     name = "nrf53_erratas",
     hdrs = ["nrf53_erratas.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/modules/nrfx/mdk"],
     deps = [":compiler_abstraction"],
 )
 
@@ -346,25 +346,25 @@ cc_library(
 cc_library(
     name = "nrf9160_bitfields",
     hdrs = ["nrf9160_bitfields.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/modules/nrfx/mdk"],
 )
 
 cc_library(
     name = "nrf9160_name_change",
     hdrs = ["nrf9160_name_change.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/modules/nrfx/mdk"],
 )
 
 cc_library(
     name = "nrf9160_peripherals",
     hdrs = ["nrf9160_peripherals.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/modules/nrfx/mdk"],
 )
 
 cc_library(
     name = "nrf91_erratas",
     hdrs = ["nrf91_erratas.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/modules/nrfx/mdk"],
     deps = [":compiler_abstraction"],
 )
 
@@ -376,7 +376,7 @@ cc_library(
 cc_library(
     name = "nrf_peripherals",
     hdrs = ["nrf_peripherals.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/modules/nrfx/mdk"],
     deps = [
         ":nrf51_peripherals",
         ":nrf52805_peripherals",
@@ -395,13 +395,13 @@ cc_library(
 cc_library(
     name = "startup_config",
     hdrs = ["startup_config.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/modules/nrfx/mdk"],
 )
 
 cc_library(
     name = "system_nrf",
     hdrs = ["system_nrf.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/modules/nrfx/mdk"],
 )
 
 cc_library(

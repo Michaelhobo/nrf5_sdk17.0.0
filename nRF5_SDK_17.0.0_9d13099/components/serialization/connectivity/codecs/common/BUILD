@@ -5,7 +5,7 @@ package(default_visibility = ["//visibility:public"])
 cc_library(
     name = "ble_dtm_conn",
     hdrs = ["ble_dtm_conn.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/components/serialization/connectivity/codecs/common"],
     deps = ["//nRF5_SDK_17.0.0_9d13099/components/serialization/connectivity/hal:dtm_uart"],
 )
 
@@ -16,10 +16,10 @@ cc_library(
         "conn_mw_items.c",
     ],
     hdrs = ["conn_mw.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/components/serialization/connectivity/codecs/common"],
     deps = [
         ":conn_mw_nrf_soc",
-        "//nRF5_SDK_17.0.0_9d13099:ble_serialization",
+        "//nRF5_SDK_17.0.0_9d13099/components/serialization/common:ble_serialization",
         "//nRF5_SDK_17.0.0_9d13099/components/serialization/connectivity/codecs/ant/middleware:conn_mw_ant",
         "//nRF5_SDK_17.0.0_9d13099/components/serialization/connectivity/codecs/ble/middleware:conn_mw_ble",
         "//nRF5_SDK_17.0.0_9d13099/components/serialization/connectivity/codecs/ble/middleware:conn_mw_ble_gap",
@@ -39,7 +39,7 @@ cc_library(
     name = "conn_mw_nrf_soc",
     srcs = ["conn_mw_nrf_soc.c"],
     hdrs = ["conn_mw_nrf_soc.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/components/serialization/connectivity/codecs/common"],
     deps = [
         "//nRF5_SDK_17.0.0_9d13099/components/serialization/common:ble_serialization",
         "//nRF5_SDK_17.0.0_9d13099/components/serialization/connectivity/codecs/ble/serializers:nrf_soc_conn",

@@ -9,4 +9,5 @@ package(
 cc_library(
     name = "sdk_config",
     hdrs = ["sdk_config.h"],
+    includes = ["."],
 )

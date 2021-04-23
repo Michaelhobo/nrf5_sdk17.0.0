@@ -23,7 +23,7 @@ cc_library(
     name = "dfu-cc.pb",
     srcs = ["dfu-cc.pb.c"],
     hdrs = ["dfu-cc.pb.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/components/libraries/bootloader/dfu"],
 )
 
 cc_library(
@@ -35,13 +35,13 @@ cc_library(
     name = "nrf_dfu_flash",
     srcs = ["nrf_dfu_flash.c"],
     hdrs = ["nrf_dfu_flash.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/components/libraries/bootloader/dfu"],
     deps = [
         ":nrf_dfu_types",
-        "//nRF5_SDK_17.0.0_9d13099:nrf_fprintf_and_atomic",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/fstorage:nrf_fstorage",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/fstorage:nrf_fstorage_nvmc",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/fstorage:nrf_fstorage_sd",
+        "//nRF5_SDK_17.0.0_9d13099/components/libraries/log:nrf_log",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:sdk_errors",
     ],
 )
@@ -55,11 +55,11 @@ cc_library(
     name = "nrf_dfu_mbr",
     srcs = ["nrf_dfu_mbr.c"],
     hdrs = ["nrf_dfu_mbr.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/components/libraries/bootloader/dfu"],
     deps = [
         ":nrf_dfu_types",
-        "//nRF5_SDK_17.0.0_9d13099:nrf_fprintf_and_atomic",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/bootloader:nrf_bootloader_info",
+        "//nRF5_SDK_17.0.0_9d13099/components/libraries/log:nrf_log",
         "//nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers/nrf52:nrf_mbr",
     ],
 )
@@ -73,13 +73,13 @@ cc_library(
     name = "nrf_dfu_settings",
     srcs = ["nrf_dfu_settings.c"],
     hdrs = ["nrf_dfu_settings.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/components/libraries/bootloader/dfu"],
     deps = [
         ":nrf_dfu_flash",
         ":nrf_dfu_types",
-        "//nRF5_SDK_17.0.0_9d13099:nrf_fprintf_and_atomic",
         "//nRF5_SDK_17.0.0_9d13099:sdk_config_remap",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/crc32",
+        "//nRF5_SDK_17.0.0_9d13099/components/libraries/log:nrf_log",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:sdk_errors",
         "//nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers:nrf_soc",
         "//nRF5_SDK_17.0.0_9d13099/modules/nrfx/hal:nrf_nvmc",
@@ -90,11 +90,11 @@ cc_library(
     name = "nrf_dfu_transport",
     srcs = ["nrf_dfu_transport.c"],
     hdrs = ["nrf_dfu_transport.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/components/libraries/bootloader/dfu"],
     deps = [
         ":nrf_dfu_types",
-        "//nRF5_SDK_17.0.0_9d13099:nrf_fprintf_and_atomic",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/experimental_section_vars:nrf_section",
+        "//nRF5_SDK_17.0.0_9d13099/components/libraries/log:nrf_log",
     ],
 )
 
@@ -106,13 +106,14 @@ cc_library(
 cc_library(
     name = "nrf_dfu_types",
     hdrs = ["nrf_dfu_types.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/components/libraries/bootloader/dfu"],
     deps = [
-        "//nRF5_SDK_17.0.0_9d13099:nrf_fprintf_and_atomic",
-        "//nRF5_SDK_17.0.0_9d13099:nrfx_mdk_nrf",
         "//nRF5_SDK_17.0.0_9d13099:sdk_config_remap",
+        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:app_util_platform",
+        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:sdk_common",
         "//nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers:ble_gap",
         "//nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers/nrf52:nrf_mbr",
+        "//nRF5_SDK_17.0.0_9d13099/modules/nrfx/mdk:nrf",
     ],
 )
 

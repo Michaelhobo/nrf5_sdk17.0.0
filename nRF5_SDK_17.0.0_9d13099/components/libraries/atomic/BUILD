@@ -21,6 +21,6 @@ cc_library(
 cc_library(
     name = "nrf_atomic_sanity_check",
     hdrs = ["nrf_atomic_sanity_check.h"],
-    includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:nrf_fprintf_and_atomic"],
+    includes = ["nRF5_SDK_17.0.0_9d13099/components/libraries/atomic"],
+    deps = [":nrf_atomic"],
 )

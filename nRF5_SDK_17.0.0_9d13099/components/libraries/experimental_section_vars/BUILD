@@ -10,7 +10,7 @@ exports_files([
 cc_library(
     name = "nrf_section",
     hdrs = ["nrf_section.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/components/libraries/experimental_section_vars"],
     deps = ["//nRF5_SDK_17.0.0_9d13099/components/libraries/util:nordic_common"],
 )
 

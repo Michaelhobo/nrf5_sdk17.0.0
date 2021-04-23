@@ -6,5 +6,5 @@ cc_library(
     name = "fnmatch",
     srcs = ["fnmatch.c"],
     hdrs = ["fnmatch.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/external/fnmatch"],
 )

@@ -6,7 +6,7 @@ cc_library(
     name = "ble_hids",
     srcs = ["ble_hids.c"],
     hdrs = ["ble_hids.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/components/ble/ble_services/ble_hids"],
     deps = [
         "//nRF5_SDK_17.0.0_9d13099/components/ble/ble_link_ctx_manager",
         "//nRF5_SDK_17.0.0_9d13099/components/ble/common:ble_srv_common",

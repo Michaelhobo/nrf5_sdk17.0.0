@@ -15,12 +15,12 @@ cc_library(
 cc_library(
     name = "nrf_cli_types",
     hdrs = ["nrf_cli_types.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/components/libraries/cli"],
     deps = ["//nRF5_SDK_17.0.0_9d13099:sdk_config_remap"],
 )
 
 cc_library(
     name = "nrf_cli_vt100",
     hdrs = ["nrf_cli_vt100.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/components/libraries/cli"],
 )

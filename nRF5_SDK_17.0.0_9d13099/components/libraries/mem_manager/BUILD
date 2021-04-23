@@ -6,6 +6,10 @@ cc_library(
     name = "mem_manager",
     srcs = ["mem_manager.c"],
     hdrs = ["mem_manager.h"],
-    includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:nrf_fprintf_and_atomic"],
+    includes = ["nRF5_SDK_17.0.0_9d13099/components/libraries/mem_manager"],
+    deps = [
+        "//nRF5_SDK_17.0.0_9d13099/components/libraries/log:nrf_log",
+        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:nrf_assert",
+        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:sdk_common",
+    ],
 )

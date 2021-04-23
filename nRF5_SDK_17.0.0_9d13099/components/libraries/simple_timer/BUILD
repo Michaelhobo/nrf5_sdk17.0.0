@@ -6,11 +6,13 @@ cc_library(
     name = "app_simple_timer",
     srcs = ["app_simple_timer.c"],
     hdrs = ["app_simple_timer.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/components/libraries/simple_timer"],
     deps = [
-        "//nRF5_SDK_17.0.0_9d13099:nrf_fprintf_and_atomic",
-        "//nRF5_SDK_17.0.0_9d13099:nrfx_mdk_nrf",
+        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:app_error",
+        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:app_util_platform",
+        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:sdk_common",
         "//nRF5_SDK_17.0.0_9d13099/integration/nrfx/legacy:nrf_drv_timer",
         "//nRF5_SDK_17.0.0_9d13099/modules/nrfx/hal:nrf_timer",
+        "//nRF5_SDK_17.0.0_9d13099/modules/nrfx/mdk:nrf",
     ],
 )

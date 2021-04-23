@@ -5,7 +5,7 @@ package(default_visibility = ["//visibility:public"])
 cc_library(
     name = "ifx_i2c",
     hdrs = ["ifx_i2c.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/external/infineon/optiga/include/optiga/ifx_i2c"],
     deps = [
         ":ifx_i2c_config",
         "//nRF5_SDK_17.0.0_9d13099/external/infineon/optiga/include/optiga/common:Datatypes",
@@ -15,7 +15,7 @@ cc_library(
 cc_library(
     name = "ifx_i2c_config",
     hdrs = ["ifx_i2c_config.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/external/infineon/optiga/include/optiga/ifx_i2c"],
     deps = [
         "//nRF5_SDK_17.0.0_9d13099/external/infineon/optiga/include/optiga/pal:pal_gpio",
         "//nRF5_SDK_17.0.0_9d13099/external/infineon/optiga/include/optiga/pal:pal_i2c",
@@ -26,21 +26,21 @@ cc_library(
 cc_library(
     name = "ifx_i2c_data_link_layer",
     hdrs = ["ifx_i2c_data_link_layer.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/external/infineon/optiga/include/optiga/ifx_i2c"],
     deps = [":ifx_i2c_config"],
 )
 
 cc_library(
     name = "ifx_i2c_physical_layer",
     hdrs = ["ifx_i2c_physical_layer.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/external/infineon/optiga/include/optiga/ifx_i2c"],
     deps = [":ifx_i2c_config"],
 )
 
 cc_library(
     name = "ifx_i2c_transport_layer",
     hdrs = ["ifx_i2c_transport_layer.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/external/infineon/optiga/include/optiga/ifx_i2c"],
     deps = [
         ":ifx_i2c_config",
         "//nRF5_SDK_17.0.0_9d13099/external/infineon/optiga/include/optiga/pal:pal_os_timer",

@@ -14,14 +14,14 @@ exports_files([
 cc_library(
     name = "ccp",
     hdrs = ["ccp.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/netif/ppp"],
     deps = [":ppp_opts"],
 )
 
 cc_library(
     name = "chap-md5",
     hdrs = ["chap-md5.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/netif/ppp"],
     deps = [":ppp_opts"],
 )
 
@@ -33,7 +33,7 @@ cc_library(
 cc_library(
     name = "chap_ms",
     hdrs = ["chap_ms.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/netif/ppp"],
     deps = [":ppp_opts"],
 )
 
@@ -45,14 +45,14 @@ cc_library(
 cc_library(
     name = "ecp",
     hdrs = ["ecp.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/netif/ppp"],
     deps = [":ppp_opts"],
 )
 
 cc_library(
     name = "eui64",
     hdrs = ["eui64.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/netif/ppp"],
     deps = [":ppp_opts"],
 )
 
@@ -64,14 +64,14 @@ cc_library(
 cc_library(
     name = "ipcp",
     hdrs = ["ipcp.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/netif/ppp"],
     deps = [":ppp_opts"],
 )
 
 cc_library(
     name = "ipv6cp",
     hdrs = ["ipv6cp.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/netif/ppp"],
     deps = [
         ":eui64",
         ":ppp_opts",
@@ -86,14 +86,14 @@ cc_library(
 cc_library(
     name = "magic",
     hdrs = ["magic.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/netif/ppp"],
     deps = [":ppp_opts"],
 )
 
 cc_library(
     name = "mppe",
     hdrs = ["mppe.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/netif/ppp"],
     deps = [
         ":ppp_opts",
         ":pppcrypt",
@@ -108,11 +108,11 @@ cc_library(
 cc_library(
     name = "ppp_impl",
     hdrs = ["ppp_impl.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/netif/ppp"],
     deps = [
+        ":ppp",
         ":ppp_opts",
         ":pppdebug",
-        "//nRF5_SDK_17.0.0_9d13099:ppp",
         "//nRF5_SDK_17.0.0_9d13099:ppp_settings_remap",
         "//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/lwip:def",
         "//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/lwip:netif",
@@ -123,18 +123,18 @@ cc_library(
 cc_library(
     name = "ppp_opts",
     hdrs = ["ppp_opts.h"],
-    includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:lwip_debug"],
+    includes = ["nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/netif/ppp"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/lwip:opt"],
 )
 
 cc_library(
     name = "pppapi",
     hdrs = ["pppapi.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/netif/ppp"],
     deps = [
+        ":ppp",
         ":ppp_opts",
         ":pppos",
-        "//nRF5_SDK_17.0.0_9d13099:ppp",
         "//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/lwip:netif",
         "//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/lwip:sys",
         "//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/lwip/priv:tcpip_priv",
@@ -144,7 +144,7 @@ cc_library(
 cc_library(
     name = "pppcrypt",
     hdrs = ["pppcrypt.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/netif/ppp"],
     deps = [
         ":ppp_opts",
         "//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/lwip:arch",
@@ -159,17 +159,17 @@ cc_library(
 cc_library(
     name = "pppdebug",
     hdrs = ["pppdebug.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/netif/ppp"],
     deps = [":ppp_opts"],
 )
 
 cc_library(
     name = "pppoe",
     hdrs = ["pppoe.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/netif/ppp"],
     deps = [
+        ":ppp",
         ":ppp_opts",
-        "//nRF5_SDK_17.0.0_9d13099:ppp",
         "//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/lwip:etharp",
     ],
 )
@@ -177,21 +177,21 @@ cc_library(
 cc_library(
     name = "pppol2tp",
     hdrs = ["pppol2tp.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/netif/ppp"],
     deps = [
+        ":ppp",
         ":ppp_opts",
-        "//nRF5_SDK_17.0.0_9d13099:ppp",
     ],
 )
 
 cc_library(
     name = "pppos",
     hdrs = ["pppos.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/netif/ppp"],
     deps = [
+        ":ppp",
         ":ppp_opts",
         ":vj",
-        "//nRF5_SDK_17.0.0_9d13099:ppp",
         "//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/lwip:sys",
     ],
 )
@@ -204,7 +204,7 @@ cc_library(
 cc_library(
     name = "vj",
     hdrs = ["vj.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/netif/ppp"],
     deps = [
         ":ppp_opts",
         "//nRF5_SDK_17.0.0_9d13099/external/lwip/src/include/lwip:ip",

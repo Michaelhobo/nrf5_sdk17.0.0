@@ -22,7 +22,7 @@ cc_library(
 cc_library(
     name = "ser_config",
     hdrs = ["ser_config.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/components/serialization/common"],
     deps = ["//nRF5_SDK_17.0.0_9d13099/modules/nrfx/mdk:nrf"],
 )
 
@@ -30,9 +30,10 @@ cc_library(
     name = "ser_dbg_sd_str",
     srcs = ["ser_dbg_sd_str.c"],
     hdrs = ["ser_dbg_sd_str.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/components/serialization/common"],
     deps = [
-        "//nRF5_SDK_17.0.0_9d13099:nrf_fprintf_and_atomic",
+        "//nRF5_SDK_17.0.0_9d13099/components/libraries/log:nrf_log",
+        "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:sdk_common",
         "//nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers:ble_ranges",
         "//nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers:nrf_soc",
     ],

@@ -27,11 +27,13 @@ cc_library(
     name = "ble_gattc_struct_serialization",
     srcs = ["ble_gattc_struct_serialization.c"],
     hdrs = ["ble_gattc_struct_serialization.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/components/serialization/common/struct_ser/ble"],
     deps = [
-        "//nRF5_SDK_17.0.0_9d13099:ble_serialization",
-        "//nRF5_SDK_17.0.0_9d13099:ble_struct_serialization",
+        ":ble_gatt_struct_serialization",
+        ":ble_struct_serialization",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:app_util",
+        "//nRF5_SDK_17.0.0_9d13099/components/serialization/common:ble_serialization",
+        "//nRF5_SDK_17.0.0_9d13099/components/serialization/common:cond_field_serialization",
         "//nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers:ble_gattc",
     ],
 )
@@ -45,11 +47,12 @@ cc_library(
     name = "ble_l2cap_struct_serialization",
     srcs = ["ble_l2cap_struct_serialization.c"],
     hdrs = ["ble_l2cap_struct_serialization.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/components/serialization/common/struct_ser/ble"],
     deps = [
-        "//nRF5_SDK_17.0.0_9d13099:ble_serialization",
-        "//nRF5_SDK_17.0.0_9d13099:ble_struct_serialization",
+        ":ble_struct_serialization",
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:app_util",
+        "//nRF5_SDK_17.0.0_9d13099/components/serialization/common:ble_serialization",
+        "//nRF5_SDK_17.0.0_9d13099/components/serialization/common:cond_field_serialization",
         "//nRF5_SDK_17.0.0_9d13099/components/softdevice/s132/headers:ble_l2cap",
     ],
 )
@@ -63,7 +66,7 @@ cc_library(
     name = "nrf_soc_struct_serialization",
     srcs = ["nrf_soc_struct_serialization.c"],
     hdrs = ["nrf_soc_struct_serialization.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/components/serialization/common/struct_ser/ble"],
     deps = [
         "//nRF5_SDK_17.0.0_9d13099/components/libraries/util:app_util",
         "//nRF5_SDK_17.0.0_9d13099/components/serialization/common:ble_serialization",

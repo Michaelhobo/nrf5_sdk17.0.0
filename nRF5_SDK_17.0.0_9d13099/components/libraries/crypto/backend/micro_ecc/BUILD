@@ -29,7 +29,7 @@ cc_library(
 cc_library(
     name = "micro_ecc_backend_shared",
     hdrs = ["micro_ecc_backend_shared.h"],
-    includes = ["."],
+    includes = ["nRF5_SDK_17.0.0_9d13099/components/libraries/crypto/backend/micro_ecc"],
     deps = [
         "//nRF5_SDK_17.0.0_9d13099:sdk_config_remap",
         "//nRF5_SDK_17.0.0_9d13099:uECC_remap",

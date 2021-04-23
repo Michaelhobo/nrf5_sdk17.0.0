@@ -11,8 +11,8 @@ cc_library(
     name = "ser_phy",
     srcs = ["ser_phy.c"],
     hdrs = ["ser_phy.h"],
-    includes = ["."],
-    deps = ["//nRF5_SDK_17.0.0_9d13099:nrf_fprintf_and_atomic"],
+    includes = ["nRF5_SDK_17.0.0_9d13099/components/serialization/common/transport/ser_phy"],
+    deps = ["//nRF5_SDK_17.0.0_9d13099/components/libraries/util:app_error"],
 )
 
 cc_library(
